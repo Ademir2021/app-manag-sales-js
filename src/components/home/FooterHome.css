@@ -1,0 +1,71 @@
+.maps {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin-right: 3%;
+    margin-left: 0%;
+    /* display: inline-block; */
+    vertical-align: top;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0 -3%;
+    width: 100%;
+    min-width: 380px;
+    /* width: 412px; */
+    /* height: 336px; */
+    /* border-style: double; */
+    /* border: 1px solid gray; */
+    border-radius: 8px;
+}
+
+p a {
+    text-decoration: none;
+}
+
+footer {
+    color:black;
+    padding: 12px 12px 12px 12px;
+    margin: 3px;
+    border-radius: 3px;
+}
+
+.social-icons {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid gray;
+    padding: 2px 2px 2px 2px;
+}
+
+.social-icons:hover {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background-color: rgb(228, 221, 221);
+    border: 2px solid gray;
+    padding: 2px 2px 2px 2px;
+}
+
+.btn-top {
+    width: 46px;
+    height: 46px;
+    background-color:gray;
+    border-radius: 4px;
+    padding: 1px;
+    margin-bottom: 12px;
+}
+
+.btn-top:hover {
+    width: 56px;
+    height: 56px;
+}
+
+.site-ssl {
+    width: 126px;
+    height: 58px;
+    background-color: gray;
+    border-radius: 6px;
+    padding: 1px;
+}

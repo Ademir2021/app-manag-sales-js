@@ -1,0 +1,43 @@
+.show{
+  display: block !important;
+}
+
+.modal-show{
+  display: block !important;
+}
+
+.modal-btn-open {
+  position: absolute;
+  height: 2rem;
+  left: 18rem;
+  top: 30rem;
+  border: none;
+  cursor: pointer;
+}
+.modal-btn-update{
+  text-decoration: none;
+  color: black;
+}
+.menu-home{
+  display: flex;
+  text-decoration: none;
+  margin-top: 0rem;
+  justify-content: center;
+  padding: 0px;
+  color:blue;
+  font-size: 16px;
+}
+
+.dashboard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem;
+  font-size:xx-large;
+}
+
+a{
+  color:blue;
+  text-decoration: none;
+}

@@ -1,0 +1,45 @@
+.header-home{
+    display: flex;
+    left: 100%;
+    padding: 6px 6px 6px 6px;
+    margin: 11px;
+}
+.header-home-sub-total{
+    display:flex;
+    align-items: baseline;
+    position: absolute;
+    color:gray;
+    font-size: 18px;
+    left:70%;
+    top: 0.7rem;
+
+}
+.header-home-carrinho{
+    display: flex;
+    position: absolute;
+    top: 0rem;
+    left:86%;
+    background-image: url("../../../public/img/carrinho_counter.png");
+    width: 42px;
+    height: 38px;
+}
+.header-home-counter{
+    display:flex;
+    position: absolute;
+    font-size: 18px;
+    left:85%;
+    top: 0.7rem;
+    color:gray;
+}
+
+@media screen and (max-width:768px) {
+    .header-home-sub-total{
+        left:42%;
+    }
+    .header-home-counter{
+        left:80%;
+    }
+    .header-home-carrinho{
+        left:85%
+    }
+}
