@@ -30,14 +30,14 @@ export function PersonForm({
                     <input className=""
                         type="text"
                         name="name_pers"
-                        placeholder='seu nome'
+                        placeholder='Seu nome'
                         value={children.name_pers || ""}
                         onChange={handleChange}
                     />
                     <InputMask className=""
                         type="text"
                         name="cpf_pers"
-                        placeholder="seu CPF"
+                        placeholder="Seu CPF"
                         mask="999.999.999-99"
                         mask-selectonfocus="true"
                         maxLength={14}
@@ -49,7 +49,7 @@ export function PersonForm({
                     <InputMask className=""
                         type="text"
                         name="phone_pers"
-                        placeholder="seu telefone celular"
+                        placeholder="Seu telefone celular"
                         mask="(99)99999-9999"
                         mask-selectonfocus="true"
                         maxLength={14}
@@ -61,7 +61,7 @@ export function PersonForm({
                     <input className=""
                         type="text"
                         name="address_pers"
-                        placeholder={'seu endereço'}
+                        placeholder={'Seu endereço'}
                         value={children.address_pers || ""}
                         onChange={handleChange}
                     />
@@ -74,7 +74,8 @@ export function PersonForm({
                         onChange={handleChange}
                     />
                     <button onClick={handleSubmit}>Registrar</button><br />
-                    <a href='###'>{'Mantenha seu cadastro atualizado'}</a>
+                    <a href='/invoice_sales'>Caso necessário ao finalizar o cadastro <b>Clique aqui</b> para retornar ao <b>Faturamento</b> !!</a>< br/>
+                    <a href='###'>{'Mantenha seu cadastro atualizado.'}</a>
                 </form>
             </fieldset>
         </div>
