@@ -34,7 +34,8 @@ export  class Globais {
 
     static title = 'centroinfo Store-online';
 
-    static URL = 'http://192.168.80.109:3001'; //endereço app-manager-sale
+    // static URL = 'http://192.168.80.109:3001'; //endereço app-manager-sale
+    static URL = 'https://app-centroinfo-aae9bffa47dc.herokuapp.com'
     
     // static API_URL = "http://192.168.80.109:3000";
     static API_URL = 'https://api-centroinfo-05e63255c453.herokuapp.com'
