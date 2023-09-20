@@ -48,7 +48,8 @@ export function FooterHome() {
         <a  href={ Globais.URL + '/#cookies' } title="Politica de cookies">cokies.</a>
     </span>
     <p className='p-1'></p>
-    <img className="site-ssl" src='img/ssl_cert.png' alt="Certificado SSL"></img>
+    <img className="site-ssl" src='img/ssl_cert.png' alt="Certificado SSL"></img><hr></hr>
+    <div className='text-center'><span>Desenvolvido pela agência: <b>CENTRO INFORMÁTICA </b> | <a target="_blank" href='http://www.centroinfo.com.br'>www.centroinfo.com.br</a> : )</span></div>
     </footer>
     </>
   )

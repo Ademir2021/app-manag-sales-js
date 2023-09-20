@@ -2,8 +2,8 @@
 
 npm run build
 
-rm -rf ../app-store-centroinfo/build
-cp -rf build/ ../app-store-centroinfo/build
+rm -rf ../app-centroinfo/build
+cp -rf build/ ../app-centroinfo/build
 
 echo 'sucess'
 
