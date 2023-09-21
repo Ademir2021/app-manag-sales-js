@@ -25,5 +25,5 @@ README_ORIG.md
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-script.sh
+git.sh
 gera-build.sh
