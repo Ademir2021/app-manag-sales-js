@@ -167,7 +167,7 @@ export function HomePage() {
                         handleAmountIncrement()}><b>+</b></button>}
                         
                         addItem={<button className='btn btn-primary' onClick={() =>
-                            handleItem(item)}><b>{amount}</b> Item</button>} 
+                            handleItem(item)}>Comprar <b>{amount}</b> Item</button>} 
 
                     decrementAmount={<button className='btn btn-info' onClick={() =>
                         handleAmountDecrement()}><b>-</b></button>}
