@@ -1,4 +1,4 @@
-import React, { useState, createContext, useEffect } from "react";
+import { useState, createContext, useEffect } from "react";
 import bcrypt from "bcryptjs-react"
 import { useNavigate } from "react-router";
 import { TUserLogin  } from '../useCases/users/UserLogin'
@@ -26,30 +26,36 @@ export const AuthProvider = ({ children }: any) => {
                 navigate("/dashboardefault")
             } else {
                 localStorage.removeItem('u');
-                setMessage("Email ou senha inválida !!")
+                setMessage("Email ou senha inválida ! Tente novamente.");
+                setTimeout(() => {
+                    setMessage('');
+                }, 3000);
             }
-        }
+        };
 
-        await api.get<TUserLogin[]>(`/login/${email}`)
-            .then(response => {
-                const res = response.data
-                if (res[0] !== undefined) {
-                    compare(res[0].password, res[0].username)
-                    if (user === true) {
-                        setUser(user)
-                    }
-                } else {
-                    setMessage("Email não Localizado !!")
+        try {
+            await api.get<TUserLogin[]>(`/login/${email}`)
+                .then(response => {
+                    const res = response.data
+                    if (res !== null) {
+                        compare(res[0].password, res[0].username);
+                        localStorage.setItem("u", JSON.stringify(res));
+                        }
+                })} catch (err) {
+                        // console.log("error occurred !!: " + err);
+                       setMessage("Email ou senha inválida ! Tente novamente.");
+                       setTimeout(() => {
+                        setMessage('');
+                    }, 3000);
                 }
-                localStorage.setItem("u", JSON.stringify(res))
-            })
-    };
+            };
 
     const logout = () => {
         localStorage.removeItem('u');
         setUser(null)
         navigate("/")
     }
+    
     return (
         <AuthContext.Provider
             value={{ authenticated: !!user, user, loading, message, login, logout }}>

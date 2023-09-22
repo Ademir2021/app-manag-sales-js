@@ -35,10 +35,10 @@ export function UserLogin() {
     return true;
   };
 
-  const handleSubmit = (e: any) => {
+ async function handleSubmit(e: Event) {
     e.preventDefault();
     if (valFields(user)) {
-      login(user.username, user.password)
+      await login(user.username, user.password)
     }
     setTimeout(() => {
       setAlert('')

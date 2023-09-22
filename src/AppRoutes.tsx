@@ -22,6 +22,7 @@ import { PersonsList } from './useCases/persons/PersonList';
 import { AuthProvider, AuthContext } from "./context/auth";
 import { Logout } from "./components/utils/logout/Logout";
 import { FormModel } from "./useCases/formModel/FormModel";
+import { BackHome } from './components/utils/backHome/BackHome';
 
 export function AppRoutes() {
     const Private = ({ children }: any) => {
@@ -54,14 +55,13 @@ export function AppRoutes() {
                     <Route path="/direct_payment" element={<Private><DirectPaymentSale/></Private>} />
                     <Route path="/sale" element={<Private><RegisterSale/></Private>} />
                     <Route path="/list_sale" element={<Private><ListSales/></Private>} />
-
                     <Route path="/form_product" element={<Private><FormProduct/></Private> } />
-
                     <Route path="/product_list" element={<Private><ProductsList/></Private>} />
                     <Route path="product_update" element={<Private><ProductUpdate/></Private>}/>
                     <Route path="/form_person" element={<Private><FormPerson/></Private>} />
                     <Route path="/person_list" element={<Private><PersonsList/></Private>} />
                     <Route path="/person_update" element={<Private><PersonUpdate/></Private>} />
+                    <Route path="*" element={<><BackHome/><strong>Error 404: <label>Endereço URL inválido</label></strong><br/></>}/>
                 </Routes>
             </AuthProvider>
         </Router>
