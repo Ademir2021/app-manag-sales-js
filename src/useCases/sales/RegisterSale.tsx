@@ -17,8 +17,8 @@ export function RegisterSale() {
     const [editId, setEditId] = useState<number | null | any>(null);
     const [, setPreco] = useState<number>(0);
     const [totalItens, setTotalItens] = useState<number>(0)
-    const [statusBtnSaleSubmit, setStatusBtnSaleSubmit] = useState<"Iniciar" | "Enviar">("Iniciar");
-    const [statusBtnSaveUpdate, setStatusBtnSaveUpdate] = useState<"Salvar" | "Atualizar">("Salvar");
+    const [statusBtnSaleSubmit, setStatusBtnSaleSubmit] = useState<"Iniciar Pedido" | "Faturar Pedido">("Iniciar Pedido");
+    const [statusBtnSaveUpdate, setStatusBtnSaveUpdate] = useState<"Salvar Item" | "Atualizar Item">("Salvar Item");
     const [itemImg, setIemImg] = useState<string>('./img/img_itens/sale_init.png');
     const [itenStorage, setItenStorage] = useState<TItens[]>([]);
     const [statuStore, setStatuStore] = useState<boolean>(false)
@@ -45,7 +45,7 @@ export function RegisterSale() {
     },[setProduct]);
 
     function updateListProduct(item: TItens) {
-        setStatusBtnSaveUpdate("Atualizar");
+        setStatusBtnSaveUpdate("Atualizar Item");
         setEditId(item.id);
         product.id = item.id;
         product.item = item.item;
@@ -91,7 +91,7 @@ export function RegisterSale() {
                 itens.splice(i, 1);
                 setEditId(null);
                 openClearNewSale();
-                setStatusBtnSaleSubmit("Enviar");
+                setStatusBtnSaleSubmit("Faturar Pedido");
                 sumItens();
             }
         }
@@ -138,7 +138,7 @@ export function RegisterSale() {
             verifItem(product);
             sumItens();
             openClearNewSale();
-            setStatusBtnSaleSubmit("Enviar");
+            setStatusBtnSaleSubmit("Faturar Pedido");
         } else {
             findProducts();
             verifItemUP(product);
@@ -166,12 +166,12 @@ export function RegisterSale() {
 
     function handleSubmit(e: Event) {
         e.preventDefault();
-        if (statusBtnSaleSubmit === "Iniciar") {
+        if (statusBtnSaleSubmit === "Iniciar Pedido") {
             itens.length === 0 ? alert("Iniciar compra !") :
                 openClearNewSale();
-            setStatusBtnSaleSubmit("Enviar");
+            setStatusBtnSaleSubmit("Faturar Pedido");
         } else {
-            setStatusBtnSaleSubmit("Iniciar");
+            setStatusBtnSaleSubmit("Iniciar Pedido");
             if (itens.length === 0) {
                 alert("Informe ao menos um item e clique em salvar !");
             } else {
@@ -193,8 +193,8 @@ export function RegisterSale() {
 
     function openClearNewSale() {
         setProduct({ id: 0, item: 0, descric: '', valor: 0, amount: 1, tItem: 0 });
-        setStatusBtnSaveUpdate("Salvar");
-        setStatusBtnSaleSubmit("Iniciar");
+        setStatusBtnSaveUpdate("Salvar Item");
+        setStatusBtnSaleSubmit("Iniciar Pedido");
         setEditId(null);
         setPreco(0);
         setIemImg('./img/img_itens/sale_avatar.png')

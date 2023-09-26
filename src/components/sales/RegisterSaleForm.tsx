@@ -12,8 +12,8 @@ type TRegisterSaleForm = {
   handleSearchItem: any;
   list: HTMLSelectElement | HTMLOptionElement | any;
   item: any
-  statusBtnSaveUpdate: "Salvar" | "Atualizar";
-  statusBtnSaleSubmit: "Iniciar" | "Enviar";
+  statusBtnSaveUpdate: "Salvar Item" | "Atualizar Item";
+  statusBtnSaleSubmit: "Iniciar Pedido" | "Faturar Pedido";
   loadItens: string | any;
   totalItens: number | string;
   item_img: string;
@@ -45,8 +45,7 @@ export function RegisterSaleForm({
         <div className="main-sale">
           <form className='main-sale-register' >
             <BackHome />
-            <span className='text-center'>centroInfo Store - <b>Terminal de Vendas :)</b></span>
-            <label>Clique no último <b>botão</b> para importar o seu <b>pedido !!.</b></label>
+            <span className='text-center'>centroInfo Store - <b> ( Terminal de Vendas )</b></span>
             <label>{alert}</label>
             <label>{message}</label>
             <img src={item_img} alt={children.descric}></img>
@@ -76,9 +75,9 @@ export function RegisterSaleForm({
             <label>{totalItens}</label>
             <button onClick={handleSaveUpdate}>{statusBtnSaveUpdate}</button>
             <button onClick={handleSubmit}>{statusBtnSaleSubmit}</button>
-            <button onClick={handleDelete}>Deletar</button>
-            <button onClick={handleSearchItem}>Buscar/Importar Item(s)</button>
-            <a href='###'>{'Terminal de Vendas'}</a>
+            <button onClick={handleDelete}>Deletar Item</button>
+            <button onClick={handleSearchItem}>( Buscar Item ) / ( Importar pedido )</button>
+            <a href='###'>{'Terminal de Vendas for PC e Smartphones.'}</a>
           </form>
   
         </div>
