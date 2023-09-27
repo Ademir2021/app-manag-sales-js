@@ -1,5 +1,4 @@
 ##bin/sh
-
 npm run build
 
 rm -rf ../app-centroinfo/build
