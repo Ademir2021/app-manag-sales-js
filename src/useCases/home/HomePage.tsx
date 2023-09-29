@@ -162,19 +162,20 @@ export function HomePage() {
                     descric={item.descric_product}
                     amount={item.amount}
                     valor={item.val_max_product}
-
-                    incrementAmount={<button className='btn btn-info' onClick={() =>
-                        handleAmountIncrement()}><b>+</b></button>}
+                    
+                    addItem={<button className='btn btn-primary' onClick={() =>
+                        handleItem(item)}>Comprar <b>{amount}</b> Item</button>} 
                         
-                        addItem={<button className='btn btn-primary' onClick={() =>
-                            handleItem(item)}>Comprar <b>{amount}</b> Item</button>} 
+                    decrementAmount={<button style={{display:'contents',color:'blue'}} onClick={() =>
+                        handleAmountDecrement()}>-</button>}
+                        
+                    incrementAmount={<button style={{display:'contents', color:'blue'}} onClick={() =>
+                        handleAmountIncrement()}>+</button>}
 
-                    decrementAmount={<button className='btn btn-info' onClick={() =>
-                        handleAmountDecrement()}><b>-</b></button>}
                 />
             )))}
             <Whats />
             <FooterHomePage />
         </>
     )
-}
+} 

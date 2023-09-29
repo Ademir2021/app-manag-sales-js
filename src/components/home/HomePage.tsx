@@ -24,9 +24,10 @@ export function ListItens(props:Props){
             {props.amount}
             <p><b>SECTOR</b> {props.fk_sector}</p>
             <p><b>R$</b> {props.valor}</p>
-            <p>{props.incrementAmount}</p>
-            <p>{props.addItem}</p>
-            <p>{props.decrementAmount}</p>
+            <>{props.addItem}</>
+            <>{props.decrementAmount}</>
+            <> Item </>
+            <>{props.incrementAmount}</>
         </div>
     </div>
     )
