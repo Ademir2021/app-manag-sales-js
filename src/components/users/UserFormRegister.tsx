@@ -1,4 +1,5 @@
 import { BackHome } from "../utils/backHome/BackHome";
+import { LogoIn } from "../utils/logoIn/LogoIn";
 
 
 type PropsUserFormRegister = {
@@ -22,8 +23,8 @@ export function UserFormRegister({
         <div className='container-user-login' >
             <fieldset className='main-user'>
                 <form className='main-user-login'>
-                    <BackHome/>
-                <strong>Registrar</strong>
+                    <LogoIn/>
+                <strong>Registrar_se</strong>
                 <label>{alert}</label>
                 <label>{message}</label>
                     <input
@@ -32,21 +33,21 @@ export function UserFormRegister({
                         placeholder='Usuário'
                         value={children.name || ""}
                         onChange={handleChange}
-                    />
+                        />
                     < input
                         type="email"
                         name="username"
                         placeholder='Email'
                         value={children.username || ""}
                         onChange={handleChange}
-                    />
+                        />
                     <input
                         type="password"
                         name="password"
                         placeholder='Senha'
                         value={children.password || ""}
                         onChange={handleChange}
-                    />
+                        />
             
                     <input
                         type="password"
@@ -54,9 +55,10 @@ export function UserFormRegister({
                         placeholder='Repita senha'
                         value={children.psw_repeat || ""}
                         onChange={handleChange}
-                    />
+                        />
                     <button onClick={handleSubmit}>Registrar</button>
-                    <a href='/login'>{'Logar'}</a>
+                        <BackHome/>
+                    <a href='/login'>{'Logar_se'}</a>
                 </form>
             </fieldset>
         </div>

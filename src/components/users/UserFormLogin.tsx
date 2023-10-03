@@ -1,4 +1,5 @@
 import { BackHome } from '../utils/backHome/BackHome';
+import { LogoIn } from '../utils/logoIn/LogoIn';
 import './UserFormLogin.css'
 
 type PropsUserFormLogin = {
@@ -21,9 +22,8 @@ export function UserFormLogin({
             <div className='container-user-login'>
                 <fieldset className='main-user'>
                     <form className='main-user-login'>
-                        
-                        <BackHome/>
-                        <strong>Login</strong>
+                        <LogoIn/>
+                        <strong>Logar_se no Panel</strong>
                         <label>{alert}</label>
                         <label>{message}</label>
                         <input
@@ -39,8 +39,9 @@ export function UserFormLogin({
                             placeholder='Senha'
                             value={children.password || "" }
                             onChange={handleChange}
-                        />
+                            />
                         <button  onClick={handleSubmit} >Entrar</button>
+                            <BackHome/>
                         <a href='/register'>{'Não tem Login'}</a>
                     </form>
                 </fieldset>

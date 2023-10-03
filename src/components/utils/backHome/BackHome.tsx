@@ -14,13 +14,6 @@ export const BackHome = () => {
     return (
         <>
             <strong>
-                <div className="text-center">
-                    <a href={link}><img
-                        src="img/logo_centroinfo.png"
-                        style={{ width: '130px', height: '48px' }}
-                        alt="Logo Centro Informática" /></a>
-                </div>
-                <div className="p-1"></div>
                 <a className='menu-home'
                     href={link}>
                     ( {locale} )
