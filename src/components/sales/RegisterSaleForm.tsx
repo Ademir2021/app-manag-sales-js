@@ -43,9 +43,11 @@ export function RegisterSaleForm({
     <>
       <div className="container-sale">
         <div className="main-sale">
-          <form className='main-sale-register' >
             <BackHome />
-            <a><strong>Store - centroinfo </strong><b>( Terminal Store - Gerencie suas Compras )</b></a>
+          <form className='main-sale-register' >
+            <div className='text-center'>
+            <strong>Terminal Store - Gerencie suas Compras</strong>
+           </div>
             <label>{alert}</label>
             <label>{message}</label>
             <img src={item_img} alt={children.descric}></img>

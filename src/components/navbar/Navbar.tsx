@@ -29,8 +29,8 @@ export function NavBar() {
                             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
 
                                 <li className="nav-item">
-                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link active" aria-current="page" href="/">Home</a> :
-                                        <a className="nav-link active" aria-current="page" href="/dashboardefault">Panel</a>}
+                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link active" aria-current="page" href="/dashboardefault">Panel</a> :
+                                        <a className="nav-link active" aria-current="page" href="/">Home</a>}
                                 </li>
                                 <li className="nav-item">
                                     {checksUserLogged() === privilegeShopping ? <a style={{ color: 'black' }} className="nav-link active" aria-current="page" href="/pe">Pedido</a> :

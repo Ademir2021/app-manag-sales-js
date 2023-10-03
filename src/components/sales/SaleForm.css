@@ -1,6 +1,6 @@
 .container-sale {
     display: flex;
-    margin-top: 1rem;
+    margin-top: auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -47,7 +47,7 @@
 
 .main-sale-register img {
     display: flex;
-    margin: 0 auto;
+    margin: -8px auto;
     width: 200px;
     height: 200px;
 }
