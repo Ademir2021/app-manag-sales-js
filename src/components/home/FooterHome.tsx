@@ -18,13 +18,49 @@ export function FooterHome() {
     </p>
 
     <strong>Seguimentos</strong>
-    <p>Vendas on-line de produtos de informática, antenas e telecom em geral.<br/>
-    </p>
+    <p>INFORMÁTICA, ANTENAS E TELECOM EM GERAL</p>
+    <div className=''>
+    <div className='container-footer'>
+        <div className='main-footer'>
+        <span><strong>Logistica</strong></span>
+        <span><a href='##'>Rma</a></span>
+        <span><a href='/invoice_sales'>Faturamento</a></span>
+        <span><a href='/direct_payment'>Financeiro</a></span>
+        <span></span>
+        </div>
+    </div>
+    <div className='container-footer'>
+        <div className='main-footer'>
+        <span><strong>Cadastros</strong></span>
+        <span><a href='form_person'>Pessoas</a></span>
+        <span><a href='##'></a></span>
+        <span><a href='##'></a></span>
+        <span><a href='##'></a></span>
+        </div>
+    </div>
+    <div className='container-footer'>
+        <div className='main-footer'>
+        <span><strong>Contatos</strong></span>
+        <span><a href='https://www.centroinfo.com.br/contact'>Fale conosco</a></span>
+        <span><a href='##'></a></span>
+        <span><a href='##'></a></span>
+        <span><a href='##'></a></span>
+        </div>
+    </div>
+</div>
 
-    <a href="#"><img src="img//btn-top.png" className="btn-top" alt="Voltar ao topo."></img></a>
+<div className='container-footer-img'>
+<img src='/img/formas_entrega.png' className='itens-img-footer-entrega'></img>
+</div>
+
+<div className='container-footer'>
+
+<img src='/img/band_cartao_creditos.png' className='itens-img-footer-pyment'></img>
+</div>
 
     <hr/>
 
+    <a href="#"><img src="img//btn-top.png" className="btn-top" alt="Voltar ao topo."></img></a>
     {/* Google Maps */}
     <div className="maps">
     <p>
@@ -47,10 +83,14 @@ export function FooterHome() {
         seus navegadores para recusar certos tipos de <a>cookies</a> ou <a>cookies</a> específicos.
         <a  href={ Globais.URL + '/#cookies' } title="Politica de cookies">cokies.</a>
     </span>
-    <p className='p-1'></p>
-    <img className="site-ssl" src='img/ssl_cert.png' alt="Certificado SSL"></img><hr></hr>
+<p className='p-1'></p>
+<img className="site-ssl" src='img/ssl_cert.png' alt="Certificado SSL"></img>
+
+    <hr></hr>
     <div className='text-center'><span>Desenvolvido pela agência: <b>CENTRO INFORMÁTICA </b> | <a target="_blank" href='http://www.centroinfo.com.br'>www.centroinfo.com.br</a> : )</span></div>
+
     </footer>
+  
     </>
   )
 }

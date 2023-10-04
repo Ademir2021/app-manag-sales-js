@@ -7,6 +7,7 @@ type  TDirectPaymentSaleForm ={
     totalPayable:any;
     totalPaid: any;
     messagesSucess:any;
+    messagesPayment:string;
     PaymentMethods:any;
     numNoteSale:any;
 }
@@ -28,8 +29,8 @@ return(
                 <ul><li><a><b>Cartões aceitos - </b></a></li></ul>
                 <img src="img/folder_pagbank.jpg" alt="Cartões aceitos"></img>
                 <ul>{props.PaymentMethods}</ul>
-                <button className="btn btn-danger"
-                onClick={props.handleSubmit}>Confirme o seu pagamento !!</button>
+                <p className='text-center'><label>{props.messagesPayment}</label></p>
+                <button className="btn btn-danger"onClick={props.handleSubmit}>Confirme o seu pagamento !!</button>
                 <a><b>{ props.totalPayable }</b></a>
                 <label>{props.totalPaid}</label>
                 <label>{props.numNoteSale}</label>

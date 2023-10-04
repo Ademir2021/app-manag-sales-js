@@ -17,6 +17,8 @@ export function DirectPaymentSale(){
 
     const [messagesSucess, SetMessagesSucess] = useState<string>('');
 
+    const [messagesPayment, SetMessagesPayment] = useState<string>('');
+
     const [directPaymentHandle, setdirectPaymentHandle] = useState<TDirectPayment>(/**Set Pagto genérico */
         {"reference_id":"","customer":{"name":"","email":"","tax_id":"","phones":[{"country":"",
         "area":"","number":"","type":""}]},"items":[],"qr_codes":[{"amount":{"value":0},"expiration_date":"",
@@ -107,8 +109,11 @@ async function registerdirectPaymentHandle() {/** API payment generica genérica
 
    function handleDirectPaymentSubmit(){
     if (flagdirectPaymentHandle === true){
+        if(sale[0].paySale !==0){
     getdirectPaymentHandle()
     registerdirectPaymentHandle()
+    localStorage.removeItem('sl');
+        }else{SetMessagesPayment('Nada a pagar neste momento !')}
     }
     if(flagSales === true){alert('Já foi clicado aguarde liberação. !!')}
    }
@@ -116,6 +121,7 @@ async function registerdirectPaymentHandle() {/** API payment generica genérica
    const onClickHandleClosePayment = () => { window.location.assign('/logout'); }
 
    const numNote = directPaymentHandle.reference_id;
+
 
     return(
         <>
@@ -132,14 +138,14 @@ async function registerdirectPaymentHandle() {/** API payment generica genérica
                         <li><b>Contato Whats - </b>44 988521033</li>
                         <li><b>Contato Email - </b>centroserra@gmail.com</li>
                         </a> : ''}
-        handleSubmit={handleDirectPaymentSubmit}
+                        messagesPayment={messagesPayment}
+                        handleSubmit={handleDirectPaymentSubmit}
         totalPayable={<>Total a pagar { currencyFormat(sale[0].paySale) }</>}
         
        totalPaid={<>{paymentdirect.qr_codes[0].amount.value !== 0 ?
                   'Pagamento de '+
                   currencyFormat(paymentdirect.qr_codes[0].amount.value) +
-                  ' efetuado com sucesso !!' :
-                  'Aguardando Pagamento'}</>}
+                  ' efetuado com sucesso !!' : 'Aguardando Pagamento'}</>}
 
                   messagesSucess={!!flagSales ? <p>{messagesSucess}</p> : ''}
                 
@@ -149,6 +155,7 @@ async function registerdirectPaymentHandle() {/** API payment generica genérica
                 />
                  {!!flagSales ? <BackHome /> : ''}
                  {!!flagSales ? <ButtonOnClick onClickHandle={onClickHandleClosePayment} text="Sair" /> : ''}
+                 <BackHome/><br></br>
         </>
     )
 }
