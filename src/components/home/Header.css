@@ -4,42 +4,43 @@
     padding: 6px 6px 6px 6px;
     margin: 11px;
 }
-.header-home-sub-total{
-    display:flex;
-    align-items: baseline;
-    position: absolute;
-    color:gray;
-    font-size: 18px;
-    left:70%;
-    top: 0.7rem;
 
+.header-home-counter{
+    display:flex;
+    position: absolute;
+    font-size: 18px;
+    left:66%;
+    top: 0.7rem;
+    color:black;
 }
 .header-home-carrinho{
     display: flex;
     position: absolute;
     top: 0rem;
-    left:86%;
+    left:73%;
     background-image: url("../../../public/img/carrinho_counter.png");
-    width: 42px;
-    height: 38px;
+    width: 33px;
+    height: 32px;
 }
-.header-home-counter{
+.header-home-sub-total{
     display:flex;
+    align-items: baseline;
     position: absolute;
+    color:black;
     font-size: 18px;
-    left:85%;
+    left:78%;
     top: 0.7rem;
-    color:gray;
+
 }
 
 @media screen and (max-width:768px) {
-    .header-home-sub-total{
-        left:42%;
-    }
     .header-home-counter{
-        left:80%;
+        left:35%;
     }
     .header-home-carrinho{
-        left:85%
+        left:55%
+    }
+    .header-home-sub-total{
+        left:66%;
     }
 }

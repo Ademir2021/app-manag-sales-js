@@ -8,9 +8,9 @@ type PropsHeader={
 export function Header(props:PropsHeader){
     return(
         <>
-        <div className='header-home'>
+        <div className="header-home">
         <strong className='header-home-carrinho'></strong>
-        <strong className='header-home-counter'>{props.counter} Item(s)</strong>
+        <strong className='header-home-counter'>{props.counter} items no </strong>
         <strong className='header-home-sub-total'> {props.subtotal}</strong>
         </div>
         </>
