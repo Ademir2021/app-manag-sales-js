@@ -1,46 +1,50 @@
-.header-home{
+.header-home {
     display: flex;
     left: 100%;
     padding: 6px 6px 6px 6px;
     margin: 11px;
 }
 
-.header-home-counter{
-    display:flex;
+.header-home-counter {
+    display: flex;
     position: absolute;
     font-size: 18px;
-    left:66%;
+    left: 66%;
     top: 0.7rem;
-    color:black;
+    color: black;
 }
-.header-home-carrinho{
+
+.header-home-carrinho {
     display: flex;
     position: absolute;
     top: 0rem;
-    left:73%;
+    left: 73%;
     background-image: url("../../../public/img/carrinho_counter.png");
     width: 33px;
     height: 32px;
 }
-.header-home-sub-total{
-    display:flex;
+
+.header-home-sub-total {
+    display: flex;
     align-items: baseline;
     position: absolute;
-    color:black;
+    color: black;
     font-size: 18px;
-    left:78%;
+    left: 78%;
     top: 0.7rem;
 
 }
 
 @media screen and (max-width:768px) {
-    .header-home-counter{
-        left:35%;
+    .header-home-counter {
+        left: 25%;
     }
-    .header-home-carrinho{
-        left:55%
+
+    .header-home-carrinho {
+        left: 45%
     }
-    .header-home-sub-total{
-        left:66%;
+
+    .header-home-sub-total {
+        left: 56%;
     }
 }
