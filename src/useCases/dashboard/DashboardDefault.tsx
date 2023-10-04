@@ -7,7 +7,7 @@ export function DashboardDefault(){
         <Dashboard/>
              <h1 className='dashboard'>Control panel</h1>
              <h1 className="text-center"><a href="\sale">Terminal de Vendas</a></h1>
-            <hr style={{margin:"9.8rem"}}></hr>
+            <hr style={{margin:"1px"}}></hr>
             <FooterHome/>
         </>
     )
