@@ -50,11 +50,12 @@ export function FooterHome() {
 </div>
 
 <div className='container-footer-img'>
+<span><strong>Escolha a sua melhor forma de entrega</strong></span>
 <img src='/img/formas_entrega.png' className='itens-img-footer-entrega'></img>
 </div>
 
-<div className='container-footer'>
-
+<div className='container-footer-img'>
+<span><strong>Escolha sua melhor forma para pagar</strong></span>
 <img src='/img/band_cartao_creditos.png' className='itens-img-footer-pyment'></img>
 </div>
 
@@ -69,7 +70,6 @@ export function FooterHome() {
     {/* fim */}
     </p>
     </div>
-    <hr></hr>
 
     <p>{ Globais.rights_reserved }</p>
     <p>{ Globais.address }</p>
@@ -86,7 +86,7 @@ export function FooterHome() {
 <p className='p-1'></p>
 <img className="site-ssl" src='img/ssl_cert.png' alt="Certificado SSL"></img>
 
-    <hr></hr>
+
     <div className='text-center'><span>Desenvolvido pela agência: <b>CENTRO INFORMÁTICA </b> | <a target="_blank" href='http://www.centroinfo.com.br'>www.centroinfo.com.br</a> : )</span></div>
 
     </footer>
