@@ -107,58 +107,48 @@ async function registerdirectPaymentHandle() {/** API payment generica genérica
         }).catch(error => console.log(error))
 };
 
-   function handleDirectPaymentSubmit(){
-    if (flagdirectPaymentHandle === true){
-        if(sale[0].paySale !==0){
-    getdirectPaymentHandle()
-    registerdirectPaymentHandle()
-    localStorage.removeItem('sl');
-        }else{
+    function handleDirectPaymentSubmit() {
+        if (flagdirectPaymentHandle === true) {
+            if (sale[0].paySale !== 0) {
+                getdirectPaymentHandle()
+                registerdirectPaymentHandle()
+                localStorage.removeItem('sl');
+            } else {
                 setFlagdirectPaymentHandle(true);
-                SetMessagesPayment('Nada a pagar neste momento !');
+                SetMessagesPayment('Nada à pagar neste momento !');
+            }
         }
+        if (flagSales === true) { alert('Já foi clicado aguarde liberação. !!') }
     }
-    if(flagSales === true){alert('Já foi clicado aguarde liberação. !!')}
-   }
 
    const onClickHandleClosePayment = () => { window.location.assign('/logout'); }
 
    const numNote = directPaymentHandle.reference_id;
 
-
     return(
         <>
         <DirectPaymentSaleForm
-
         bestPayment={!flagSales ? <>Escolha a sua melhor forma de pagamento :)</> : ''}
         paymentInfo={<span><b>Pagamento localizado, os itens na NOTA serão liberados !! .</b></span>}
-        PaymentMethods={!flagSales ? <a>
-                        <li><b>Chave PIX - </b>44988521033</li>
-                        <li><b>Chave PIX - </b>18069383000110</li>
-                        <br></br>
-                        <li><b>PagSeguro - </b>Banco:290 AG:0001 Conta:10715966-7</li>
-                        <br></br>
-                        <li><b>Contato Whats - </b>44 988521033</li>
-                        <li><b>Contato Email - </b>centroserra@gmail.com</li>
-                        </a> : ''}
+        PaymentMethods={!flagSales ? <span>
+                        <li><b><strong>Chave PIX</strong></b>44988521033</li>
+                        <li><b><strong>Chave PIX</strong></b>18069383000110</li>
+                        <li><b><strong>PagSeguro</strong></b>Banco:290 AG:0001 Conta:10715966-7</li>
+                        <li><b><strong>Contato Whats</strong></b>44 988521033</li>
+                        <li><b><strong>Contato Email</strong></b>centroserra@gmail.com</li>
+                        </span> : ''}
                         messagesPayment={messagesPayment}
                         handleSubmit={handleDirectPaymentSubmit}
-        totalPayable={<>Total a pagar { currencyFormat(sale[0].paySale) }</>}
-        
-       totalPaid={<>{paymentdirect.qr_codes[0].amount.value !== 0 ?
-                  'Pagamento de '+
-                  currencyFormat(paymentdirect.qr_codes[0].amount.value) +
+            totalPayable={<>Total a pagar { currencyFormat(sale[0].paySale) }</>}
+            totalPaid={<>{paymentdirect.qr_codes[0].amount.value !== 0 ?
+                  'Pagamento de ' + currencyFormat(paymentdirect.qr_codes[0].amount.value) +
                   ' efetuado com sucesso !!' : 'Aguardando Pagamento'}</>}
-
                   messagesSucess={!!flagSales ? <p>{messagesSucess}</p> : ''}
-                
                   numNoteSale={!!flagSales ? <a target="_blank" href={ Globais.URL_NOTE + numNote }>
                         Clique aqui para gerar a sua nota de nº: {numNote}</a> : ''}
-
                 />
                  {!!flagSales ? <BackHome /> : ''}
                  {!!flagSales ? <ButtonOnClick onClickHandle={onClickHandleClosePayment} text="Sair" /> : ''}
-                 <BackHome/><br></br>
         </>
     )
 }
