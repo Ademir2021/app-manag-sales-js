@@ -113,7 +113,10 @@ async function registerdirectPaymentHandle() {/** API payment generica genérica
     getdirectPaymentHandle()
     registerdirectPaymentHandle()
     localStorage.removeItem('sl');
-        }else{SetMessagesPayment('Nada a pagar neste momento !')}
+        }else{
+                setFlagdirectPaymentHandle(true);
+                SetMessagesPayment('Nada a pagar neste momento !');
+        }
     }
     if(flagSales === true){alert('Já foi clicado aguarde liberação. !!')}
    }
