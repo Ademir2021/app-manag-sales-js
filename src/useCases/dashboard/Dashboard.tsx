@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from "../../context/auth";
 import { NavBar } from '../../components/navbar/Navbar';
 import { HeaderDashboard } from '../../components/dashboard/HeaderDashboard';

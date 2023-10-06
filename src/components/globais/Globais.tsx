@@ -43,4 +43,6 @@ export  class Globais {
     // static URL_NOTE = 'http://localhost:3000/note/' /**acrescentar na frente do / a variavel da nota */
     static URL_NOTE = 'https://api-centroinfo-05e63255c453.herokuapp.com/note/'
 
+    static URL_CENTROINFO = 'https://www.centroinfo.com.br'
+
 }

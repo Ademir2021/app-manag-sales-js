@@ -1,5 +1,3 @@
-import './HeaderDashboard.css'
-
 type PropsHeaderDashboard = {
     user: number;
     username: number;
@@ -9,11 +7,13 @@ type PropsHeaderDashboard = {
 export function HeaderDashboard(props: PropsHeaderDashboard) {
     return (
         <>
-            <div className='header-dashboard'>
-                <strong className='header-dashboard-text' >Panel.</strong>
-                <span className='header-dashboard-user'><strong>Login:</strong>{props.user}</span>
-                <span className='header-dashboard-username'><strong>User logado:</strong>{props.username}</span>
-                <button className='header-dashboard-btn-handle-logout' onClick={props.handleLogout}>Logout</button>
+            <div style={{fontSize:'14px'}} >
+               <strong><b> ID </b></strong><span>{props.user}</span>
+                <strong><b> User logado </b></strong><span>{props.username}</span>
+               <button
+                onClick={props.handleLogout}
+                className='btn btn-second p-1'
+                >| <strong><b style={{color:'green',fontSize:'12px'}}>FINALIZAR SESSÃO</b></strong></button>
             </div>
         </>
     )

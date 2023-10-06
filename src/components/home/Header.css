@@ -1,50 +1,39 @@
-.header-home {
-    display: flex;
-    left: 100%;
-    padding: 6px 6px 6px 6px;
-    margin: 11px;
-}
-
-.header-home-counter {
-    display: flex;
-    position: absolute;
-    font-size: 18px;
-    left: 66%;
-    top: 0.7rem;
-    color: black;
-}
-
 .header-home-carrinho {
-    display: flex;
-    position: absolute;
-    top: 0rem;
-    left: 73%;
-    background-image: url("../../../public/img/carrinho_counter.png");
+    background-color: rgb(234, 225, 225);
+    border: solid 1px rgb(248, 244, 244);
+    padding: 9px;
     width: 33px;
     height: 32px;
 }
+.header-home-carrinho:hover{
+    background-color: rgb(221, 217, 217);
+}
 
 .header-home-sub-total {
-    display: flex;
-    align-items: baseline;
-    position: absolute;
-    color: black;
-    font-size: 18px;
-    left: 78%;
-    top: 0.7rem;
+    background-color: rgb(234, 225, 225);
+    border: solid 1px rgb(248, 244, 244);
+    padding: 9px;
+    color: rgb(62, 18, 18);
+    font-size: 14px;
+}
+.header-home-sub-total:hover{
+    background-color: rgb(221, 217, 217);
+}
 
+.header-contact{
+    font-size: 16px;
+    background-color: azure;
+    border: solid 1px rgb(248, 244, 244);
+    padding: 12px;
+}
+.header-contact:hover{
+    background-color:rgb(204, 219, 219);
 }
 
 @media screen and (max-width:768px) {
-    .header-home-counter {
-        left: 25%;
-    }
-
-    .header-home-carrinho {
-        left: 45%
-    }
-
-    .header-home-sub-total {
-        left: 56%;
+    .header-contact{
+        font-size: 11px;
     }
 }
+
+@media screen and (max-width:768px) {}

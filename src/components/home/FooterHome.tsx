@@ -41,7 +41,7 @@ export function FooterHome() {
     <div className='container-footer'>
         <div className='main-footer'>
         <span><strong>Contatos</strong></span>
-        <span><a href='https://www.centroinfo.com.br/contact'>Fale conosco</a></span>
+        <span><a href={Globais.URL_CENTROINFO + "/contact"}>Fale conosco</a></span>
         <span><a href='##'></a></span>
         <span><a href='##'></a></span>
         <span><a href='##'></a></span>

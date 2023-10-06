@@ -85,7 +85,7 @@ export function NavBar() {
                     </div>
                 </div>
             </nav>
-            <i>{Globais.calendar}</i>
+            <strong style={{color:'green', fontSize:'12px'}}>{Globais.calendar}</strong>
         </>
     )
 }
