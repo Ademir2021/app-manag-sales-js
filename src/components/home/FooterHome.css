@@ -1,23 +1,11 @@
+.global-footer{
+    font-size: 12px;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:white;
+}
+
 .maps {
-    /* display: flex; */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    margin-right: 3%;
-    margin-left: 0%;
-    /* display: inline-block; */
-    vertical-align: top;
-    max-width: 520px;
-    margin: 0 auto;
-    padding: 0 -3%;
     width: 100%;
-    min-width: 380px;
-    /* width: 412px; */
-    /* height: 336px; */
-    /* border-style: double; */
-    /* border: 1px solid gray; */
-    border-radius: 8px;
 }
 
 p a {
@@ -63,11 +51,8 @@ footer {
 }
 
 .site-ssl {
-    width: 126px;
-    height: 58px;
-    background-color: gray;
-    border-radius: 6px;
-    padding: 1px;
+    width: 90px;
+    height: 38px;
 }
 .container-footer{
     display: inline-block;
@@ -113,7 +98,7 @@ footer {
     padding: 2px 2px 2px 2px;
 }
 
-.itens-img-footer-pyment{
+.itens-img-footer-payment{
     width: 380px;
     height: 100px;
     border-radius: 2px;

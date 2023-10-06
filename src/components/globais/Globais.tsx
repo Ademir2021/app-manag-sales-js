@@ -26,13 +26,13 @@ export  class Globais {
 
     static privilAdmin = '2'
     
-    static rights_reserved = '2007 | '+ year +', All Rights reserved centroinfo';
+    static rights_reserved = '2007 | '+ year +', All rights reserved CENTROINFO';
 
     static address = 'Avenida Castro Alves 1241, Barbosa Ferraz, Paraná, CEP 86960-000';
 
     static phone = '+55 (44) 98852-1033'
 
-    static title = 'centroinfo Store-online';
+    static title = 'centroinfo store-online';
 
     // static URL = 'http://192.168.80.109:3001'; //endereço app-manager-sale
     static URL = 'https://app-centroinfo-aae9bffa47dc.herokuapp.com'
