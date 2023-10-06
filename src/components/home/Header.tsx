@@ -8,7 +8,7 @@ type PropsHeader = {
 
 export function Header(props: PropsHeader) {
     return (
-        <>
+        <>  <div className='header-home'>
             <strong className='header-home-carrinho' >
                 {props.counter}
                 <img alt='Carrinho'
@@ -17,6 +17,7 @@ export function Header(props: PropsHeader) {
             <a className='header-home-sub-total'>
                 {props.subtotal}</a>
                  <a className='header-contact'>{props.contact}</a>
+                 </div>
         </>
     )
 }

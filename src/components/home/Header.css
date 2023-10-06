@@ -1,5 +1,9 @@
+.header-home{
+    display:flexbox;
+    background-color: white;
+}
+
 .header-home-carrinho {
-    background-color: rgb(234, 225, 225);
     border: solid 1px rgb(248, 244, 244);
     padding: 9px;
     width: 33px;
@@ -10,7 +14,6 @@
 }
 
 .header-home-sub-total {
-    background-color: rgb(234, 225, 225);
     border: solid 1px rgb(248, 244, 244);
     padding: 9px;
     color: rgb(62, 18, 18);
@@ -22,12 +25,11 @@
 
 .header-contact{
     font-size: 16px;
-    background-color: azure;
     border: solid 1px rgb(248, 244, 244);
     padding: 12px;
 }
 .header-contact:hover{
-    background-color:rgb(204, 219, 219);
+    background-color: rgb(221, 217, 217);
 }
 
 @media screen and (max-width:768px) {
@@ -36,4 +38,4 @@
     }
 }
 
-@media screen and (max-width:768px) {}
+/* @media screen and (max-width:768px) {} */
