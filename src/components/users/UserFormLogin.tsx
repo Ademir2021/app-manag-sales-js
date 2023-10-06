@@ -18,7 +18,7 @@ export function UserFormLogin({
     alert
 }: PropsUserFormLogin) {
     return (
-        <>
+        <>     <BackHome/>
             <div className='container-user-login'>
                 <fieldset className='main-user'>
                     <form className='main-user-login'>
@@ -41,7 +41,6 @@ export function UserFormLogin({
                             onChange={handleChange}
                             />
                         <button  onClick={handleSubmit} >Entrar</button>
-                            <BackHome/>
                         <a href='/register'>{'Não tem Login'}</a>
                     </form>
                 </fieldset>

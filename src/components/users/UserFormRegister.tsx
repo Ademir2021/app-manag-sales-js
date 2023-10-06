@@ -20,6 +20,7 @@ export function UserFormRegister({
 
     return (
         <>
+        <BackHome/>
         <div className='container-user-login' >
             <fieldset className='main-user'>
                 <form className='main-user-login'>
@@ -57,7 +58,6 @@ export function UserFormRegister({
                         onChange={handleChange}
                         />
                     <button onClick={handleSubmit}>Registrar</button>
-                        <BackHome/>
                     <a href='/login'>{'Logar_se'}</a>
                 </form>
             </fieldset>

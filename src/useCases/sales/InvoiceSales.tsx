@@ -133,8 +133,8 @@ export function InvoiceSales() {
 
     return (
         <>
-            <BackHome />
             <InvoiceSalesForm
+                backHomeInvoice={<BackHome />}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
                 alert=""

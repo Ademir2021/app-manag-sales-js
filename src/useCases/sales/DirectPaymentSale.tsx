@@ -127,9 +127,11 @@ async function registerdirectPaymentHandle() {/** API payment generica genérica
 
     return(
         <>
+         
         <DirectPaymentSaleForm
-        bestPayment={!flagSales ? <>Escolha a sua melhor forma de pagamento :)</> : ''}
-        paymentInfo={<span><b>Pagamento localizado, os itens na NOTA serão liberados !! .</b></span>}
+        bestPayment={!flagSales ? <>Escolha a sua melhor forma de pagamento</> : ''}
+        backHomePayment={messagesPayment  !== "" ?<BackHome/> : ''}
+        paymentInfo={<span><b>Pagamento localizado, os itens na NOTA serão liberados !</b></span>}
         PaymentMethods={!flagSales ? <span>
                         <li><b><strong>Chave PIX</strong></b>44988521033</li>
                         <li><b><strong>Chave PIX</strong></b>18069383000110</li>

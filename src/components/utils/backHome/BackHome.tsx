@@ -2,23 +2,32 @@ import { checksUserLogged } from "../checksUserLogged/ChecksUserLogged"
 
 export const BackHome = () => {
 
-    let link = ''
-    let locale = ''
-    if (checksUserLogged() !== undefined) {
-        link = '/dashboardefault'
-        locale = "Retornar - Panel"
-    } else {
-        link = '/'
-        locale = 'Retornar - Home'
-    }
+    function handleLink() {
+        let link = ''
+        if (checksUserLogged() !== undefined) {
+            link = '/dashboardefault'
+            window.location.replace(link);
+    
+        } else {
+            link = '/'
+            window.location.replace(link);
+        }
+        return link
+    };
+    function handleLocale(){
+        let locale = ''
+        if (checksUserLogged() !== undefined) {
+            locale = "Retornar - Panel"
+        } else {
+            locale = 'Retornar - Home'
+        }
+        return locale
+    };
+
     return (
-        <>
-            <strong>
-                <a className='menu-home'
-                    href={link}>
-                    ( {locale} )
-                </a>
-            </strong>
-        </>
+        <div className="container-global">
+        <button className="btn btn-primary"
+        onClick={handleLink}>{handleLocale()}</button>
+        </div>
     )
 }

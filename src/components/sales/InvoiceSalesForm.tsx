@@ -9,6 +9,7 @@ type TInvoiceSalesForm = {
   loadItens?: any;
   alert: string
   message: string;
+  backHomeInvoice:any;
 }
 
 export function InvoiceSalesForm({
@@ -17,7 +18,8 @@ export function InvoiceSalesForm({
   children,
   loadItens,
   alert,
-  message
+  message,
+  backHomeInvoice
 }: TInvoiceSalesForm) {
 
   return (
@@ -29,6 +31,7 @@ export function InvoiceSalesForm({
           <h4 className='text-center'>FATURAR O PEDIDO</h4>
            {/* <label>{alert}</label> */}
            {/* <label>{message}</label> */}
+          <>{backHomeInvoice}</>
           <label className='text-center'>( DADOS PARA ENTREGA E EMISSÃO DA NOTA !! )</label>
           <div><strong>Nome do cliente</strong><span>{children.name_pers}</span></div>
           <div><strong>Contato do cliente</strong><span>{children.phone_pers}</span></div>
