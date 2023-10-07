@@ -28,7 +28,7 @@ export  class Globais {
     
     static rights_reserved = '2007 | '+ year +', All rights reserved CENTROINFO';
 
-    static address = 'Avenida Castro Alves 1241, Barbosa Ferraz, Paraná, CEP 86960-000';
+    static address = 'Avenida Castro Alves 1241, Barbosa Ferraz, PR. CEP 86960-000';
 
     static phone = '+55 (44) 98852-1033'
 
