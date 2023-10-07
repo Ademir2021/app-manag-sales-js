@@ -69,7 +69,8 @@ button {
 }
 
 button:hover {
-    background-color: gray;
+    /* background-color: gray; */
+    background-color: rgb(172, 170, 170);
 }
 
 div input {

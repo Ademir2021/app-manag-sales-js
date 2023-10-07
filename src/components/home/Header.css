@@ -16,7 +16,7 @@
 .header-home-sub-total {
     border: solid 1px rgb(248, 244, 244);
     padding: 9px;
-    color: rgb(62, 18, 18);
+    color:black;
     font-size: 14px;
 }
 .header-home-sub-total:hover{

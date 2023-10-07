@@ -4,9 +4,8 @@ export function Logo() {
     const logo = <img
         src="img/logo_centroinfo.png"
         className="logo"
-        alt="Centro Informática"
-    >
-    </img>
+        alt="CENTRO INFORMÁTICA"
+    ></img>
     return (
         <>{logo}</>
     )

@@ -1,12 +1,10 @@
 .logo{
-    width: 96px;
-    height: 36px;
-    margin-top: 1px;
-    background-color:#6c757d;
-    padding: 1px 1px 1px 1px;
-    border-radius: 2px;
+    width: 150px;
+    height: 45px;
+    background-color:rgb(172, 170, 170);
     cursor:pointer;
 }
 .logo:hover{
-    background-color:#757d85;
+     background-color:rgb(172, 170, 170);
+    
 }

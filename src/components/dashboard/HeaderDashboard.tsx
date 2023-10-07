@@ -13,7 +13,7 @@ export function HeaderDashboard(props: PropsHeaderDashboard) {
                <button
                 onClick={props.handleLogout}
                 className='btn btn-second p-1'
-                >| <strong><b style={{color:'green',fontSize:'12px'}}>FINALIZAR SESSÃO</b></strong></button>
+                >| <strong><b style={{color:'rgb(34, 34, 147)',fontSize:'12px'}}>FINALIZAR SESSÃO</b></strong></button>
             </div>
         </>
     )
