@@ -5,7 +5,7 @@ import './cookies.css'
 export function FooterHome() {
     return (
         <>
-            <footer className='global-footer'>
+            <footer>
                 <p id="cookies"></p>
                 <p>
                     <div>SIGA-NOS NAS REDES SOCIAIS</div>
@@ -51,7 +51,7 @@ export function FooterHome() {
 
                 <p><a href="#"><img src="img//btn-top.png" className="btn-top" alt="Voltar ao topo."></img></a></p>
                 <hr></hr>
-                    <strong>Formas de entregra - Delivery ! <a href={Globais.URL_CENTROINFO + '/contact'}>Solicite cotação para sua regiâo</a></strong>
+                    <strong>Formas de entregra - Delivery ! <a href={Globais.URL_CENTROINFO + '/contact'}>Solicite sua <b>cotação</b></a></strong>
                     <a href={Globais.URL_CENTROINFO + '/contact'}>
                     <img src='/img/formas_entrega.png' className='footer-delivery'></img>
                     </a>
@@ -69,7 +69,8 @@ export function FooterHome() {
                     {/* fim */}
                     </p> 
                 </div>
-                
+                    {/**Text Footer */}
+                <div className='text-footer'>
                 <div>{Globais.rights_reserved}</div>
                 <div>{Globais.address}</div>
                 <div>Powered by <a href={Globais.URL} title="Powered By." target="_self">{Globais.title}</a> Contato {Globais.phone}</div>
@@ -84,6 +85,7 @@ export function FooterHome() {
                     <img className="site-ssl" src='img/ssl_cert.png' alt="Certificado SSL"></img>
                 </div>
                 <p className='text-center'><span>Desenvolvido pela agência: <b>CENTRO INFORMÁTICA </b><a target="_blank" href={Globais.URL_CENTROINFO}>www.centroinfo.com.br</a></span></p>
+                </div>
             </footer>
         </>
     )
