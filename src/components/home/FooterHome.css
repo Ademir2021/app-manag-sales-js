@@ -48,20 +48,18 @@ a:hover{
     vertical-align: top;
     max-width: 100%;
     width: 25%;
-    min-width: 127px;
+    min-width: 110px;
  }
  .main-footer {
-    font-size: 18px;
+     font-size: 18px;
      display: flex;
      flex-direction: column;
      align-items: left;
      justify-content: left;
      width: 100%;
      background-color:white;
-     border-radius: 4px;
-     margin-top: 3px;
+     margin-top: 1px;
      margin-bottom: 2px;
-     padding: 8px 8px 8px 8px;
  }
 
 .footer-delivery{

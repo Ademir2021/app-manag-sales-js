@@ -19,32 +19,33 @@ export function FooterHome() {
                 <strong>Seguimentos</strong>
                 <p>INFORMÁTICA, ANTENAS E TELECOM EM GERAL</p>
 
+                <h1>CANAIS DE ACESSO</h1>
+                <hr></hr>
                 <div className=''>
                     <div className='container-footer'>
                         <div className='main-footer'>
-                            <span><strong>Logistica</strong></span>
-                            <span><a href='##'>Rma</a></span>
-                            <span><a href='/invoice_sales'>Faturamento</a></span>
-                            <span><a href='/direct_payment'>Financeiro</a></span>
-                            <span></span>
+                            <b>Logística</b>
+                            <a href='##'>Rma</a>
+                            <a href='/invoice_sales'>Faturamento</a>
+                            <a href='/direct_payment'>Financeiro</a>
                         </div>
                     </div>
                     <div className='container-footer'>
                         <div className='main-footer'>
-                            <span><strong>Cadastros</strong></span>
-                            <span><a href='form_person'>Pessoas</a></span>
-                            <span><a href='##'></a></span>
-                            <span><a href='##'></a></span>
-                            <span><a href='##'></a></span>
+                        <b>Cadastros</b>
+                        <a href='form_person'>Pessoas</a>
+                        <a href='##'></a>
+                        <a href='##'></a>
+                        <a href='##'></a>
                         </div>
                     </div>
                     <div className='container-footer'>
                         <div className='main-footer'>
-                            <span><strong>Contatos</strong></span>
-                            <span><a href={Globais.URL_CENTROINFO + "/contact"}>Fale conosco</a></span>
-                            <span><a href='##'></a></span>
-                            <span><a href='##'></a></span>
-                            <span><a href='##'></a></span>
+                        <b>Contatos</b>
+                        <a href={Globais.URL_CENTROINFO + "/contact"}>Fale conosco</a>
+                        <a href='##'></a>
+                        <a href='##'></a>
+                        <a href='##'></a>
                         </div>
                     </div>
                 </div>
