@@ -52,10 +52,14 @@ export function FooterHome() {
                 <p><a href="#"><img src="img//btn-top.png" className="btn-top" alt="Voltar ao topo."></img></a></p>
                 <hr></hr>
                     <strong>Formas de entregra - Delivery ! <a href={Globais.URL_CENTROINFO + '/contact'}>Solicite cotação para sua regiâo</a></strong>
+                    <a href={Globais.URL_CENTROINFO + '/contact'}>
                     <img src='/img/formas_entrega.png' className='footer-delivery'></img>
+                    </a>
                 <hr></hr>
-                    <strong>Formas de pagamento - Payment ! <a href={Globais.URL_CENTROINFO + '/contact'}>Saiba mais aqui</a></strong>
+                    <strong>Formas de pagamento - Payment ! <a href={Globais.URL_CENTROINFO + '/contact'}>Saiba mais <b>aqui</b></a></strong>
+                    <a href={Globais.URL_CENTROINFO + '/contact'}>
                     <img src='/img/band_cartao_creditos.png' className='footer-payment'></img>
+                    </a>
                 <hr></hr>
                 {/* Google Maps */}
                 <div className="maps">
