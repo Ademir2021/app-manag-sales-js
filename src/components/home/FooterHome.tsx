@@ -54,7 +54,7 @@ export function FooterHome() {
                     <strong>Formas de entregra - Delivery ! <a href={Globais.URL_CENTROINFO + '/contact'}>Solicite cotação para sua regiâo</a></strong>
                     <img src='/img/formas_entrega.png' className='footer-delivery'></img>
                 <hr></hr>
-                    <strong>Formas de pagamento - Payment ! <a href={Globais.URL_CENTROINFO + '/contact'}>Pague suas compras em até 12X</a></strong>
+                    <strong>Formas de pagamento - Payment ! <a href={Globais.URL_CENTROINFO + '/contact'}>Saiba mais <b>aqui</b></a></strong>
                     <img src='/img/band_cartao_creditos.png' className='footer-payment'></img>
                 <hr></hr>
                 {/* Google Maps */}
