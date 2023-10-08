@@ -74,7 +74,7 @@ export function PersonForm({
                         onChange={handleChange}
                     />
                     <button onClick={handleSubmit}>Registrar</button><br />
-                    <a href='/invoice_sales'>Caso necessário ao finalizar o cadastro <b>Clique aqui</b> para retornar ao <b>Faturamento</b> !!</a>< br/>
+                    <a href='/invoice_sales'>Faturamento <b>clique aqui</b></a>< br/>
                     <a href='###'>{'Mantenha seu cadastro atualizado.'}</a>
                 </form>
             </fieldset>
