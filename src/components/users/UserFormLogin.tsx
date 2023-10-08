@@ -1,5 +1,5 @@
-import { BackHome } from '../utils/backHome/BackHome';
 import { LogoIn } from '../utils/logoIn/LogoIn';
+import { UserHome } from './UserHome';
 import './UserFormLogin.css'
 
 type PropsUserFormLogin = {
@@ -18,7 +18,6 @@ export function UserFormLogin({
     alert
 }: PropsUserFormLogin) {
     return (
-        <>     <BackHome/>
             <div className='container-user-login'>
                 <fieldset className='main-user'>
                     <form className='main-user-login'>
@@ -42,9 +41,9 @@ export function UserFormLogin({
                             />
                         <button  onClick={handleSubmit} >Entrar</button>
                         <a href='/register'>{'Não tem Login'}</a>
+                       <UserHome/>
                     </form>
                 </fieldset>
             </div>
-        </>
     )
 }

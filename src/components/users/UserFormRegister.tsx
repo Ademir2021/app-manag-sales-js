@@ -1,6 +1,5 @@
-import { BackHome } from "../utils/backHome/BackHome";
 import { LogoIn } from "../utils/logoIn/LogoIn";
-
+import { UserHome } from "./UserHome";
 
 type PropsUserFormRegister = {
     children: string | number | readonly string[] | undefined | any;
@@ -19,8 +18,6 @@ export function UserFormRegister({
      }: PropsUserFormRegister) {
 
     return (
-        <>
-        <BackHome/>
         <div className='container-user-login' >
             <fieldset className='main-user'>
                 <form className='main-user-login'>
@@ -59,9 +56,9 @@ export function UserFormRegister({
                         />
                     <button onClick={handleSubmit}>Registrar</button>
                     <a href='/login'>{'Logar_se'}</a>
+                    <UserHome/>
                 </form>
             </fieldset>
         </div>
-        </>
     )
 }
