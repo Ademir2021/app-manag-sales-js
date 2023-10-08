@@ -5,9 +5,13 @@ export function DashboardDefault(){
     return(
         <>
         <Dashboard/>
-             <h1 className='dashboard'>Control panel</h1>
-             <h1 className="text-center"><a href="\sale">Terminal de Vendas</a></h1>
-            <hr style={{margin:"1px"}}></hr>
+             <h1 className='text-center p-2'>PANEL DASHBOARD</h1>
+            <div className="text-center">
+                <button className="btn btn-danger">
+                    <a href="\sale" 
+                        style={{color:'white'}}>
+                            ACESSO AO TERMINAL DE COMPRAS</a></button></div>
+            <hr></hr>
             <FooterHome/>
         </>
     )

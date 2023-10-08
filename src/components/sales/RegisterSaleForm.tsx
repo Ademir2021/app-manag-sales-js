@@ -1,7 +1,6 @@
 import './SaleForm.css'
 
 import { Thead } from '../dashboard/Thead';
-import { BackHome } from '../utils/backHome/BackHome';
 
 type TRegisterSaleForm = {
   children: string | number | readonly string[] | undefined | any;
@@ -43,10 +42,8 @@ export function RegisterSaleForm({
     <>
       <div className="container-sale">
         <div className="main-sale">
-            <BackHome />
           <form className='main-sale-register' >
             <div className='text-center'>
-            <strong>Terminal Store - Gerencie suas Compras</strong>
            </div>
             <label>{alert}</label>
             <label>{message}</label>
@@ -79,7 +76,10 @@ export function RegisterSaleForm({
             <button onClick={handleSubmit}>{statusBtnSaleSubmit}</button>
             <button onClick={handleDelete}>Deletar Item</button>
             <button onClick={handleSearchItem}>( Buscar Item ) / ( Importar pedido )</button>
-            <a href='###'>{'Terminal de Vendas for PC e Smartphones.'}</a>
+           <div className='text-center'>
+            <a><b>Centro Informática</b></a>
+            <a>Compras on-line<a href='/dashboardefault'><b>Sair</b></a></a>
+            </div>
           </form>
   
         </div>

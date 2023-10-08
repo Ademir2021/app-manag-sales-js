@@ -34,7 +34,7 @@
     color: red;
     font-size: 12px;
     float: center;
-    margin: 3px 20px;
+    margin: 1px 20px;
 }
 
 .main-sale-register a {
@@ -47,7 +47,7 @@
 
 .main-sale-register img {
     display: flex;
-    margin: -8px auto;
+    margin: auto;
     width: 200px;
     height: 200px;
 }
@@ -78,7 +78,3 @@
     }
 }
 
-.tp-info{
-    width: 36px;
-    height: 36px;
-}

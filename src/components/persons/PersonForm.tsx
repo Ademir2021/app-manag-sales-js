@@ -3,7 +3,6 @@ import InputMask from "react-input-mask";
 
 import '../../components/global-module.css'
 
-
 type IPersonForm = {
     children: string | number | readonly string[] | undefined | any;
     handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
@@ -20,7 +19,6 @@ export function PersonForm({
     alert,
 }: IPersonForm): JSX.Element {
     return (
-        <>
         <div className='container-global'>
             <fieldset className='main-global'>
                 <form className='main-global-form'>
@@ -75,10 +73,9 @@ export function PersonForm({
                     />
                     <button onClick={handleSubmit}>Registrar</button><br />
                     <a href='/invoice_sales'>Faturamento <b>clique aqui</b></a>< br/>
-                    <a href='###'>{'Mantenha seu cadastro atualizado.'}</a>
+                    <a href='###'>{'Mantenha seu cadastro atualizado'}</a>
                 </form>
             </fieldset>
         </div>
-        </>
     )
 }

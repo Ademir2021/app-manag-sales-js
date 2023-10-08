@@ -23,7 +23,7 @@ return(
                 <LogoIn/>
                 <p className='text-center'>{props.bestPayment}</p>
                 <>{props.backHomePayment}</>
-                <p>{props.paymentInfo}</p>
+                <p className='text-center' >{props.paymentInfo}</p>
                 <ul><li><strong>Cartões aceitos</strong></li></ul>
                 <img src="img/folder_pagbank.jpg" alt="Cartões aceitos"></img>
                 <ul>{props.PaymentMethods}</ul>

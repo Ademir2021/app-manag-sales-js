@@ -32,14 +32,14 @@ export function InvoiceSalesForm({
            {/* <label>{alert}</label> */}
            {/* <label>{message}</label> */}
           <>{backHomeInvoice}</>
-          <label>DADOS PARA ENTREGA E EMISSÃO DA NOTA</label>
+          <div className='text-center'>DADOS PARA EMISSÃO DA NOTA</div>
           <div><div></div><strong>Nome</strong><span>{children.name_pers}</span></div>
           <div><strong>Telefone</strong><span>{children.phone_pers}</span></div>
           <div><strong>CPF</strong><span>{children.cpf_pers}</span></div>
           <div><strong>Endereço</strong><span>{children.address_pers}</span></div>
           <a href='/person_update'>Atualizar cadastro <b>clique-aqui</b></a>
           <hr></hr>
-          <p className='text-center'>VALOR DA COMPRA</p>
+          <div className='text-center'>VALOR DA COMPRA</div>
           <div><strong>Subtotal</strong><span>{currencyFormat(children.tItens)}</span></div>
           <div><strong>Cupom de desconto</strong><span>{currencyFormat(children.disc_sale)}</span></div>
           <div><strong>Total da nota</strong><span>{currencyFormat(children.tNote)}</span></div>
