@@ -1,3 +1,4 @@
+import { LogoIn } from '../utils/logoIn/LogoIn';
 import './SaleForm.css'
 type  TDirectPaymentSaleForm ={
     bestPayment:any;
@@ -19,12 +20,10 @@ return(
     <div className="container-global">
         <div className="main-global">
             <div className="main-global-form">
-                <img className="tp-info" src="/img/tp_info.ico"></img>
-                <span> Direct Payment - CENTRO INFORMÁTICA</span>
+                <LogoIn/>
                 <p className='text-center'>{props.bestPayment}</p>
                 <>{props.backHomePayment}</>
-                <a>{props.paymentInfo}</a>
-                <hr></hr>
+                <p>{props.paymentInfo}</p>
                 <ul><li><strong>Cartões aceitos</strong></li></ul>
                 <img src="img/folder_pagbank.jpg" alt="Cartões aceitos"></img>
                 <ul>{props.PaymentMethods}</ul>
