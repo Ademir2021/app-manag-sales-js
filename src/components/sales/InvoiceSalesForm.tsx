@@ -1,6 +1,7 @@
 import { currencyFormat } from '../utils/currentFormat/CurrentFormat';
 
 import '../global-module.css'
+import { LogoIn } from '../utils/logoIn/LogoIn';
 
 type TInvoiceSalesForm = {
   children: string | number | readonly string[] | undefined | any;
@@ -26,26 +27,23 @@ export function InvoiceSalesForm({
     <div className="container-global" >
       <div className="main-global">
         <div className='main-global-form'>
-           <img className="tp-info" src="/img/tp_info.ico"></img>
-           <span> Direct Fatura - CENTRO INFORMÁTICA</span>
-          <h4 className='text-center'>FATURAR O PEDIDO</h4>
+          <LogoIn/>
+          <p className='text-center'>FATURAR O PEDIDO</p>
            {/* <label>{alert}</label> */}
            {/* <label>{message}</label> */}
           <>{backHomeInvoice}</>
-          <label className='text-center'>( DADOS PARA ENTREGA E EMISSÃO DA NOTA !! )</label>
-          <div><strong>Nome do cliente</strong><span>{children.name_pers}</span></div>
-          <div><strong>Contato do cliente</strong><span>{children.phone_pers}</span></div>
-          <div><strong>CPF do cliente</strong><span>{children.cpf_pers}</span></div>
-          <div><strong>Endereço do cliente</strong><span>{children.address_pers}</span></div>
-          
-          <a href='/person_update'>Matenha seus dados cadastrais atualizados. <b>clique-aqui !</b></a>
-
+          <label>DADOS PARA ENTREGA E EMISSÃO DA NOTA</label>
+          <div><div></div><strong>Nome</strong><span>{children.name_pers}</span></div>
+          <div><strong>Telefone</strong><span>{children.phone_pers}</span></div>
+          <div><strong>CPF</strong><span>{children.cpf_pers}</span></div>
+          <div><strong>Endereço</strong><span>{children.address_pers}</span></div>
+          <a href='/person_update'>Atualizar cadastro <b>clique-aqui</b></a>
           <hr></hr>
-          <strong>VALORES NA NOTA</strong>
-          <div><strong>SubTotal</strong><span>{currencyFormat(children.tItens)}</span></div>
+          <p className='text-center'>VALOR DA COMPRA</p>
+          <div><strong>Subtotal</strong><span>{currencyFormat(children.tItens)}</span></div>
           <div><strong>Cupom de desconto</strong><span>{currencyFormat(children.disc_sale)}</span></div>
           <div><strong>Total da nota</strong><span>{currencyFormat(children.tNote)}</span></div>
-          <div><strong>Valor a pagar</strong><span>{currencyFormat(children.paySale)}</span></div><br></br>
+          <div><strong>Valor a pagar</strong><span>{currencyFormat(children.paySale)}</span></div>
           <input
             type='text'
             name="disc_sale"
