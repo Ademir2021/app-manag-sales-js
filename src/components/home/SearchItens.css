@@ -12,8 +12,7 @@
     height: 32px;
 }
 .search-items-img:hover{
-left:-3rem;
-top:0.2rem;
+background-color: aliceblue;
 }
 .search-items-message{
     font-size: 12px;
