@@ -1,0 +1,17 @@
+.btn-navbar-seach {
+    display: contents;
+}
+
+.btn-navbar-img {
+    background-color:white;
+    border-radius: 12px;
+    position: relative;
+    left: -3rem;
+    top: 0.2rem;
+    width: 32px;
+    height: 32px;
+}
+.btn-navbar-img:hover{
+left:-2rem;
+top:0.2;
+}

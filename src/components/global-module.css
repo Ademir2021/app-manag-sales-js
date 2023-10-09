@@ -89,18 +89,3 @@ div input {
     border: 1px solid rgba(33, 31, 31, 0.178);
     float: center;
 }
-
-.btn-navbar-seach{
-    position: relative;
-    left:-2rem;
-    background-color:white;
-    background-image: url("../../public/img/icons8-pesquisar.png");
-    padding: 12px 0 0 12px;
-    border-radius: 0 12px 12px 0;
-    width: 46px;
-    height: 42px;
-    border: 2px solid rgb(204, 199, 199);
-    }
-    .btn-navbar-seach:hover{
-        background-color:rgba(198, 190, 190, 0.608);
-    }
