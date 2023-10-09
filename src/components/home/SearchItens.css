@@ -1,17 +1,21 @@
-.btn-navbar-seach {
+.btn-search {
     display: contents;
 }
 
-.btn-navbar-img {
+.search-items-img {
     background-color:white;
     border-radius: 12px;
     position: relative;
-    left: -3rem;
+    left: -4.6rem;
     top: 0.2rem;
     width: 32px;
     height: 32px;
 }
-.btn-navbar-img:hover{
-left:-2rem;
+.search-items-img:hover{
+left:-3rem;
 top:0.2rem;
+}
+.search-items-message{
+    font-size: 12px;
+    padding-left: 12px;
 }

@@ -101,8 +101,8 @@ export function HomePage() {
         for (let i = 0; itens.length > 0; i++) {
             if (itens[i].item === item.id_product) {
                 setMessages('Adicionado ' + itens[i].amount +
-                    ' UN do ' + item.descric_product + ' com sucesso !!');
-                    setTimeout(() => {setMessages('')},3000)
+                    ' UN ' + item.descric_product);
+                    setTimeout(() => {setMessages('')},9000)
             }
         }
     };
@@ -144,8 +144,8 @@ export function HomePage() {
                 contact={<a href={Globais.URL_CENTROINFO + "/contact"} style={{color:'gray'}}>Fale conosco +55 (44) 98852-1033</a>}
                 />
             <NavBar/>
-            <strong style={{fontSize:'14px', padding:'2px 2px 2px 12px'}}>{messages}</strong>
                 <SearchItens
+                messageItems={messages}
                        list={<select>{products.map((product) => (
                            <option key={product.id_product}>
                         {product.descric_product}</option>))}
