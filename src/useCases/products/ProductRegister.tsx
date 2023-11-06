@@ -14,7 +14,8 @@ export function FormProduct() {
         val_min_product: 0,
         fk_brand: 1,
         fk_sector: 1,
-        bar_code: ''
+        bar_code: '',
+        image:''
     });
     const handleChange = (e: any) => {
         const name = e.target.name;

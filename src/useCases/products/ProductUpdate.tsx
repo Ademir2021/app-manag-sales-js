@@ -23,7 +23,8 @@ export function ProductUpdate() {
         val_min_product: 0,
         fk_brand: 1,
         fk_sector: 1,
-        bar_code: ''
+        bar_code: '',
+        image:''
     });
     const handleChange = (e: any) => {
         const name = e.target.name;
@@ -42,6 +43,7 @@ export function ProductUpdate() {
         product.fk_brand = product_.fk_brand
         product.fk_sector = product_.fk_sector
         product.bar_code = product_.bar_code
+        product.image = product_.image
         toggleDropdown()
     };
 
@@ -91,7 +93,8 @@ export function ProductUpdate() {
             val_min_product: 0,
             fk_brand: 1,
             fk_sector: 1,
-            bar_code: ''
+            bar_code: '',
+            image:''
         })
         alert("Digite um novo produto !!")
     };
@@ -126,6 +129,7 @@ export function ProductUpdate() {
                         brand={product.fk_brand}
                         sector={product.fk_sector}
                         bar_code={product.bar_code}
+                        image={product.image}
                         update={<div onClick={() =>
                             listUpdate(product)}>Atualizar</div>}
                     />

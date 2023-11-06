@@ -64,6 +64,13 @@ export function ProductForm({
                         value={children.bar_code || ""}
                         onChange={handleChange}
                     />
+                         <input
+                        type="text"
+                        name="image"
+                        placeholder='Imagem'
+                        value={children.image || ""}
+                        onChange={handleChange}
+                    />
                     <button onClick={handleSubmit}>Registrar</button>
                     <a href='###'>{'Mantenha seu cadastro atualizado'}</a>
                 </form>

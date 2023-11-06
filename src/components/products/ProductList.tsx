@@ -10,7 +10,8 @@ type Props = {
     brand:number;
     sector:number;
     bar_code:string;
-    update:any;
+    update:any,
+    image?:string
 }
 
 export function ProductList(props: Props) {
@@ -28,7 +29,8 @@ export function ProductList(props: Props) {
                 <strong>Marca</strong>  {props.brand}<br />
                 <strong>Setor</strong>  {props.sector}<br />
                 <strong>Código de barras</strong>  {props.bar_code}<br />
-                <button>{props.update}</button>
+                <strong>Imagem</strong> {props.image}
+                <button>{props.update}</button><br />
                 </span>
                 </div>
             </div>

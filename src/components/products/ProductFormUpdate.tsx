@@ -96,6 +96,13 @@ export function ProductFormUpdate({
                                 onChange={handleChange}
                                 placeholder='código de barras'
                             />
+                            <input
+                                type="text"
+                                name="image"
+                                value={children.image || ''}
+                                onChange={handleChange}
+                                placeholder='Imagem'
+                            />
                             <button onClick={handleSubmit}>Registrar</button>
                             <button onClick={handleUpdate}>Atualizar</button>
                             <button onClick={handleDelete}>Novo</button>

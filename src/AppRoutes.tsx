@@ -4,7 +4,6 @@ import { HomePage } from "./useCases/home/HomePage";
 import { UserLogin } from './useCases/users/UserLogin';
 import { DashboardDefault } from "./useCases/dashboard/DashboardDefault";
 import { ItenStore } from "./useCases/dashboard/iItenStore";
-// import { Dashboard } from "./useCases/dashboard/Dashboard";
 import { UserRegister } from './useCases/users/UserRegister';
 import { UsersList } from './useCases/users/UsersList';
 import { UserUpdate } from "./useCases/users/UserUpdate";
@@ -45,7 +44,6 @@ export function AppRoutes() {
                     <Route path="/logout" Component={Logout} />
                     <Route path="/form_model" Component={FormModel} />
                     <Route path="/register" Component={UserRegister} />
-                    {/* <Route path="/dashboard" element={<Private><Dashboard/></Private>} /> */}
                     <Route path="/dashboardefault" element={<Private><DashboardDefault/></Private>}/>
                     <Route path="/pe" element={<Private><ItenStore/></Private>}/>
                     <Route path="/users_list" element={<Private><UsersList/></Private>} />
