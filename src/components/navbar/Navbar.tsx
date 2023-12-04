@@ -33,8 +33,8 @@ export function NavBar() {
                                         <a className="nav-link" aria-current="page" href="/">Home</a>}
                                 </li>
                                 <li className="nav-item">
-                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" aria-current="page" href="/pe">Pedido</a> :
-                                        <a className="nav-link" aria-current="page" href="/pe">Pedido</a>}
+                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" aria-current="page" href="/pe">Carrinho</a> :
+                                        <a className="nav-link" aria-current="page" href="/pe">Carrinho</a>}
                                 </li>
 
                                 <li className="nav-item">
