@@ -48,10 +48,12 @@ export function ItenStore() {
                     itens.splice(i, 1);
                     localStorage.setItem("p", JSON.stringify(itens));
                     setMessages(item.descric + ', foi removido com sucesso !');
-                    const res_counter = localStorage.getItem('c');
+                    let res_counter = localStorage.getItem('c');
                     if(res_counter !== null ){
                     const counter = JSON.parse(res_counter)
                     localStorage.setItem("c", JSON.stringify(counter - 1));
+                    res_counter = localStorage.getItem('c');
+                    setCounter(counter_);
                     }
                     sumItens()
                     setTimeout(() => {
