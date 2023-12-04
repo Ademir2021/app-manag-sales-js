@@ -28,6 +28,8 @@ export function HomePage() {
         setItem(values => ({ ...values, [name]: value }))
     };
 
+
+
     const getProducts = useCallback(async () => {
         try {
             await api.get<TProductRegister[]>('products_home')
@@ -42,6 +44,12 @@ export function HomePage() {
 
     useEffect(() => {
         getProducts()
+
+        const res_itens= localStorage.getItem('p');
+        if(res_itens !== null ){
+        setItens(JSON.parse(res_itens));
+        }
+
         const res_counter = localStorage.getItem('c');
         if(res_counter !== null ){
         setCounter(JSON.parse(res_counter));
@@ -84,6 +92,8 @@ export function HomePage() {
             valor: 0,
             tItem: 0
         }
+
+
         getItem.id = id;
         getItem.item = item.id_product;
         getItem.descric = item.descric_product;
