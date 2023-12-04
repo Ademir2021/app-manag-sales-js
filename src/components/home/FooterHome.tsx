@@ -28,13 +28,14 @@ export function FooterHome() {
                             <a href='##'>Rma</a>
                             <a href='/invoice_sales'>Faturamento</a>
                             <a href='/direct_payment'>Financeiro</a>
+                            <a href='/pe'>Carrinho de compras</a>
                         </div>
                     </div>
                     <div className='container-footer'>
                         <div className='main-footer'>
                             <b>Cadastros</b>
                             <a href='form_person'>Pessoas</a>
-                            <a href='##'></a>
+                            <a href='sale'>Suas compras</a>
                             <a href='##'></a>
                             <a href='##'></a>
                         </div>
