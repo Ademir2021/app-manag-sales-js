@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useContext } from "react"
 import { FormatDate } from "../../components/utils/formatDate";
-import { TProductRegister } from "./type/TypeProducts";
+import { TProductRegister, TBrand, TSector } from "./type/TypeProducts";
 import { postRegister, putUpdate } from "../../services/handleService";
 import { ProductValFields } from "../../components/utils/ValFields/ValFields";
 import { ProductFormUpdate } from "../../components/products/ProductFormUpdate";
@@ -12,7 +12,13 @@ import { AuthContext } from '../../context/auth'
 import "../../App.css"
 
 export function ProductUpdate() {
-    
+
+    const [brands, setBrand] = useState<TBrand[]>([]);
+    const [sectors, setSector] = useState<TSector[]>([]);
+
+    const [selectedIdBrand, setSelectedIdBrand] = useState<any>(1);
+    const [selectedIdSector, setSelectedIdSector] = useState<any>(1);
+
     const { user: isLogged }: any = useContext(AuthContext);
 
     const [products, setProducts] = useState<TProductRegister[]>([])
@@ -24,8 +30,12 @@ export function ProductUpdate() {
         fk_brand: 1,
         fk_sector: 1,
         bar_code: '',
-        image:''
+        image: ''
     });
+
+    product.fk_brand = selectedIdBrand;
+    product.fk_sector = selectedIdSector;
+
     const handleChange = (e: any) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -35,6 +45,10 @@ export function ProductUpdate() {
     const [dropdown, setDropdown] = useState<string>("");
     const modalRef = useRef<any>(null);
 
+    /**
+     * 
+     * @param product_ 
+     */
     function listUpdate(product_: TProductRegister) {
         product.id_product = product_.id_product
         product.descric_product = product_.descric_product
@@ -47,6 +61,9 @@ export function ProductUpdate() {
         toggleDropdown()
     };
 
+    /**
+     * Listar Produtos
+     */
     async function getProducts() {
         await api.get<TProductRegister[]>(`/products/${isLogged[0].id}`)
             .then(response => {
@@ -57,6 +74,42 @@ export function ProductUpdate() {
     useEffect(() => {
         getProducts()
     }, []);
+
+    /**
+     * Listar Marcas
+     */
+    async function getBrands() {
+        try {
+            await api.get<TBrand[]>('/brands')
+                .then(response => {
+                    setBrand(response.data);
+                });
+        } catch (err) {
+            alert("error occurred !!" + err);
+        }
+    };
+
+    useEffect(() => {
+        getBrands()
+    }, [])
+
+    /**
+     * Listar Setores
+     */
+    async function getSectors() {
+        try {
+            await api.get<TSector[]>('/sectors')
+                .then(response => {
+                    setSector(response.data);
+                });
+        } catch (err) {
+            alert("error occurred !!" + err);
+        }
+    };
+
+    useEffect(() => {
+        getSectors()
+    }, [])
 
     function toggleDropdown(): void {
         setDropdown("modal-show");
@@ -94,10 +147,39 @@ export function ProductUpdate() {
             fk_brand: 1,
             fk_sector: 1,
             bar_code: '',
-            image:''
+            image: ''
         })
         alert("Digite um novo produto !!")
     };
+
+    /**
+     * Setar nome do Produto
+     * @param idBrand
+     * @returns 
+     */
+    function  nameBrands(idBrand: number) {
+        for (let i = 0; i < brands.length; i++) {
+            if (brands[i].id_brand === idBrand) {
+                const brand:string = brands[i].name_brand;
+                return brand;
+            }
+        }
+    }
+
+    /**
+     * Setar nome do Setor
+     * @param idSector
+     * @returns 
+     */
+    function  nameSector(idSector: number) {
+        for (let i = 0; i < sectors.length; i++) {
+            if (sectors[i].id_sector === idSector) {
+                const sector:string = sectors[i].name_sector;
+                return sector;
+            }
+        }
+    }
+
     return (
         <>
             <BackHome />
@@ -111,6 +193,27 @@ export function ProductUpdate() {
                 close={closeDropdown}
                 alert=""
                 message=""
+                listBrand={<select
+                    onChange={e => setSelectedIdBrand(e.target.value)}
+                >
+                    {brands.map((brand) => (
+                        <option
+                            key={brand.id_brand}
+                            value={brand.id_brand}
+                        >
+                            {brand.name_brand}
+                        </option>))}</select>}
+
+                listSector={<select
+                    onChange={e => setSelectedIdSector(e.target.value)}
+                >
+                    {sectors.map((sector) => (
+                        <option
+                            key={sector.id_sector}
+                            value={sector.id_sector}
+                        >
+                            {sector.name_sector}
+                        </option>))}</select>}
             >
                 {product}
             </ProductFormUpdate>
@@ -126,8 +229,8 @@ export function ProductUpdate() {
                         name={product.descric_product}
                         val_max={product.val_max_product}
                         val_min={product.val_min_product}
-                        brand={product.fk_brand}
-                        sector={product.fk_sector}
+                        brand={nameBrands(product.fk_brand)}
+                        sector={nameSector(product.fk_sector)}
                         bar_code={product.bar_code}
                         image={product.image}
                         update={<div onClick={() =>

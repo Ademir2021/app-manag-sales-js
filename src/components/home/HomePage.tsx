@@ -5,7 +5,8 @@ type Props = {
     item_img:string;
     item?: number;
     descric: string | number | "" | 0 ;
-    fk_sector: number | string;
+    sector: number | string |undefined;
+    brand: number | string | undefined;
     amount: number | undefined;
     valor: number | string | "money";
     tItem?: number | string | "money";
@@ -22,7 +23,8 @@ export function ListItens(props:Props){
             <p><b>ITEM</b> {props.id}</p>
             <p className='text-center'>{props.descric}</p>
             {props.amount}
-            <p><b>SECTOR</b> {props.fk_sector}</p>
+            <span><b>Marca: </b>{props.brand}</span>
+            <span><b>Setor: </b>{props.sector}</span>
             <p><b>R$</b> {props.valor}</p>
             <>{props.addItem}</>
             <>{props.decrementAmount}</>

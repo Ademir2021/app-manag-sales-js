@@ -2,11 +2,13 @@
 import '../global-module.css'
 
 type IProdctForm = {
-    children:React.ChangeEventHandler<HTMLInputElement> | undefined | any;
-    handleChange:React.ChangeEventHandler<HTMLInputElement> | undefined;
-    handleSubmit:any
-    alert:string;
-    message:string
+    children: React.ChangeEventHandler<HTMLInputElement> | undefined | any;
+    handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+    handleSubmit: any
+    alert: string;
+    message: string
+    listBrand: any;
+    listSector:any;
 }
 
 export function ProductForm({
@@ -14,14 +16,17 @@ export function ProductForm({
     handleChange,
     handleSubmit,
     alert,
-    message }: IProdctForm) {
+    message,
+    listBrand,
+    listSector
+}: IProdctForm) {
     return (
         <div className="container-global">
             <fieldset className="main-global">
                 <form className="main-global-form">
-                <strong>Cadastro de Produtos</strong>
-                        <label>{alert}</label>
-                        <label>{message}</label>
+                    <strong>Cadastro de Produtos</strong>
+                    <label>{alert}</label>
+                    <label>{message}</label>
                     <input
                         type="text"
                         name="descric_product"
@@ -43,20 +48,32 @@ export function ProductForm({
                         value={children.val_min_product || ""}
                         onChange={handleChange}
                     />
-                    <input
+                    {/* <input
                         type="number"
                         name="fk_brand"
                         placeholder='marca'
                         value={children.fk_brand || ""}
                         onChange={handleChange}
-                    />
-                    <input
+                    /> */}
+
+                    <label>
+                        <strong>Selecione uma Marca </strong>
+                        {listBrand}
+                    </label>
+
+                    {/* <input
                         type="number"
                         name="fk_sector"
                         placeholder='setor'
                         value={children.fk_sector || ""}
                         onChange={handleChange}
-                    />
+                    /> */}
+
+                    <label>
+                        <strong>Selecione um Setor</strong>
+                        {listSector}
+                    </label>
+
                     <input
                         type="text"
                         name="bar_code"
@@ -64,7 +81,7 @@ export function ProductForm({
                         value={children.bar_code || ""}
                         onChange={handleChange}
                     />
-                         <input
+                    <input
                         type="text"
                         name="image"
                         placeholder='Imagem'

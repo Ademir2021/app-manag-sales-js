@@ -6,8 +6,8 @@ export type TProductRegister = {
     amount?:number | undefined |any;
     val_max_product: number;
     val_min_product: number;
-    fk_brand: number;
-    fk_sector: number;
+    fk_brand: number |any;
+    fk_sector: number | any;
     bar_code: string;
     image?: | string;
 };
@@ -43,4 +43,14 @@ export type TSale = {
     amount: number;
     valor: number | any;
     tItem: number;
+};
+
+export type TBrand = {
+id_brand: number;
+name_brand: string;
+};
+
+export type TSector ={
+    id_sector:number;
+    name_sector:string;
 };

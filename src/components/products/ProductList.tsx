@@ -7,8 +7,8 @@ type Props = {
     name:string | number;
     val_max:number;
     val_min:number;
-    brand:number;
-    sector:number;
+    brand:string | undefined;
+    sector:string | undefined ;
     bar_code:string;
     update:any,
     image?:string

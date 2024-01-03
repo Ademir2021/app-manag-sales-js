@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import { NavBar } from "../../components/navbar/Navbar";
-import { TProductRegister, TItem, TItens } from '../products/type/TypeProducts';
+import { TProductRegister, TItem, TItens, TBrand, TSector } from '../products/type/TypeProducts';
 import api from '../../services/api/api'
 import { ListItens } from '../../components/home/HomePage';
 import { Header } from '../../components/home/Header';
@@ -21,6 +21,9 @@ export function HomePage() {
     const [listProd, setlistProd] = useState<TProductRegister[]>([]);
     const [itens, setItens] = useState<TItens[]>([]);
     const [item, setItem] = useState<TItem>({descric:''});
+
+    const [brands, setBrand] = useState<TBrand[]>([]);
+    const [sectors, setSector] = useState<TSector[]>([]);
    
     const handleChange = (e: any) => {
         const name = e.target.name;
@@ -28,8 +31,9 @@ export function HomePage() {
         setItem(values => ({ ...values, [name]: value }))
     };
 
-
-
+    /**
+     * Listar Produtos
+     */
     const getProducts = useCallback(async () => {
         try {
             await api.get<TProductRegister[]>('products_home')
@@ -45,7 +49,7 @@ export function HomePage() {
     useEffect(() => {
         getProducts()
 
-        const res_itens= localStorage.getItem('p');
+        const res_itens = localStorage.getItem('p');
         if(res_itens !== null ){
         setItens(JSON.parse(res_itens));
         }
@@ -92,7 +96,6 @@ export function HomePage() {
             valor: 0,
             tItem: 0
         }
-
 
         getItem.id = id;
         getItem.item = item.id_product;
@@ -145,6 +148,68 @@ export function HomePage() {
         setAmount(amount);
         }
     };
+    
+    /**
+     * Listar Produto
+     */
+    async function getBrands() {
+        try {
+            await api.get<TBrand[]>('/brands')
+                .then(response => {
+                    setBrand(response.data);
+                });
+        } catch (err) {
+            alert("error occurred !!" + err);
+        }
+    };
+    useEffect(() => {
+        getBrands()
+    }, [])
+
+    /**
+     * Listar Setor
+     */
+    async function getSectors() {
+        try {
+            await api.get<TSector[]>('/sectors')
+                .then(response => {
+                    setSector(response.data);
+                });
+        } catch (err) {
+            alert("error occurred !!" + err);
+        }
+    };
+    useEffect(() => {
+        getSectors()
+    }, [])
+
+    /**
+     * setar nome da Marca
+     * @param idBrand
+     * @returns brand
+     */
+    function  nameBrands(idBrand: number) {
+        for (let i = 0; i < brands.length; i++) {
+            if (brands[i].id_brand === idBrand) {
+                const brand:string = brands[i].name_brand;
+                return brand;
+            }
+        }
+    }
+
+    /**
+     * 
+     * @param brName setar nome do setor
+     * @returns 
+     */
+    function  nameSector(brName: number) {
+        for (let i = 0; i < sectors.length; i++) {
+            if (sectors[i].id_sector === brName) {
+                const sector:string = sectors[i].name_sector;
+                return sector;
+            }
+        }
+    }
 
     return (
         <> 
@@ -170,7 +235,8 @@ export function HomePage() {
                     item_img={item.image !== null ?
                         `./img/img_itens/${item.image}` : itemImg}
                     id={item.id_product}
-                    fk_sector={item.fk_sector}
+                    brand={nameBrands(item.fk_brand)}
+                    sector={nameSector(item.fk_sector)}
                     descric={item.descric_product}
                     amount={item.amount}
                     valor={item.val_max_product}
