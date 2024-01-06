@@ -8,9 +8,7 @@ import api from "../../services/api/api";
 export function ProductsList() {
 
     const [products, setProducts] = useState<TProductRegister[]>([]);
-
     const [brands, setBrand] = useState<TBrand[]>([]);
-
     const [sectors, setSector] = useState<TSector[]>([]);
 
     /**
@@ -28,7 +26,7 @@ export function ProductsList() {
     };
     useEffect(() => {
         getProducts()
-    }, [])
+    }, [])   
 
     /**
      * Listar Marca
@@ -95,8 +93,8 @@ export function ProductsList() {
     return (
         <>
             <BackHome />
-            {products.length === 0 ? <p>Carregando...</p> : (
-                products.map((product: TProductRegister) => (
+            { products.length === 0 ? <p>Carregando...</p> : (
+                 products.map((product: TProductRegister) => (
                     <ProductList
                         key={product.id_product}
                         id={product.id_product}
