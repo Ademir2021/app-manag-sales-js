@@ -64,7 +64,7 @@ export function PersonsList() {
     function numCep(idCep: number) {
         for (let i = 0; i < ceps.length; i++) {
             if (ceps[i].id_cep === idCep) {
-                const cep: string = ceps[i].num_cep;
+                const cep: String = ceps[i].num_cep;
                 return cep;
             }
         }

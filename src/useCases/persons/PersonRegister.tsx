@@ -16,7 +16,7 @@ export type TPersonRegister = {
     fk_cep:number |undefined | any;
     num_cep:string | undefined |any;
     name_city:string | undefined|any;
-    uf:string | undefined | any ;
+    uf:string | undefined;
     fk_name_filial: number;
     fk_id_user:number;
   }
@@ -28,7 +28,7 @@ export type TPersonRegister = {
 
   export type TCities = {
     id_city:number;
-    name_city:String;
+    name_city:string;
     uf:string;
   }
 

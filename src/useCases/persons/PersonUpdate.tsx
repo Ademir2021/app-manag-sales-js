@@ -51,6 +51,7 @@ export function PersonUpdate() {
         toggleDropdown()
     }
 
+
     const handleChange = (e: any) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -98,9 +99,7 @@ export function PersonUpdate() {
     async function handleUpdate(e: Event) {
         e.preventDefault();
         if (PersonsValFields(person)) {
-
             listUpdate(person); //Atualiza o CEP do Cliente
-
             person.cpf_pers = person.cpf_pers.replace(/[..-]/g, '')
             person.phone_pers = person.phone_pers.replace(/[()-]/g, '')
             putUpdate(person.id_person, person, 'persons')
@@ -179,19 +178,18 @@ export function PersonUpdate() {
     function numCep(idCep: number) {
         for (let i = 0; i < ceps.length; i++) {
             if (ceps[i].id_cep === idCep) {
-                const cep: string = ceps[i].num_cep;
+                const cep: String = ceps[i].num_cep;
                 return cep;
             }
         }
     }
-
 
     /**
  * Setar id pelo numero do CEP
  * @param numCep
  * @returns 
  */
-    function setNumCep(numCep: String) {
+    function setNumCep(numCep: string) {
         for (let i = 0; i < ceps.length; i++) {
             if (ceps[i].num_cep === numCep) {
                 const idCep: number = ceps[i].id_cep;
@@ -208,7 +206,7 @@ export function PersonUpdate() {
     function nameCity(idCity: number) {
         for (let i = 0; i < cities.length; i++) {
             if (cities[i].id_city === idCity) {
-                const city: String = cities[i].name_city;
+                const city: string = cities[i].name_city;
                 return city;
             }
         }
@@ -217,7 +215,7 @@ export function PersonUpdate() {
     function uf(idCity: number) {
         for (let i = 0; i < cities.length; i++) {
             if (cities[i].id_city === idCity) {
-                const uf: String = cities[i].uf;
+                const uf: string = cities[i].uf;
                 return uf;
             }
         }
