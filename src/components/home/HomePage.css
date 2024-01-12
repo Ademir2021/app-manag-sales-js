@@ -26,8 +26,16 @@
 
 .itens-img {
     max-width: 100%;
-    width: 12rem;
+    width: 10rem;
     height: 11rem;
     border-radius: 6px;
-    border:none;
+    border:1px solid none;
+}
+.itens-img:hover{
+    max-width: 160%;
+    width: 17rem;
+    height: 18rem;
+    border-radius: 6px;
+    border:1px solid grey;
+
 }

@@ -12,8 +12,24 @@ export type TPersonRegister = {
     cpf_pers: string;
     phone_pers:string;
     address_pers: string;
+    bairro_pers:string;
+    fk_cep:number |undefined | any;
+    num_cep:string | undefined |any;
+    name_city:string | undefined|any;
+    uf:string | undefined | any ;
     fk_name_filial: number;
     fk_id_user:number;
+  }
+
+  export type TCeps ={
+    id_cep:number;
+    num_cep:string;
+  }
+
+  export type TCities = {
+    id_city:number;
+    name_city:String;
+    uf:string;
   }
 
 export function FormPerson() {
@@ -23,6 +39,11 @@ export function FormPerson() {
         cpf_pers: "",
         phone_pers:"",
         address_pers: "",
+        bairro_pers:"",
+        fk_cep:0,
+        name_city:"",
+        uf:"",
+        num_cep:"",
         fk_name_filial: 1,
         fk_id_user:0
     })

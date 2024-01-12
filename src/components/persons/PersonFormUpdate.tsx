@@ -43,6 +43,7 @@ export function PersonFormUpdate({
                             disabled
                             onChange={handleChange}
                         />
+                        <div><a>Nome</a></div>
                         <input
                             type="text"
                             name="name_pers"
@@ -50,6 +51,7 @@ export function PersonFormUpdate({
                             placeholder="Seu nome"
                             onChange={handleChange}
                         />
+                        <div><a>CPF</a></div>
                         <InputMask
                             type="text"
                             name="cpf_pers"
@@ -62,10 +64,11 @@ export function PersonFormUpdate({
                             value={children.cpf_pers}
                             onChange={handleChange}
                         />
+                        <div><a>Telefone</a></div>
                         <InputMask
                             type="text"
                             name="phone_pers"
-                            placeholder="Seu telefone celular"
+                            placeholder="Seu telefone"
                             mask="(99)99999-9999"
                             mask-selectonfocus="true"
                             maxLength={14}
@@ -74,11 +77,47 @@ export function PersonFormUpdate({
                             value={children.phone_pers || ''}
                             onChange={handleChange}
                         />
+                        <div><a>Endereço</a></div>
                         <input
                             type="text"
                             name="address_pers"
                             value={children.address_pers || ''}
                             placeholder="Seu endereço"
+                            onChange={handleChange}
+                        />
+                        <div><a>Bairro</a></div>
+                        <input
+                            type="text"
+                            name="bairro_pers"
+                            value={children.bairro_pers || ''}
+                            placeholder="Seu bairro"
+                            onChange={handleChange}
+                        />
+                        <div><a>CEP</a></div>
+                        <InputMask
+                            mask={"99.999-999"}
+                            type="text"
+                            name="num_cep"
+                            value={children.num_cep || ''}
+                            placeholder="CEP de sua cidade"
+                            onChange={handleChange}
+                        />
+                        <div><a>Cidade</a></div>
+                        <input
+                            type="text"
+                            name="name_city"
+                            value={children.name_city || ''}
+                            placeholder="Cidade"
+                            disabled
+                            onChange={handleChange}
+                        />
+                           <div><a>Estado</a></div>
+                        <input
+                            type="text"
+                            name="uf"
+                            value={children.uf || ''}
+                            placeholder="Estado"
+                            disabled
                             onChange={handleChange}
                         />
                         <input
@@ -100,7 +139,7 @@ export function PersonFormUpdate({
                         <button onClick={handleSubmit}>Registrar</button>
                         <button onClick={handleUpdate} >Atualizar</button>
                         <button onClick={handleDelete}>Novo</button>
-                         <button onClick={close}>Sair</button>
+                        <button onClick={close}>Sair</button>
                         <a href='###'>{'Mantenha seu cadastro atualizado'}</a>
                     </form>
 

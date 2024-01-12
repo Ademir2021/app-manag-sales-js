@@ -7,8 +7,8 @@ type IPersonForm = {
     children: string | number | readonly string[] | undefined | any;
     handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
     handleSubmit: any
-    message:string;
-    alert:string;
+    message: string;
+    alert: string;
 }
 
 export function PersonForm({
@@ -25,6 +25,7 @@ export function PersonForm({
                     <strong>Cadastro de Clientes</strong>
                     <label>{alert}</label>
                     <label>{message}</label>
+                    <div><a>Nome</a></div>
                     <input className=""
                         type="text"
                         name="name_pers"
@@ -32,6 +33,7 @@ export function PersonForm({
                         value={children.name_pers || ""}
                         onChange={handleChange}
                     />
+                    <div><a>CPF</a></div>
                     <InputMask className=""
                         type="text"
                         name="cpf_pers"
@@ -44,10 +46,11 @@ export function PersonForm({
                         value={children.cpf_pers || ""}
                         onChange={handleChange}
                     />
+                    <div><a>Telefone</a></div>
                     <InputMask className=""
                         type="text"
                         name="phone_pers"
-                        placeholder="Seu telefone celular"
+                        placeholder="Seu telefone"
                         mask="(99)99999-9999"
                         mask-selectonfocus="true"
                         maxLength={14}
@@ -56,11 +59,20 @@ export function PersonForm({
                         value={children.phone_pers || ""}
                         onChange={handleChange}
                     />
+                    <div><a>Endereço</a></div>
                     <input className=""
                         type="text"
                         name="address_pers"
                         placeholder={'Seu endereço'}
                         value={children.address_pers || ""}
+                        onChange={handleChange}
+                    />
+                    <div><a>Bairro</a></div>
+                    <input className=""
+                        type="text"
+                        name="bairro_pers"
+                        placeholder={'Seu Bairro'}
+                        value={children.bairro_pers || ""}
                         onChange={handleChange}
                     />
                     <input className=""
@@ -72,7 +84,7 @@ export function PersonForm({
                         onChange={handleChange}
                     />
                     <button onClick={handleSubmit}>Registrar</button><br />
-                    <a href='/invoice_sales'>Faturamento <b>clique aqui</b></a>< br/>
+                    <a href='/invoice_sales'>Faturamento <b>clique aqui</b></a>< br />
                     <a href='###'>{'Mantenha seu cadastro atualizado'}</a>
                 </form>
             </fieldset>

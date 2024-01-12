@@ -8,6 +8,10 @@ export type Props = {
     cpf: string;
     phone: string;
     address: string;
+    bairro:string;
+    num_cep:String | undefined;
+    name_city:String | undefined;
+    uf:String | undefined;
     filial: number;
     id_user: number;
     update: any
@@ -25,6 +29,10 @@ export const PersonList = (props: Props) => {
                 <strong>CPF</strong> {props.cpf}<br />
                 <strong>Telefone</strong>{props.phone}<br />
                 <strong>Endereço</strong>{props.address}<br />
+                <strong>Bairro</strong>{props.bairro}<br />
+                <strong>CEP</strong>{props.num_cep}<br />
+                <strong>Cidade</strong>{props.name_city}<br />
+                <strong>Estado</strong>{props.uf}<br />
                 <strong>Filial</strong>{props.filial}<br />
                 <strong>Usuário</strong>{props.id_user}<br />
                 <button>{props.update}</button>
