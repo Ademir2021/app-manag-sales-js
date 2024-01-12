@@ -29,7 +29,7 @@ export function NavBar() {
                             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
 
                                 <li className="nav-item">
-                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" aria-current="page" href="/dashboardefault">Panel</a> :
+                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" aria-current="page" href="/dashboardefault">Painel</a> :
                                         <a className="nav-link" aria-current="page" href="/">Home</a>}
                                 </li>
                                 <li className="nav-item">
@@ -43,8 +43,8 @@ export function NavBar() {
                                 </li>
 
                                 <li className="nav-item">
-                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" href='/login'>Login</a> :
-                                        <a className="nav-link" href='/logout'>Logout</a>}
+                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" href='/login'>Entrar</a> :
+                                        <a className="nav-link" href='/logout'>Sair</a>}
                                 </li>
                                 <li className="nav-item">
                                     {checksUserLogged() === privilegeShopping ? <a className="nav-link" href="/sale">Compras</a> :
@@ -54,23 +54,23 @@ export function NavBar() {
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="##" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">Cadastros</a>
-                                    <ul className="dropdown-menu" style={{ background: 'rgb(237,237,237)', border: '1px solid gray', padding: '12px' }}>
-                                        <li><a className="dropdown-item nav-link" href="/form_person">Pessoas - Comprador</a></li>
+                                    <ul className="dropdown-menu" style={{ background: 'rgb(237,237,237)', border: '0px solid gray', padding: '12px' }}>
+                                        <li><a className="dropdown-item nav-link" href="/form_person">Clientes</a></li>
 
-                                        <li>{checkAdminPrivilege() === privilAdmin ? <a className="dropdown-item nav-link" href="/form_product">Produtos - Admin</a> :
-                                            <a className="dropdown-item nav-link" href="#">-</a>}</li>
+                                        <li>{checkAdminPrivilege() === privilAdmin ? <a className="dropdown-item nav-link" href="/form_product">Produtos</a> :
+                                            <></>}</li>
                                         <li>
 
                                             <hr className="dropdown-divider" />
                                         </li>
-                                        <li><a className="dropdown-item nav-link" href="/person_update">Atualizar Pessoas - Comprador</a></li>
-                                        <li>{checkAdminPrivilege() === privilAdmin ? <a className="dropdown-item nav-link" href="/product_update">Atualizar Produtos - Admin</a> :
-                                            <a className="dropdown-item nav-link" href="#">-</a>}</li>
+                                        <li><a className="dropdown-item nav-link" href="/person_update">Clientes - Atualizar</a></li>
+                                        <li>{checkAdminPrivilege() === privilAdmin ? <a className="dropdown-item nav-link" href="/product_update">Produtos - Atualizar</a> :
+                                            <></>}</li>
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="##" role="button" data-bs-toggle="dropdown" aria-expanded="false">Listagem</a>
-                                    <ul className="dropdown-menu" style={{ background: 'rgb(237, 237, 237)', border: '1px solid gray', padding: '12px' }}>
+                                    <ul className="dropdown-menu" style={{ background: 'rgb(237, 237, 237)', border: '0px solid gray', padding: '12px' }}>
                                         <li><a className="dropdown-item nav-link" href="/person_list">Pessoas</a></li>
                                         <li><a className="dropdown-item nav-link" href="/product_list">Produtos</a></li>
                                         <li>
