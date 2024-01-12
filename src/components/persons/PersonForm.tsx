@@ -75,6 +75,15 @@ export function PersonForm({
                         value={children.bairro_pers || ""}
                         onChange={handleChange}
                     />
+                    <div><a>CEP</a></div>
+                    <InputMask
+                        mask={"99.999-999"}
+                        type="text"
+                        name="num_cep"
+                        value={children.num_cep || ""}
+                        placeholder="CEP de sua cidade"
+                        onChange={handleChange}
+                    />
                     <input className=""
                         type="hidden"
                         name="fk_name_filial"

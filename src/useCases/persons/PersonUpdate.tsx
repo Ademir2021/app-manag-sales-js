@@ -49,8 +49,7 @@ export function PersonUpdate() {
         person.uf = _person.uf
         getPersons()
         toggleDropdown()
-    }
-
+    };
 
     const handleChange = (e: any) => {
         const name = e.target.name;
@@ -102,7 +101,11 @@ export function PersonUpdate() {
             listUpdate(person); //Atualiza o CEP do Cliente
             person.cpf_pers = person.cpf_pers.replace(/[..-]/g, '')
             person.phone_pers = person.phone_pers.replace(/[()-]/g, '')
-            putUpdate(person.id_person, person, 'persons')
+            if (person.fk_cep === undefined) {
+                alert('Digite um Cep válido')
+            } else {
+                putUpdate(person.id_person, person, 'persons')
+            }
             getPersons()
         }
     };
@@ -127,9 +130,11 @@ export function PersonUpdate() {
         person.fk_id_user = isLogged[0].id
         alert("Digite um novo usuário !!")
     };
+
     function toggleDropdown(): void {
         setDropdown("modal-show");
     };
+
     function closeDropdown(e: Event) {
         e.stopPropagation();
         const contain = modalRef.current.contains(e.target);
@@ -152,6 +157,7 @@ export function PersonUpdate() {
             alert("error occurred !!" + err)
         }
     };
+
     useEffect(() => {
         getCeps()
     }, [])
@@ -166,15 +172,11 @@ export function PersonUpdate() {
             alert("error occurred !!" + err)
         }
     };
+
     useEffect(() => {
         getCities()
     }, [])
 
-    /**
- * Setar id do CEP
- * @param idCep
- * @returns 
- */
     function numCep(idCep: number) {
         for (let i = 0; i < ceps.length; i++) {
             if (ceps[i].id_cep === idCep) {
@@ -182,27 +184,22 @@ export function PersonUpdate() {
                 return cep;
             }
         }
-    }
+    };
 
-    /**
- * Setar id pelo numero do CEP
- * @param numCep
- * @returns 
- */
-    function setNumCep(numCep: string) {
+    function setNumCep(numCep: string) { // Busca e valida o CEP
         for (let i = 0; i < ceps.length; i++) {
             if (ceps[i].num_cep === numCep) {
                 const idCep: number = ceps[i].id_cep;
                 return idCep;
             }
-        }
-    }
+        };
+        for (let i = 0; i < ceps.length; i++) {
+            if (ceps[i].num_cep !== numCep) {
+                return undefined;
+            }
+        };
+    };
 
-    /**
-* Setar o id da Cidade
-* @param idCity
-* @returns 
-*/
     function nameCity(idCity: number) {
         for (let i = 0; i < cities.length; i++) {
             if (cities[i].id_city === idCity) {
@@ -210,7 +207,7 @@ export function PersonUpdate() {
                 return city;
             }
         }
-    }
+    };
 
     function uf(idCity: number) {
         for (let i = 0; i < cities.length; i++) {
@@ -219,7 +216,7 @@ export function PersonUpdate() {
                 return uf;
             }
         }
-    }
+    };
 
     return (
         <>
