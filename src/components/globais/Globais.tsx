@@ -26,7 +26,9 @@ export  class Globais {
     static phone = '+55 (44) 98852-1033'
     static title = 'centroinfo store-online';
 
-    static URL = 'https://app-centroinfo-aae9bffa47dc.herokuapp.com'
+    // static URL = 'https://app-centroinfo-aae9bffa47dc.herokuapp.com'
+    
+    static URL = 'https://centroinfo.com.br'
     static API_URL = 'https://api-centroinfo-05e63255c453.herokuapp.com'
     static URL_NOTE = 'https://api-centroinfo-05e63255c453.herokuapp.com/note/'
     
