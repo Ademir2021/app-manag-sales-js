@@ -5,21 +5,19 @@ type IContact = {
     children: React.ChangeEventHandler<HTMLInputElement> | undefined | any;
     handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined | any;
     handleSubmit: any
+    msg:string;
 }
 
 export function ContactForm({
     children,
     handleChange,
-    handleSubmit
+    handleSubmit,
+    msg
 }: IContact) {
 
     return (
         <>
             <h2 className="p-1"><strong>Formulário de contato !</strong></h2>
-            {/* <div ><i className="bi bi-pencil-fill"></i> Seus comentários !</div>
-            <div ><i className="bi bi-question-square-fill"></i> Solicitações !</div>
-            <div ><i className="bi bi-exclamation-square-fill"></i> Dúvidas !</div> */}
-
             <form method="" className="form-control input-contact bg-secondarys">
 
                 <div className="mb-3">
@@ -58,6 +56,8 @@ export function ContactForm({
                         onChange={handleChange}
                     />
                 </div>
+
+                <div style={{color:'red'}}><p>{msg}</p></div>
 
                 <div className="mb-3">
                     <div className="form-label">Seu texto</div>

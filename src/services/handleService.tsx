@@ -4,6 +4,7 @@ export async function postRegister(object: any, route: string) {
     await api.post<any[]>(`/${route}`, object)
         .then(response => {
             alert(response.data)
+            return response.data;
         })
         .catch(error => alert(error));
 };

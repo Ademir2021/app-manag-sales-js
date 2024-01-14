@@ -19,25 +19,39 @@ export function Contacts() {
         comments: ""
     });
 
+    const [msg, setMsg] = useState<string>('');
+
     const handleChange = (e: any) => {
         const name = e.target.name;
         const value = e.target.value;
         setContacts(values => ({ ...values, [name]: value }))
     };
 
+    function contactValFields(contact: TContact) {
+        let msg = ""
+        if (contact.name === "") { msg += "Digite o nome completo |\n" };
+        if (contact.email === "") { msg += "Digite seu email | \n" };
+        if (contact.phone === "") { msg += "Digite seu telefone |\n" };
+        if (contact.comments === "") { msg += "Digite seu assunto\n" };
+        if (msg !== "") {
+            setMsg(msg)
+            return false;
+        };
+        return true;
+    };
+
+    function contactClearFields() {
+        contacts.name = ""
+        contacts.email = ""
+        contacts.phone = ""
+        contacts.comments = ""
+    }
+
     function handleSubmit(e: Event) {
         e.preventDefault();
-        if (
-            contacts.name != "" &&
-            contacts.phone != "" &&
-            contacts.email != "" &&
-            contacts.comments != "") {
-            // console.log(contacts)
+        if (contactValFields(contacts)) {
             postRegister(contacts, "contact")
-            contacts.name = "";
-            contacts.phone = "";
-            contacts.email = "";
-            contacts.comments = "";
+            contactClearFields();
         }
     }
 
@@ -47,6 +61,7 @@ export function Contacts() {
             <ContactForm
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
+                msg={msg}
             >
                 {contacts}
             </ContactForm>
