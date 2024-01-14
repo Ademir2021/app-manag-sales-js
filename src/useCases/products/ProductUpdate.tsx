@@ -45,10 +45,6 @@ export function ProductUpdate() {
     const [dropdown, setDropdown] = useState<string>("");
     const modalRef = useRef<any>(null);
 
-    /**
-     * 
-     * @param product_ 
-     */
     function listUpdate(product_: TProductRegister) {
         product.id_product = product_.id_product
         product.descric_product = product_.descric_product
@@ -59,57 +55,30 @@ export function ProductUpdate() {
         product.bar_code = product_.bar_code
         product.image = product_.image
         toggleDropdown()
-    };
+    }
 
-    /**
-     * Listar Produtos
-     */
     async function getProducts() {
         await api.get<TProductRegister[]>(`/products/${isLogged[0].id}`)
-            .then(response => {
-                setProducts(response.data)
-            })
+            .then(response => {setProducts(response.data)})
             .catch(error => alert(error));
-    };
-    useEffect(() => {
-        getProducts()
-    }, []);
+    }
+    useEffect(() => {getProducts()}, []);
 
-    /**
-     * Listar Marcas
-     */
     async function getBrands() {
         try {
             await api.get<TBrand[]>('/brands')
-                .then(response => {
-                    setBrand(response.data);
-                });
-        } catch (err) {
-            alert("error occurred !!" + err);
-        }
-    };
+             .then(response => {setBrand(response.data)});
+        } catch (err) {alert("error occurred !!" + err);}
+    }
+    useEffect(() => {getBrands()}, [])
 
-    useEffect(() => {
-        getBrands()
-    }, [])
-
-    /**
-     * Listar Setores
-     */
     async function getSectors() {
         try {
             await api.get<TSector[]>('/sectors')
-                .then(response => {
-                    setSector(response.data);
-                });
-        } catch (err) {
-            alert("error occurred !!" + err);
-        }
-    };
-
-    useEffect(() => {
-        getSectors()
-    }, [])
+                .then(response => { setSector(response.data) });
+        } catch (err) { alert("error occurred !!" + err) }
+    }
+    useEffect(() => { getSectors() }, [])
 
     function toggleDropdown(): void {
         setDropdown("modal-show");
@@ -152,29 +121,19 @@ export function ProductUpdate() {
         alert("Digite um novo produto !!")
     };
 
-    /**
-     * Setar nome do Produto
-     * @param idBrand
-     * @returns 
-     */
-    function  nameBrands(idBrand: number) {
+    function nameBrands(idBrand: number) {
         for (let i = 0; i < brands.length; i++) {
             if (brands[i].id_brand === idBrand) {
-                const brand:string = brands[i].name_brand;
+                const brand: string = brands[i].name_brand;
                 return brand;
             }
         }
     }
 
-    /**
-     * Setar nome do Setor
-     * @param idSector
-     * @returns 
-     */
-    function  nameSector(idSector: number) {
+    function nameSector(idSector: number) {
         for (let i = 0; i < sectors.length; i++) {
             if (sectors[i].id_sector === idSector) {
-                const sector:string = sectors[i].name_sector;
+                const sector: string = sectors[i].name_sector;
                 return sector;
             }
         }
@@ -224,7 +183,7 @@ export function ProductUpdate() {
                         id={product.id_product}
                         created_at={FormatDate(product.created_at)}
                         updated_at={product.updated_at === null ?
-                            "não houve atualização"
+                            "Não houve atualização"
                             : FormatDate(product.updated_at)}
                         name={product.descric_product}
                         val_max={product.val_max_product}

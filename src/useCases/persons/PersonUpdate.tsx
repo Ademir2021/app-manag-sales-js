@@ -157,7 +157,6 @@ export function PersonUpdate() {
             alert("error occurred !!" + err)
         }
     };
-
     useEffect(() => {
         getCeps()
     }, [])
@@ -172,7 +171,6 @@ export function PersonUpdate() {
             alert("error occurred !!" + err)
         }
     };
-
     useEffect(() => {
         getCities()
     }, [])

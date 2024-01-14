@@ -60,7 +60,7 @@ export function FormPerson() {
         setPerson(values => ({ ...values, [name]: value }))
     }
 
-    async function handleSubmit(e: any) {
+    async function handleSubmit(e: Event) {
         e.preventDefault();
         if (PersonsValFields(person)) {
             person.cpf_pers = person.cpf_pers.replace(/[..-]/g, '')
@@ -81,7 +81,7 @@ export function FormPerson() {
                     setCeps(response.data)
                 })
         } catch (err) {
-            alert("error occurred !!" + err)
+            alert("error occurred !" + err)
         }
     };
     useEffect(() => {
@@ -91,14 +91,13 @@ export function FormPerson() {
     function setNumCep() {
         for (let i = 0; i < ceps.length; i++) {
             if (ceps[i].num_cep != person.num_cep) {
-                let idCep: number = ceps[i].id_cep;
                 person.fk_cep = undefined
                 setPerson(person)
             }
         }
         for (let i = 0; i < ceps.length; i++) {
             if (ceps[i].num_cep === person.num_cep) {
-                let idCep: number = ceps[i].id_cep;
+                const idCep: number = ceps[i].id_cep;
                 person.fk_cep = idCep;
                 setPerson(person)
             }

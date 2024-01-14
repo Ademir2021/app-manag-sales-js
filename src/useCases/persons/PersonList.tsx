@@ -16,51 +16,27 @@ export function PersonsList() {
     async function getPerson() {
         try {
             await api.get(`/persons/${isLogged[0].id}`)
-                .then(response => {
-                    setPerson(response.data)
-                })
-        } catch (err) {
-            alert("error occurred !!" + err)
-        }
+                .then(response => { setPerson(response.data) })
+        } catch (err) { alert("error occurred !!" + err) }
     };
-    useEffect(() => {
-        getPerson()
-    }, [])
+    useEffect(() => { getPerson() }, [])
 
     async function getCeps() {
         try {
             await api.get(`/ceps`)
-                .then(response => {
-                    setCeps(response.data)
-                })
-        } catch (err) {
-            alert("error occurred !!" + err)
-        }
+                .then(response => { setCeps(response.data) })
+        } catch (err) { alert("error occurred !!" + err) }
     };
-    useEffect(() => {
-        getCeps()
-    }, [])
-
+    useEffect(() => { getCeps() }, [])
 
     async function getCities() {
         try {
             await api.get(`/cities`)
-                .then(response => {
-                    setCities(response.data)
-                })
-        } catch (err) {
-            alert("error occurred !!" + err)
-        }
+                .then(response => { setCities(response.data) })
+        } catch (err) { alert("error occurred !!" + err) }
     };
-    useEffect(() => {
-        getCities()
-    }, [])
+    useEffect(() => { getCities() }, [])
 
-    /**
- * Setar o numero do CEP
- * @param idCep
- * @returns 
- */
     function numCep(idCep: number) {
         for (let i = 0; i < ceps.length; i++) {
             if (ceps[i].id_cep === idCep) {
@@ -70,11 +46,6 @@ export function PersonsList() {
         }
     }
 
-    /**
-* Setar o numero do CEP
-* @param idCity
-* @returns 
-*/
     function nameCity(idCity: number) {
         for (let i = 0; i < cities.length; i++) {
             if (cities[i].id_city === idCity) {
@@ -84,9 +55,9 @@ export function PersonsList() {
         }
     }
 
-    function uf(idCity: number) {
+    function uf(ufCity: number) {
         for (let i = 0; i < cities.length; i++) {
-            if (cities[i].id_city === idCity) {
+            if (cities[i].id_city === ufCity) {
                 const uf: String = cities[i].uf;
                 return uf;
             }

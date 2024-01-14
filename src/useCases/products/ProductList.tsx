@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { FormatDate } from "../../components/utils/formatDate";
 import { ProductList } from "../../components/products/ProductList";
 import { TBrand, TProductRegister, TSector } from "./type/TypeProducts";
@@ -11,90 +11,53 @@ export function ProductsList() {
     const [brands, setBrand] = useState<TBrand[]>([]);
     const [sectors, setSector] = useState<TSector[]>([]);
 
-    /**
-     * Listar Produtos
-     */
     async function getProducts() {
         try {
             await api.get<TProductRegister[]>('/products_home')
-                .then(response => {
-                    setProducts(response.data);
-                });
-        } catch (err) {
-            alert("error occurred !!" + err);
-        }
+                .then(response => { setProducts(response.data) });
+        } catch (err) { alert("error occurred !!" + err); }
     };
-    useEffect(() => {
-        getProducts()
-    }, [])   
+    useEffect(() => { getProducts() }, [])
 
-    /**
-     * Listar Marca
-     */
     async function getBrands() {
         try {
             await api.get<TBrand[]>('/brands')
-                .then(response => {
-                    setBrand(response.data);
-                });
-        } catch (err) {
-            alert("error occurred !!" + err);
-        }
+                .then(response => { setBrand(response.data) });
+        } catch (err) { alert("error occurred !!" + err) }
     };
-    useEffect(() => {
-        getBrands()
-    }, [])
+    useEffect(() => { getBrands() }, [])
 
-    /**
-     * Listar Setor
-     */
     async function getSectors() {
         try {
             await api.get<TSector[]>('/sectors')
-                .then(response => {
-                    setSector(response.data);
-                });
-        } catch (err) {
-            alert("error occurred !!" + err);
-        }
+                .then(response => { setSector(response.data) });
+        } catch (err) { alert("error occurred !!" + err) }
     };
-    useEffect(() => {
-        getSectors()
-    }, [])
+    useEffect(() => { getSectors() }, [])
 
-    /**
-     * Setar o nome da Marca
-     * @param idBrand 
-     * @returns brand
-     */
-    function  nameBrands(idBrand: number) {
+    function nameBrands(idBrand: number) {
         for (let i = 0; i < brands.length; i++) {
             if (brands[i].id_brand === idBrand) {
-                const brand:string = brands[i].name_brand;
+                const brand: string = brands[i].name_brand;
                 return brand;
             }
         }
     }
 
-    /**
-     * Setar o nome do Setor
-     * @param idSector
-     * @returns 
-     */
-    function  nameSector(idSector: number) {
+    function nameSector(idSector: number) {
         for (let i = 0; i < sectors.length; i++) {
             if (sectors[i].id_sector === idSector) {
-                const sector:string = sectors[i].name_sector;
+                const sector: string = sectors[i].name_sector;
                 return sector;
             }
         }
     }
-    
+
     return (
         <>
             <BackHome />
-            { products.length === 0 ? <p>Carregando...</p> : (
-                 products.map((product: TProductRegister) => (
+            {products.length === 0 ? <p>Carregando...</p> : (
+                products.map((product: TProductRegister) => (
                     <ProductList
                         key={product.id_product}
                         id={product.id_product}

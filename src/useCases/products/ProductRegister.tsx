@@ -28,15 +28,13 @@ export function FormProduct() {
     product.fk_brand = selectedIdBrand;
     product.fk_sector = selectedIdSector;
 
-    console.log(product)
-
     const handleChange = (e: any) => {
         const name = e.target.name;
         const value = e.target.value;
         setProduct(values => ({ ...values, [name]: value }))
     };
 
-    async function handleSubmit(e: any) {
+    async function handleSubmit(e: Event) {
         e.preventDefault();
         if (ProductValFields(product)) {
             postRegister(product, 'products')
@@ -46,32 +44,18 @@ export function FormProduct() {
     async function getBrands() {
         try {
             await api.get<TBrand[]>('/brands')
-                .then(response => {
-                    setBrand(response.data);
-                });
-        } catch (err) {
-            alert("error occurred !!" + err);
-        }
-    };
-
-    useEffect(() => {
-        getBrands()
-    }, [])
+                .then(response => { setBrand(response.data) });
+        } catch (err) { alert("error occurred !!" + err) }
+    }
+    useEffect(() => { getBrands() }, [])
 
     async function getSectors() {
         try {
             await api.get<TSector[]>('/sectors')
-                .then(response => {
-                    setSector(response.data);
-                });
-        } catch (err) {
-            alert("error occurred !!" + err);
-        }
-    };
-
-    useEffect(() => {
-        getSectors()
-    }, [])
+                .then(response => { setSector(response.data) });
+        } catch (err) { alert("error occurred !!" + err) }
+    }
+    useEffect(() => { getSectors() }, [])
 
     return (
         <>
@@ -81,7 +65,6 @@ export function FormProduct() {
                 handleChange={handleChange}
                 alert=""
                 message=""
-                
                 listBrand={<select
                     onChange={e => setSelectedIdBrand(e.target.value)}
                 >
