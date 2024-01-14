@@ -223,7 +223,7 @@ export function HomePage() {
             <Header
                 counter={counter !== 0 ? counter : 0}
                 subtotal={subtotal === 0 ? '' : 'Subtotal R$' + subtotal}
-                contact={<a href={Globais.URL_CENTROINFO + "/contact"} style={{ color: 'gray' }}>Fale conosco +55 (44) 98852-1033</a>}
+                contact={<a href={"/contact"} style={{ color: 'gray' }}>Fale conosco +55 (44) 98852-1033</a>}
             />
             <NavBar />
             <SearchItens

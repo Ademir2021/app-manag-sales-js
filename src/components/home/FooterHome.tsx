@@ -43,7 +43,7 @@ export function FooterHome() {
                     <div className='container-footer'>
                         <div className='main-footer'>
                             <b>Contatos</b>
-                            <a href={Globais.URL_CENTROINFO + "/contact"}>Fale conosco</a>
+                            <a href={"/contact"}>Fale conosco</a>
                             <a href='##'></a>
                             <a href='##'></a>
                             <a href='##'></a>
@@ -53,13 +53,13 @@ export function FooterHome() {
 
                 <p><a href="#"><img src="img//btn-top.png" className="btn-top" alt="Voltar ao topo."></img></a></p>
                 <hr></hr>
-                <strong>Formas de entregra - Delivery ! <a href={Globais.URL_CENTROINFO + '/contact'}><b>Sua cotação?</b></a></strong>
-                <a href={Globais.URL_CENTROINFO + '/contact'}>
+                <strong>Formas de entregra - Delivery ! <a href={'/contact'}><b>Sua cotação?</b></a></strong>
+                <a href={'/contact'}>
                     <img src='/img/formas_entrega.png' className='footer-delivery'></img>
                 </a>
                 <hr></hr>
-                <strong>Formas de pagamento - Payment ! <a href={Globais.URL_CENTROINFO + '/contact'}><b>Como Pagar?</b></a></strong>
-                <a href={Globais.URL_CENTROINFO + '/contact'}>
+                <strong>Formas de pagamento - Payment ! <a href={'/contact'}><b>Como Pagar?</b></a></strong>
+                <a href={'/contact'}>
                     <img src='/img/band_cartao_creditos.png' className='footer-payment'></img>
                 </a>
                 <hr></hr>
