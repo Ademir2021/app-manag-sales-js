@@ -69,7 +69,8 @@ export function NavBar() {
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="##" role="button" data-bs-toggle="dropdown" aria-expanded="false">Listagem</a>
+                                    <a className="nav-link dropdown-toggle" href="##" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Consultas</a>
                                     <ul className="dropdown-menu" style={{ background: 'rgb(237, 237, 237)', border: '0px solid gray', padding: '12px' }}>
                                         <li><a className="dropdown-item nav-link" href="/person_list">Pessoas</a></li>
                                         <li><a className="dropdown-item nav-link" href="/product_list">Produtos</a></li>
