@@ -10,7 +10,7 @@ import { SearchItens } from '../../components/home/SearchItens';
 import { Globais } from '../../components/globais/Globais';
 
 export function HomePage() {
-    
+
     const [id, setId] = useState<number>(1);
     let [amount, setAmount] = useState<number>(1)
     const [counter, setCounter] = useState<number>(0)
@@ -20,11 +20,11 @@ export function HomePage() {
     const [products, setProducts] = useState<TProductRegister[]>([]);
     const [listProd, setlistProd] = useState<TProductRegister[]>([]);
     const [itens, setItens] = useState<TItens[]>([]);
-    const [item, setItem] = useState<TItem>({descric:''});
+    const [item, setItem] = useState<TItem>({ descric: '' });
 
     const [brands, setBrand] = useState<TBrand[]>([]);
     const [sectors, setSector] = useState<TSector[]>([]);
-   
+
     const handleChange = (e: any) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -38,8 +38,15 @@ export function HomePage() {
         try {
             await api.get<TProductRegister[]>('products_home')
                 .then(response => {
-                    setProducts(response.data)
-                    setlistProd(response.data)
+                    const resultProducts: TProductRegister[] = []
+                    const items: TProductRegister[] = response.data
+                    for (let i = 0; items.length > i; i++) {
+                        if (items[i].fk_sector != 7 && items[i].fk_sector != 6) { // Remover grupo especifico.
+                            resultProducts.push(items[i])
+                            setProducts(resultProducts)
+                            setlistProd(resultProducts)
+                        }
+                    }
                 })
         } catch (err) {
             console.log("error occurred !" + err)
@@ -50,17 +57,17 @@ export function HomePage() {
         getProducts()
 
         const res_itens = localStorage.getItem('p');
-        if(res_itens !== null ){
-        setItens(JSON.parse(res_itens));
+        if (res_itens !== null) {
+            setItens(JSON.parse(res_itens));
         }
 
         const res_counter = localStorage.getItem('c');
-        if(res_counter !== null ){
-        setCounter(JSON.parse(res_counter));
+        if (res_counter !== null) {
+            setCounter(JSON.parse(res_counter));
         }
         const res_sub_total = localStorage.getItem('t');
-        if(res_sub_total !== null ){
-        setsubtotal(JSON.parse(res_sub_total))
+        if (res_sub_total !== null) {
+            setsubtotal(JSON.parse(res_sub_total))
         }
 
     }, [item, itens]);
@@ -115,7 +122,7 @@ export function HomePage() {
             if (itens[i].item === item.id_product) {
                 setMessages('Adicionado ' + itens[i].amount +
                     ' UN ' + item.descric_product);
-                    setTimeout(() => {setMessages('')},9000)
+                setTimeout(() => { setMessages('') }, 9000)
             }
         }
     };
@@ -131,26 +138,26 @@ export function HomePage() {
                 for (let j = 0; products.length > j; j++) {
                     if (num_sector === products[j].fk_sector) {
                         res.push(products[j])
-                        setlistProd(res);
+                        setlistProd(res)
                     }
                 }
             }
         }
     };
 
-    function handleAmountIncrement(){
-        amount ++
+    function handleAmountIncrement() {
+        amount++
         setAmount(amount);
     };
-    function handleAmountDecrement(){
-        if(amount > 1){
-        amount --
-        setAmount(amount);
+    function handleAmountDecrement() {
+        if (amount > 1) {
+            amount--
+            setAmount(amount);
         }
     };
-    
+
     /**
-     * Listar Produto
+     * Listar Marcas
      */
     async function getBrands() {
         try {
@@ -188,10 +195,10 @@ export function HomePage() {
      * @param idBrand
      * @returns brand
      */
-    function  nameBrands(idBrand: number) {
+    function nameBrands(idBrand: number) {
         for (let i = 0; i < brands.length; i++) {
             if (brands[i].id_brand === idBrand) {
-                const brand:string = brands[i].name_brand;
+                const brand: string = brands[i].name_brand;
                 return brand;
             }
         }
@@ -202,33 +209,33 @@ export function HomePage() {
      * @param brName setar nome do setor
      * @returns 
      */
-    function  nameSector(brName: number) {
+    function nameSector(brName: number) {
         for (let i = 0; i < sectors.length; i++) {
             if (sectors[i].id_sector === brName) {
-                const sector:string = sectors[i].name_sector;
+                const sector: string = sectors[i].name_sector;
                 return sector;
             }
         }
     }
 
     return (
-        <> 
+        <>
             <Header
                 counter={counter !== 0 ? counter : 0}
                 subtotal={subtotal === 0 ? '' : 'Subtotal R$' + subtotal}
-                contact={<a href={Globais.URL_CENTROINFO + "/contact"} style={{color:'gray'}}>Fale conosco +55 (44) 98852-1033</a>}
-                />
-            <NavBar/>
-                <SearchItens
+                contact={<a href={Globais.URL_CENTROINFO + "/contact"} style={{ color: 'gray' }}>Fale conosco +55 (44) 98852-1033</a>}
+            />
+            <NavBar />
+            <SearchItens
                 messageItems={messages}
-                       list={<select>{products.map((product) => (
-                           <option key={product.id_product}>
+                list={<select>{products.map((product) => (
+                    <option key={product.id_product}>
                         {product.descric_product}</option>))}
                 </select>}
                 descric={item.descric}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
-                />
+            />
             {(listProd.map((item: TProductRegister) => (
                 <ListItens
                     key={item.id_product}
@@ -240,14 +247,14 @@ export function HomePage() {
                     descric={item.descric_product}
                     amount={item.amount}
                     valor={item.val_max_product}
-                    
+
                     addItem={<button className='btn btn-primary' onClick={() =>
-                        handleItem(item)}>Comprar <b>{amount}</b> Item</button>} 
-                        
-                    decrementAmount={<button style={{display:'contents',color:'red', fontSize:'14px'}} onClick={() =>
+                        handleItem(item)}>Comprar <b>{amount}</b> Item</button>}
+
+                    decrementAmount={<button style={{ display: 'contents', color: 'red', fontSize: '14px' }} onClick={() =>
                         handleAmountDecrement()}>Diminuir -</button>}
-                        
-                    incrementAmount={<button style={{display:'contents', color:'green' , fontSize:'14px'}} onClick={() =>
+
+                    incrementAmount={<button style={{ display: 'contents', color: 'green', fontSize: '14px' }} onClick={() =>
                         handleAmountIncrement()}>+ Aumentar</button>}
 
                 />
