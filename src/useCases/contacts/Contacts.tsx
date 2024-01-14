@@ -32,8 +32,12 @@ export function Contacts() {
             contacts.phone != "" &&
             contacts.email != "" &&
             contacts.comments != "") {
-            console.log(contacts)
+            // console.log(contacts)
             postRegister(contacts, "contact")
+            contacts.name = "";
+            contacts.phone = "";
+            contacts.email = "";
+            contacts.comments = "";
         }
     }
 
