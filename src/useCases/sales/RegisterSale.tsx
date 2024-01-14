@@ -19,10 +19,10 @@ export function RegisterSale() {
     const [totalItens, setTotalItens] = useState<number>(0)
     const [statusBtnSaleSubmit, setStatusBtnSaleSubmit] = useState<"Iniciar Pedido" | "Faturar Pedido">("Iniciar Pedido");
     const [statusBtnSaveUpdate, setStatusBtnSaveUpdate] = useState<"Salvar Item" | "Atualizar Item">("Salvar Item");
-    const [itemImg, setIemImg] = useState<string>('./img/img_itens/sale_init.png');
+    const [itemImg, setIemImg] = useState<string>('./img/img_itens/sale_avatar.png');
     const [itenStorage, setItenStorage] = useState<TItens[]>([]);
     const [statuStore, setStatuStore] = useState<boolean>(false)
-     
+
     const handleChange = (e: any) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -32,17 +32,10 @@ export function RegisterSale() {
     const getProducts = useCallback(async () => {
         try {
             await api.get<TProductRegister[]>('/products_home')
-                .then(response => {
-                    setProducts(response.data)
-                })
-        } catch (err) {
-            console.log("error occurred !" + err)
-        }
-    },[setProducts]);
-
-    useEffect(() => {
-        getProducts()
-    },[setProduct]);
+                .then(response => { setProducts(response.data) })
+        } catch (err) { console.log("error occurred !" + err) }
+    }, [setProducts]);
+    useEffect(() => { getProducts() }, [setProduct]);
 
     function updateListProduct(item: TItens) {
         setStatusBtnSaveUpdate("Atualizar Item");
@@ -54,10 +47,10 @@ export function RegisterSale() {
         product.valor = item.valor;
         product.tItem = item.amount * item.valor;
         product.image = item.image;
-        if(product.image === null){
+        if (product.image === null) {
             setIemImg('./img/img_itens/sale_avatar.png')
-        }else{
-        findProducts();
+        } else {
+            findProducts();
         }
     };
 
@@ -75,10 +68,10 @@ export function RegisterSale() {
                 product.descric = products[i].descric_product;
                 product.valor = products[i].val_max_product;
                 product.tItem = product.valor * product.amount;
-                if(products[i].image === null){
+                if (products[i].image === null) {
                     setIemImg('./img/img_itens/sale_avatar.png')
-                }else{
-                setIemImg("./img/img_itens/" + products[i].image);
+                } else {
+                    setIemImg("./img/img_itens/" + products[i].image);
                 }
             }
         }
@@ -106,7 +99,7 @@ export function RegisterSale() {
             setId(id + 1);
             return itens.push(product)
         } else {
-            alert("Item não existe")
+            alert("Item não localizado")
         }
     };
 
@@ -145,7 +138,7 @@ export function RegisterSale() {
             sumItens();
             openClearNewSale();
             setEditId(null);
-             setPreco(0);
+            setPreco(0);
         }
     };
 
@@ -202,32 +195,32 @@ export function RegisterSale() {
 
     function searchItem(e: Event) {
         e.preventDefault();
-        if(statuStore === false){
-        itensStore()
-        setStatuStore(true)
-        sumItens()
+        if (statuStore === false) {
+            itensStore()
+            setStatuStore(true)
+            sumItens()
         }
         findProducts();
         setPreco(product.valor);
     };
 
-    function itensStore(){
+    function itensStore() {
         const itens_store_res: [] | any = localStorage.getItem('p');
-               if (itens_store_res !== null) {
-                const itens_store:TItens[] = JSON.parse(itens_store_res)
-                   setItenStorage(itens_store);
-                 for(let i = 0; itenStorage.length > i; i++){
+        if (itens_store_res !== null) {
+            const itens_store: TItens[] = JSON.parse(itens_store_res)
+            setItenStorage(itens_store);
+            for (let i = 0; itenStorage.length > i; i++) {
                 itens.push(itenStorage[i]);
                 setItens(itens)
                 const res_id: any = localStorage.getItem('id');
                 setId(JSON.parse(res_id))
-                 }  
             }
-       };
+        }
+    };
 
-       useEffect(() => {
-           itensStore()
-       },[]);   
+    useEffect(() => {
+        itensStore()
+    }, []);
 
     return (
         <>

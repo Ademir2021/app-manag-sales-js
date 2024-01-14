@@ -1,6 +1,7 @@
 import './SaleForm.css'
 
 import { Thead } from '../dashboard/Thead';
+import { Globais } from '../globais/Globais';
 
 type TRegisterSaleForm = {
   children: string | number | readonly string[] | undefined | any;
@@ -40,6 +41,7 @@ export function RegisterSaleForm({
 
   return (
     <>
+    <p></p>
       <div className="container-sale">
         <div className="main-sale">
           <form className='main-sale-register' >
