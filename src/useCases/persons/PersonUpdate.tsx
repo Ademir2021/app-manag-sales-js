@@ -90,10 +90,8 @@ export function PersonUpdate() {
             person.cpf_pers = person.cpf_pers.replace(/[..-]/g, '')
             person.phone_pers = person.phone_pers.replace(/[()-]/g, '')
             postRegister(person, 'persons')
-        } else {
-            alert("Digite um novo usuário")
-        }
-    };
+        } else { alert("Digite um novo usuário") }
+    }
 
     async function handleUpdate(e: Event) {
         e.preventDefault();
@@ -103,12 +101,10 @@ export function PersonUpdate() {
             person.phone_pers = person.phone_pers.replace(/[()-]/g, '')
             if (person.fk_cep === undefined) {
                 alert('Digite um Cep válido')
-            } else {
-                putUpdate(person.id_person, person, 'persons')
-            }
+            } else { putUpdate(person.id_person, person, 'persons') }
             getPersons()
         }
-    };
+    }
 
     async function handleDelete(e: Event) {
         e.preventDefault();
@@ -129,7 +125,7 @@ export function PersonUpdate() {
         })
         person.fk_id_user = isLogged[0].id
         alert("Digite um novo usuário !!")
-    };
+    }
 
     function toggleDropdown(): void {
         setDropdown("modal-show");
@@ -150,71 +146,48 @@ export function PersonUpdate() {
     async function getCeps() {
         try {
             await api.get(`/ceps`)
-                .then(response => {
-                    setCeps(response.data)
-                })
-        } catch (err) {
-            alert("error occurred !!" + err)
-        }
-    };
-    useEffect(() => {
-        getCeps()
-    }, [])
+                .then(response => { setCeps(response.data) })
+        } catch (err) { alert("error occurred !!" + err) }
+    }
+    useEffect(() => { getCeps() }, [])
 
     async function getCities() {
         try {
             await api.get(`/cities`)
-                .then(response => {
-                    setCities(response.data)
-                })
-        } catch (err) {
-            alert("error occurred !!" + err)
-        }
-    };
-    useEffect(() => {
-        getCities()
-    }, [])
+                .then(response => { setCities(response.data) })
+        } catch (err) { alert("error occurred !!" + err) }
+    }
+    useEffect(() => { getCities() }, [])
 
-    function numCep(idCep: number) {
+    function setCep(idCep: number) {
         for (let i = 0; i < ceps.length; i++) {
             if (ceps[i].id_cep === idCep) {
-                const cep: String = ceps[i].num_cep;
-                return cep;
+                return ceps[i];
             }
         }
-    };
+    }
 
-    function setNumCep(numCep: string) { // Busca e valida o CEP
+    function setCity(idCep: number) {
+        for (let i = 0; i < cities.length; i++) {
+            if (cities[i].id_city === idCep) {
+                return cities[i];
+            }
+        }
+    }
+
+    const setNumCep = (numCep: string) => { // Busca e valida o CEP
         for (let i = 0; i < ceps.length; i++) {
             if (ceps[i].num_cep === numCep) {
                 const idCep: number = ceps[i].id_cep;
                 return idCep;
             }
-        };
+        }
         for (let i = 0; i < ceps.length; i++) {
             if (ceps[i].num_cep !== numCep) {
                 return undefined;
             }
-        };
-    };
-
-    function nameCity(idCity: number) {
-        for (let i = 0; i < cities.length; i++) {
-            if (cities[i].id_city === idCity) {
-                const city: string = cities[i].name_city;
-                return city;
-            }
         }
-    };
-
-    function uf(idCity: number) {
-        for (let i = 0; i < cities.length; i++) {
-            if (cities[i].id_city === idCity) {
-                const uf: string = cities[i].uf;
-                return uf;
-            }
-        }
-    };
+    }
 
     return (
         <>
@@ -244,9 +217,9 @@ export function PersonUpdate() {
                         phone={person.phone_pers}
                         address={person.address_pers}
                         bairro={person.bairro_pers}
-                        num_cep={person.num_cep = numCep(person.fk_cep)}
-                        name_city={person.name_city = nameCity(person.fk_cep)}
-                        uf={person.uf = uf(person.fk_cep)}
+                        num_cep={person.num_cep = setCep(person.fk_cep)?.num_cep}
+                        name_city={person.name_city = setCity(person.fk_cep)?.name_city}
+                        uf={person.uf = setCity(person.fk_cep)?.uf}
                         cpf={person.cpf_pers}
                         id_user={person.fk_id_user}
                         filial={person.fk_name_filial}

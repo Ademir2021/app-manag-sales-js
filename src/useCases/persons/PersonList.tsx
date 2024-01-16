@@ -37,29 +37,18 @@ export function PersonsList() {
     };
     useEffect(() => { getCities() }, [])
 
-    function numCep(idCep: number) {
+    function setCep(idCep: number) {
         for (let i = 0; i < ceps.length; i++) {
             if (ceps[i].id_cep === idCep) {
-                const cep: String = ceps[i].num_cep;
-                return cep;
+                return ceps[i];
             }
         }
     }
 
-    function nameCity(idCity: number) {
+    function setCity(idCep: number) {
         for (let i = 0; i < cities.length; i++) {
-            if (cities[i].id_city === idCity) {
-                const city: String = cities[i].name_city;
-                return city;
-            }
-        }
-    }
-
-    function uf(ufCity: number) {
-        for (let i = 0; i < cities.length; i++) {
-            if (cities[i].id_city === ufCity) {
-                const uf: String = cities[i].uf;
-                return uf;
+            if (cities[i].id_city === idCep) {
+                return cities[i]
             }
         }
     }
@@ -79,9 +68,9 @@ export function PersonsList() {
                         phone={person.phone_pers}
                         address={person.address_pers}
                         bairro={person.bairro_pers}
-                        num_cep={person.num_cep = numCep(person.fk_cep)}
-                        name_city={nameCity(person.fk_cep)}
-                        uf={uf(person.fk_cep)}
+                        num_cep={person.num_cep = setCep(person.fk_cep)?.num_cep}
+                        name_city={setCity(person.fk_cep)?.name_city}
+                        uf={setCity(person.fk_cep)?.uf}
                         cpf={person.cpf_pers}
                         id_user={person.id_person}
                         filial={person.fk_name_filial}
