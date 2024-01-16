@@ -48,26 +48,11 @@ export function ProductForm({
                         value={children.val_min_product || ""}
                         onChange={handleChange}
                     />
-                    {/* <input
-                        type="number"
-                        name="fk_brand"
-                        placeholder='marca'
-                        value={children.fk_brand || ""}
-                        onChange={handleChange}
-                    /> */}
 
                     <label>
                         <strong>Selecione uma Marca </strong>
                         {listBrand}
                     </label>
-
-                    {/* <input
-                        type="number"
-                        name="fk_sector"
-                        placeholder='setor'
-                        value={children.fk_sector || ""}
-                        onChange={handleChange}
-                    /> */}
 
                     <label>
                         <strong>Selecione um Setor</strong>

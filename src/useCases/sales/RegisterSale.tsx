@@ -94,7 +94,7 @@ export function RegisterSale() {
         if (product.item !== 0) {
             for (let i = 0; itens.length > i; i++)
                 if (product.item === itens[i].item && editId == null) {
-                    return alert("Producto já foi lançado")
+                    return alert("Item já foi lançado")
                 }
             setId(id + 1);
             return itens.push(product)
@@ -108,7 +108,7 @@ export function RegisterSale() {
             if (product.item === itens[i].item && editId !== null) {
                 itens[i].amount = product.amount
                 itens[i].tItem = product.amount * product.valor
-                return alert("Producto já foi lançado ! a quantidade é de " + product.amount + " item(s)")
+                return alert("Item já foi lançado ! a quantidade é de " + product.amount + " item(s)")
             }
         deleteProduct();
         setItens(itens);
