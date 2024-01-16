@@ -3,16 +3,16 @@ import InputMask from "react-input-mask";
 import '../global-module.css'
 
 type PropsPersonsFormUpdate = {
-    children: string | number | readonly string[] | undefined | any;
-    handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
-    handleSubmit: any;
-    handleUpdate: any;
-    handleDelete: any;
-    modalRef?: any;
-    className?: string;
-    close?: any;
-    alert: string;
-    message: string;
+    children: string | number | readonly string[] | undefined | any
+    handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined
+    handleSubmit: any
+    handleUpdate: any
+    handleDelete: any
+    modalRef?: any
+    className?: string
+    close?: any
+    alert: string
+    message: string
 }
 
 export function PersonFormUpdate({

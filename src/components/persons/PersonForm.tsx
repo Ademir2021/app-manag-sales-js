@@ -4,11 +4,11 @@ import InputMask from "react-input-mask";
 import '../../components/global-module.css'
 
 type IPersonForm = {
-    children: string | number | readonly string[] | undefined | any;
-    handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+    children: string | number | readonly string[] | undefined | any
+    handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined
     handleSubmit: any
-    message: string;
-    alert: string;
+    message: string
+    alert: string
 }
 
 export function PersonForm({

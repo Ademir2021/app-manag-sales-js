@@ -1,19 +1,19 @@
 import '../global-module.css'
 
 export type Props = {
-    id_person: any;
-    created_at: Date | any;
-    updated_at: Date | any;
+    id_person: number
+    created_at: Date | any
+    updated_at: Date | any
     name: string
-    cpf: string;
-    phone: string;
-    address: string;
-    bairro:string;
-    num_cep:String | undefined;
-    name_city:String | undefined;
-    uf:String | undefined;
-    filial: number;
-    id_user: number;
+    cpf: string
+    phone: string
+    address: string
+    bairro:string
+    num_cep:string | undefined
+    name_city:string | undefined
+    uf:string | undefined
+    filial: number
+    id_user: number
     update: any
 }
 
@@ -25,7 +25,7 @@ export const PersonList = (props: Props) => {
                 <strong>Id</strong>{props.id_person}<br />
                 <strong>Data cadastro</strong> {props.created_at}<br />
                 <strong>Atualizado</strong>{props.updated_at}<br />
-                <strong>Nome pessoa</strong>{props.name}<br />
+                <strong>Nome</strong>{props.name}<br />
                 <strong>CPF</strong> {props.cpf}<br />
                 <strong>Telefone</strong>{props.phone}<br />
                 <strong>Endereço</strong>{props.address}<br />

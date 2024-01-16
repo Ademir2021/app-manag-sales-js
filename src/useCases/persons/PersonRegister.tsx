@@ -6,32 +6,30 @@ import { Dashboard } from "../dashboard/Dashboard";
 import api from "../../services/api/api";
 
 export type TPersonRegister = {
-    id_person?: number | any;
-    created_at?: Date | any;
-    updated_at?: Date | any;
-    name_pers: string | any;
-    cpf_pers: string;
-    phone_pers: string;
-    address_pers: string;
-    bairro_pers: string;
-    fk_cep: number | undefined | any;
-    num_cep: string | undefined | any;
-    name_city: string | undefined | any;
-    uf: string | undefined;
-    fk_name_filial: number;
-    fk_id_user: number;
-};
-
+    id_person?: number | any
+    created_at?: Date | any
+    updated_at?: Date | any
+    name_pers: string | any
+    cpf_pers: string
+    phone_pers: string
+    address_pers: string
+    bairro_pers: string
+    fk_cep: number | undefined | any
+    num_cep: string | undefined | any
+    name_city: string | undefined | any
+    uf: string | undefined
+    fk_name_filial: number
+    fk_id_user: number
+}
 export type TCeps = {
-    id_cep: number;
-    num_cep: string;
-};
-
+    id_cep: number
+    num_cep: string
+}
 export type TCities = {
-    id_city: number;
-    name_city: string;
-    uf: string;
-};
+    id_city: number
+    name_city: string
+    uf: string
+}
 
 export function FormPerson() {
     const [person, setPerson] = useState<TPersonRegister>({
