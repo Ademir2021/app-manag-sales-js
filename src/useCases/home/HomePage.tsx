@@ -226,6 +226,7 @@ export function HomePage() {
                 contact={<a href={"/contact"} style={{ color: 'gray' }}>Fale conosco +55 (44) 98852-1033</a>}
             />
             <NavBar />
+            <h3><b><strong><a href='form_person'>Cadastre-se em nosso site e receba promoções imperdíveis</a></strong></b></h3>
             <SearchItens
                 messageItems={messages}
                 list={<select>{products.map((product) => (

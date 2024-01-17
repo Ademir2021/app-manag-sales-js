@@ -25,7 +25,6 @@ export  class Globais {
     static address = 'Avenida Castro Alves 1241, Barbosa Ferraz, PR. CEP 86960-000';
     static phone = '+55 (44) 98852-1033'
     static title = 'centroinfo store-online';
-
     
     static URL = 'https://centroinfo.com.br'
     static API_URL = 'https://api-centroinfo-05e63255c453.herokuapp.com'
