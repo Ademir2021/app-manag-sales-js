@@ -114,14 +114,14 @@ export function Ceps() {
 
     function cepValFields(cep: ICeps) {
         let msg = ""
-        if (cep.num_cep === "") { msg += "Digite um CEP válido |\n" };
-        if (cep.public_place === "") { msg += "Digite seu Logradouro | \n" };
-        if (cep.type_cep === "") { msg += "Digite tipo de Cep |\n" };
-        if (cep.num_initial === 0) { msg += "Digite num inicial\n" };
-        if (cep.num_final === 0) { msg += "Digite num final\n" };
-        if (cep.complement === "") { msg += "Digite um complemento\n" };
-        if (checkCepExist() === true) { msg += "Cep já existe\n" };
-        if (selectedUf === "Selecione um Estado") { msg += "Selecione um Estado\n" };
+        if (cep.num_cep === "") { msg += "Digite um CEP válido ! _\n" };
+        if (cep.public_place === "") { msg += "Digite seu Logradouro ! _ \n" };
+        if (cep.type_cep === "") { msg += "Digite tipo de Cep ! _\n" };
+        if (cep.num_initial === 0) { msg += "Digite num inicial ! _\n" };
+        if (cep.num_final === 0) { msg += "Digite num final ! _\n" };
+        if (cep.complement === "") { msg += "Digite um complemento ! _\n" };
+        if (checkCepExist() === true) { msg += "Cep já existe ! _\n" };
+        if (selectedUf === "Selecione um Estado") { msg += "Selecione um Estado ! _\n" };
         if (selectedNameCity === undefined) { msg += "Selecione uma Cidade\n" };
         if (msg !== "") {
             setMessage(msg)
