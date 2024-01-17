@@ -7,7 +7,6 @@ import { Header } from '../../components/home/Header';
 import { FooterHomePage } from './FooterHome';
 import { Whats } from '../../components/whats/Whats';
 import { SearchItens } from '../../components/home/SearchItens';
-import { Globais } from '../../components/globais/Globais';
 
 export function HomePage() {
 
@@ -31,9 +30,6 @@ export function HomePage() {
         setItem(values => ({ ...values, [name]: value }))
     };
 
-    /**
-     * Listar Produtos
-     */
     const getProducts = useCallback(async () => {
         try {
             await api.get<TProductRegister[]>('products_home')
@@ -70,7 +66,7 @@ export function HomePage() {
             setsubtotal(JSON.parse(res_sub_total))
         }
 
-    }, [item, itens]);
+    }, [item, itens])
 
     function sumItens() {
         let sum = 0
@@ -80,7 +76,7 @@ export function HomePage() {
         setsubtotal(sum)
         localStorage.setItem("t", JSON.stringify(sum));
         return sum
-    };
+    }
 
     function verifItem(element: TItens) {
         for (let i = 0; itens.length > i; i++)
@@ -92,7 +88,7 @@ export function HomePage() {
         localStorage.setItem("c", JSON.stringify(counter + 1));
         setId(id + 1);
         return itens.push(element);
-    };
+    }
 
     function handleItem(item: TProductRegister) {
         const getItem: TItens = {
@@ -125,7 +121,7 @@ export function HomePage() {
                 setTimeout(() => { setMessages('') }, 9000)
             }
         }
-    };
+    }
 
     function handleSubmit(e: Event) {
         e.preventDefault()
@@ -143,22 +139,19 @@ export function HomePage() {
                 }
             }
         }
-    };
+    }
 
     function handleAmountIncrement() {
         amount++
         setAmount(amount);
-    };
+    }
     function handleAmountDecrement() {
         if (amount > 1) {
             amount--
             setAmount(amount);
         }
-    };
+    }
 
-    /**
-     * Listar Marcas
-     */
     async function getBrands() {
         try {
             await api.get<TBrand[]>('/brands')
@@ -173,9 +166,6 @@ export function HomePage() {
         getBrands()
     }, [])
 
-    /**
-     * Listar Setor
-     */
     async function getSectors() {
         try {
             await api.get<TSector[]>('/sectors')
@@ -190,30 +180,19 @@ export function HomePage() {
         getSectors()
     }, [])
 
-    /**
-     * setar nome da Marca
-     * @param idBrand
-     * @returns brand
-     */
     function nameBrands(idBrand: number) {
         for (let i = 0; i < brands.length; i++) {
             if (brands[i].id_brand === idBrand) {
-                const brand: string = brands[i].name_brand;
-                return brand;
+                return brands[i].name_brand;
+
             }
         }
     }
 
-    /**
-     * 
-     * @param brName setar nome do setor
-     * @returns 
-     */
-    function nameSector(brName: number) {
+    function nameSector(idSector: number) {
         for (let i = 0; i < sectors.length; i++) {
-            if (sectors[i].id_sector === brName) {
-                const sector: string = sectors[i].name_sector;
-                return sector;
+            if (sectors[i].id_sector === idSector) {
+                return sectors[i].name_sector;
             }
         }
     }
@@ -257,7 +236,6 @@ export function HomePage() {
 
                     incrementAmount={<button style={{ display: 'contents', color: 'green', fontSize: '14px' }} onClick={() =>
                         handleAmountIncrement()}>+ Aumentar</button>}
-
                 />
             )))}
             <Whats />
