@@ -33,8 +33,13 @@ export function ProductUpdate() {
         image: ''
     });
     
+    /** atualiza a marca somente se selecionar */
+    if(selectedIdBrand !== 1){ 
     product.fk_brand = selectedIdBrand;
+    }
+    if(selectedIdSector !== 1){
     product.fk_sector = selectedIdSector;
+    }
 
     const handleChange = (e: any) => {
         const name = e.target.name;
