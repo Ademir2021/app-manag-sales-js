@@ -15,11 +15,11 @@ export function ProductUpdate() {
 
     const [brands, setBrand] = useState<TBrand[]>([]);
     const [sectors, setSector] = useState<TSector[]>([]);
-
+    
+    const { user: isLogged }: any = useContext(AuthContext);
+    
     const [selectedIdBrand, setSelectedIdBrand] = useState<any>(1);
     const [selectedIdSector, setSelectedIdSector] = useState<any>(1);
-
-    const { user: isLogged }: any = useContext(AuthContext);
 
     const [products, setProducts] = useState<TProductRegister[]>([])
     const [product, setProduct] = useState<TProductRegister>({
@@ -32,7 +32,7 @@ export function ProductUpdate() {
         bar_code: '',
         image: ''
     });
-
+    
     product.fk_brand = selectedIdBrand;
     product.fk_sector = selectedIdSector;
 
@@ -51,7 +51,7 @@ export function ProductUpdate() {
         product.val_max_product = product_.val_max_product
         product.val_min_product = product_.val_min_product
         product.fk_brand = product_.fk_brand
-        product.fk_sector = product_.fk_sector
+        product.fk_sector = product_.fk_sector    
         product.bar_code = product_.bar_code
         product.image = product_.image
         toggleDropdown()
@@ -196,7 +196,6 @@ export function ProductUpdate() {
                             listUpdate(product)}>Atualizar</div>}
                     />
                 )))}
-
         </>
     )
 }

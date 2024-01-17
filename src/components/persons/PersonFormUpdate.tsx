@@ -136,9 +136,9 @@ export function PersonFormUpdate({
                             disabled
                             onChange={handleChange}
                         />
-                        <button onClick={handleSubmit}>Registrar</button>
                         <button onClick={handleUpdate} >Atualizar</button>
                         <button onClick={handleDelete}>Novo</button>
+                        <button onClick={handleSubmit}>Registrar</button>
                         <button onClick={close}>Sair</button>
                         <a href='###'>{'Mantenha seu cadastro atualizado'}</a>
                     </form>

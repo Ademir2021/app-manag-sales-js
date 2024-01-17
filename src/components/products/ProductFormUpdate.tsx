@@ -73,30 +73,12 @@ export function ProductFormUpdate({
                             onChange={handleChange}
                             placeholder="valor mínimo"
                         />
-                        {/* <input
-                                type="text"
-                                name="fk_brand"
-                                mask-selectonfocus="true"
-                                maxLength={14}
-                                autoComplete="off"
-                                value={children.fk_brand || ''}
-                                onChange={handleChange}
-                                placeholder="marca"
-                            /> */}
+              
                         <label>
                             <strong>Selecione uma Marca</strong>
                             {listBrand}
                         </label>
-                        {/* <input
-                            type="text"
-                            name="fk_sector"
-                            mask-selectonfocus="true"
-                            maxLength={14}
-                            autoComplete="off"
-                            value={children.fk_sector || ''}
-                            onChange={handleChange}
-                            placeholder="setor"
-                        /> */}
+            
                           <label>
                             <strong>Selecione um Setor</strong>
                             {listSector}
@@ -115,8 +97,8 @@ export function ProductFormUpdate({
                             onChange={handleChange}
                             placeholder='Imagem'
                         />
-                        <button onClick={handleSubmit}>Registrar</button>
                         <button onClick={handleUpdate}>Atualizar</button>
+                        <button onClick={handleSubmit}>Registrar</button>
                         <button onClick={handleDelete}>Novo</button>
                         <button onClick={close}>Sair</button>
                         <a href='###'>{'Mantenha seu cadastro atualizado'}</a>
