@@ -17,7 +17,6 @@ export function PersonUpdate() {
     const [ceps, setCeps] = useState<TCeps[]>([])
     const [cities, setCities] = useState<TCities[]>([])
     const [person, setPerson] = useState<TPersonRegister>({
-        id_person: 0,
         created_at: '',
         updated_at: '',
         name_pers: '',

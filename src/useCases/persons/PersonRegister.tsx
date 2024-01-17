@@ -24,6 +24,7 @@ export type TPersonRegister = {
 export type TCeps = {
     id_cep: number
     num_cep: string
+    code_city:number
 }
 export type TCities = {
     id_city: number
