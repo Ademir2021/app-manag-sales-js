@@ -21,10 +21,10 @@ export const PersonList = (props: Props) => {
     return (
         <div className="container-global" >
             <div className="main-global">
-                <span className='main-global-form'>
+                <span className="main-global-form">
                 <strong>Id</strong>{props.id_person}<br />
-                <strong>Data cadastro</strong> {props.created_at}<br />
-                <strong>Atualizado</strong>{props.updated_at}<br />
+                <strong>Data cadastro</strong><a>{props.created_at}</a><br />
+                <strong>Atualizado</strong><a>{props.updated_at}</a><br />
                 <strong>Nome</strong>{props.name}<br />
                 <strong>CPF</strong> {props.cpf}<br />
                 <strong>Telefone</strong>{props.phone}<br />
