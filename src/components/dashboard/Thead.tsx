@@ -7,7 +7,7 @@ export function Thead() {
             <thead>
                 <tr>
                 <th scope="col">Item</th>
-                <th scope="col">Descrição<object data="" type=""></object></th>
+                <th scope="col">Descrição</th>
                 <th scope="col">Unit</th>
                 <th scope="col">Valor</th>
                 <th scope="col">T-Item</th>
