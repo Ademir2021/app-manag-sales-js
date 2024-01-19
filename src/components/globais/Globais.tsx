@@ -17,7 +17,7 @@ if (H <= 12 || H >= 6) {
     }
 };
 
-const setYears = () => {
+const setMonth = () => {
     if (month === 1)
         return "Janeiro"
     else if (month === 2)
@@ -45,7 +45,7 @@ const setYears = () => {
 }
 
 export class Globais {
-    static calendar = saudacao + ' - ' + 'Hoje é ' + day + ' de ' + setYears() + ' de ' + year + ' ás ' + H + ':' + M + ':' + S
+    static calendar = saudacao + ' - ' + 'Hoje é ' + day + ' de ' + setMonth() + ' de ' + year + ' ás ' + H + ':' + M + ':' + S
     static checksUserLogged = undefined;
     static privilAdmin = '2'
     static rights_reserved = '2007 | ' + year + ', All rights reserved CENTROINFO';
