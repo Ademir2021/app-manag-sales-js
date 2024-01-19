@@ -28,7 +28,7 @@ export function ListItens(props:Props){
             <p><b>R$</b> {props.valor}</p>
             <>{props.addItem}</>
             <>{props.decrementAmount}</>
-            <></>
+            <>/</>
             <>{props.incrementAmount}</>
         </div>
     </div>

@@ -231,11 +231,11 @@ export function HomePage() {
                     addItem={<button className='btn btn-primary' onClick={() =>
                         handleItem(item)}>Comprar {amount} Item</button>}
 
-                    decrementAmount={<button style={{ display: 'contents', color: 'red', fontSize: '14px' }} onClick={() =>
-                        handleAmountDecrement()}>- </button>} 
+                    decrementAmount={<button style={{ display: 'contents', color: 'gray', fontSize: '14px'}} onClick={() =>
+                        handleAmountDecrement()}>{'Diminuir'}</button>} 
 
-                    incrementAmount={<button style={{ display: 'contents', color: 'green', fontSize: '14px' }} onClick={() =>
-                        handleAmountIncrement()}> +</button>}
+                    incrementAmount={<button style={{ display: 'contents', color: 'blue', fontSize: '14px' }} onClick={() =>
+                        handleAmountIncrement()}>{'Aumentar'}</button>}
                 />
             )))}
             <Whats />
