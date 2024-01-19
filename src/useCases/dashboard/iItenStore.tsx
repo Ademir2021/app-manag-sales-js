@@ -6,13 +6,14 @@ import { BackHome } from '../../components/utils/backHome/BackHome';
 import { Waiting } from '../../components/utils/waiting/Waiting';
 import { Messages } from '../../components/utils/messages/Messages';
 import { TItens } from '../products/type/TypeProducts';
+import { currencyFormat } from '../../components/utils/currentFormat/CurrentFormat';
 
 export function ItenStore() {
-    
+
     const [itens, setItens] = useState<TItens[]>([]);
     const [messages, setMessages] = useState<string>('');
     const [subtotal, setsubtotal] = useState<number>(0);
-    const [counter_,  setCounter] = useState<number>(0)
+    const [counter_, setCounter] = useState<number>(0)
 
     function itensStore() {
         const itens_store_res = localStorage.getItem('p');
@@ -20,17 +21,17 @@ export function ItenStore() {
             setItens(JSON.parse(itens_store_res));
         }
         const counter_res = localStorage.getItem('c');
-        if (counter_res !== null ){
-        setCounter(JSON.parse(counter_res));
+        if (counter_res !== null) {
+            setCounter(JSON.parse(counter_res));
         }
         const subTotal_res = localStorage.getItem('t');
-        if(subTotal_res !== null ){
-        setsubtotal(JSON.parse(subTotal_res));
+        if (subTotal_res !== null) {
+            setsubtotal(JSON.parse(subTotal_res));
         }
     };
     useEffect(() => {
         itensStore();
-    },[itens]);
+    }, [itens]);
 
     function sumItens() {
         let sum = 0
@@ -49,16 +50,16 @@ export function ItenStore() {
                     localStorage.setItem("p", JSON.stringify(itens));
                     setMessages(item.descric + ', foi removido com sucesso !');
                     let res_counter = localStorage.getItem('c');
-                    if(res_counter !== null ){
-                    const counter = JSON.parse(res_counter)
-                    localStorage.setItem("c", JSON.stringify(counter - 1));
-                    res_counter = localStorage.getItem('c');
-                    setCounter(counter_);
+                    if (res_counter !== null) {
+                        const counter = JSON.parse(res_counter)
+                        localStorage.setItem("c", JSON.stringify(counter - 1));
+                        res_counter = localStorage.getItem('c');
+                        setCounter(counter_);
                     }
                     sumItens()
                     setTimeout(() => {
                         setMessages('');
-                    },3000);
+                    }, 3000);
                 }
             }
         }
@@ -66,13 +67,17 @@ export function ItenStore() {
 
     return (
         <>
-            <NavBar/>
+            <NavBar />
             <BackHome />
-            {itens.length !== 0 ?  <Messages
-                    messages={messages}
-                    counter_= {counter_ + " : Item(s) comprado"}
-                    subtotal={'Subtotal: R$ ' + subtotal}/>:''}
-            {itens.length === 0 ? <Waiting waiting='Sem itens no pedido !!' /> : <Thead />}
+            <hr></hr>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '1px' }}>
+                <img style={{ width: '60px', height: '70px' }} src="img/car_sale.jpg" alt="Carrinho de Compras" /></div>
+
+            {itens.length !== 0 ? <Messages
+                messages={messages}
+                counter_={counter_ + " Items no seu carrinho de compras"}
+                subtotal={'Subtotal ' + currencyFormat(subtotal)} /> : ''}
+            {itens.length === 0 ? <Waiting waiting="Seu carrinho de compras está vazio"/> : <Thead />}
             {(itens.map((item: TItens) => (
                 <ListItensStore
                     key={item.item}

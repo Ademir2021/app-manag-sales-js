@@ -8,22 +8,22 @@ type PropsMessages = {
 export function Messages(props:PropsMessages) {
     return (
             <>
-            <p style={{
+            <b style={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 color:"red"
-            }}>{props.messages}</p>
-                <p style={{
+            }}>{props.messages}</b>
+                <b style={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-            }}>{props.counter_}</p>
-                 <p style={{
+            }}>{props.counter_}</b>
+                 <b style={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-            }}>{props.subtotal}</p>
+            }}>{props.subtotal}</b>
             </>
     )
 }
