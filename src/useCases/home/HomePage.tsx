@@ -229,13 +229,13 @@ export function HomePage() {
                     valor={item.val_max_product}
 
                     addItem={<button className='btn btn-primary' onClick={() =>
-                        handleItem(item)}>Comprar <b>{amount}</b> Item</button>}
+                        handleItem(item)}>Comprar {amount} Item</button>}
 
                     decrementAmount={<button style={{ display: 'contents', color: 'red', fontSize: '14px' }} onClick={() =>
-                        handleAmountDecrement()}>Diminuir -</button>}
+                        handleAmountDecrement()}>- </button>} 
 
                     incrementAmount={<button style={{ display: 'contents', color: 'green', fontSize: '14px' }} onClick={() =>
-                        handleAmountIncrement()}>+ Aumentar</button>}
+                        handleAmountIncrement()}> +</button>}
                 />
             )))}
             <Whats />
