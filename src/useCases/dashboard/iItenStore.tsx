@@ -77,7 +77,7 @@ export function ItenStore() {
                 messages={messages}
                 counter_={counter_ + " Items no seu carrinho de compras"}
                 subtotal={'Subtotal ' + currencyFormat(subtotal)} /> : ''}
-            {itens.length === 0 ? <Waiting waiting="Seu carrinho de compras está vazio"/> : <Thead />}
+            {itens.length === 0 ? <Waiting waiting={"O seu carrinho de compras está vazio"} /> : <Thead />}
             {(itens.map((item: TItens) => (
                 <ListItensStore
                     key={item.item}
@@ -90,6 +90,7 @@ export function ItenStore() {
                         deleteListStore(item)}><b>-</b></button>}
                 />
             )))}
+
         </>
     )
 

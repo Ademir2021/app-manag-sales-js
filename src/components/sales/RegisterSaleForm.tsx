@@ -2,6 +2,7 @@ import './SaleForm.css'
 import '../global-module.css'
 
 import { Thead } from '../dashboard/Thead';
+import { Globais } from '../globais/Globais';
 
 
 type TRegisterSaleForm = {
@@ -84,8 +85,9 @@ export function RegisterSaleForm({
             <button onClick={handleDelete}>Deletar Item</button>
             <button onClick={handleSearchItem}>( Buscar Item ) / ( Importar pedido )</button>
             <div>
-              <a><b>Centro Informática</b></a>
-              <a>Compras on-line<a href='/dashboardefault'><b>Sair</b></a></a>
+              <a href='###'><b>{Globais.title}</b></a>
+              <a href='###'>{Globais.URL}</a>
+              <a href='/dashboardefault'><b>Sair</b></a>
             </div>
           </form>
 
