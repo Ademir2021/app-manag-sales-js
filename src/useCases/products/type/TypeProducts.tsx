@@ -33,6 +33,11 @@ export type TSale = {
     cpf_pers:string;
     address_pers:string;
     phone_pers:string;
+    bairro_pers: string
+    fk_cep: number;
+    num_cep: string | undefined | any
+    name_city: string | undefined | any
+    uf: string | undefined
     disc_sale: number;
     tItens: number;
     tNote: number;

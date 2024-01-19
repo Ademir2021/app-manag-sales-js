@@ -37,6 +37,10 @@ export function InvoiceSalesForm({
           <div><strong>Telefone</strong><span>{children.phone_pers}</span></div>
           <div><strong>CPF</strong><span>{children.cpf_pers}</span></div>
           <div><strong>Endereço</strong><span>{children.address_pers}</span></div>
+          <div><strong>Bairro</strong><span>{children.bairro_pers}</span></div>
+          <div><strong>Cidade</strong><span>{children.name_city}</span></div>
+          <div><strong>Estado</strong><span>{children.uf}</span></div>
+          <div><strong>Cep</strong><span>{children.num_cep}</span></div>
           <a href='/person_update'>Atualizar cadastro <b>clique-aqui</b></a>
           <hr></hr>
           <div className='text-center'>VALOR DA COMPRA</div>

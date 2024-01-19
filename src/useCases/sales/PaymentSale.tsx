@@ -26,7 +26,13 @@ export function PaymentSale() {
 
     const [sale, setSale] = useState<TSale[]>([
         {"filial":0,"user_id":0,"user":"","fk_name_pers":0,"name_pers":"",
-        "cpf_pers":"","address_pers":"","phone_pers":"","disc_sale":0,"tItens":0,
+        "cpf_pers":"","address_pers":"",
+        "bairro_pers": '',
+        "fk_cep": 0,
+        "name_city":'',
+        "uf":'',
+        "num_cep":'',
+        "phone_pers":"","disc_sale":0,"tItens":0,
         "tNote":0,"paySale":0,"id":0,"item":0,"descric":"","amount":0,"valor":0,"tItem":0}
     ]);
 
@@ -111,16 +117,15 @@ export function PaymentSale() {
         obj.customer.phones[0].number = sale[0].phone_pers.substring(2)
         obj.customer.phones[0].country = '55'
         obj.customer.phones[0].area = sale[0].phone_pers.slice(0, -9);
-        obj.customer.phones[0].type = 'MOBILE'
+        obj.customer.phones[0].type = null
         obj.shipping.address.street = sale[0].address_pers
-        obj.shipping.address.number = '1248'
-        obj.shipping.address.complement = 'Casa'
-        obj.shipping.address.locality = 'Centro'
-        obj.shipping.address.city = 'Barbosa Ferraz'
-        obj.shipping.address.region_code = 'PR'
+        obj.shipping.address.number = null
+        obj.shipping.address.complement = null
+        obj.shipping.address.locality = sale[0].bairro_pers
+        obj.shipping.address.city = sale[0].name_city
+        obj.shipping.address.region_code = sale[0].uf
         obj.shipping.address.country = 'BRA'
-        obj.shipping.address.postal_code = '86960000'
-        obj.shipping.address.postal_code = '86960000'
+        obj.shipping.address.postal_code = sale[0].num_cep
     };
 
     function getPaymentPagSeguroPix() {

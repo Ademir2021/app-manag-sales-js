@@ -3,20 +3,44 @@ import { InvoiceSalesForm } from '../../components/sales/InvoiceSalesForm';
 import { BackHome } from "../../components/utils/backHome/BackHome";
 import { TSale } from "../products/type/TypeProducts";
 import { Globais } from "../../components/globais/Globais";
+import api from "../../services/api/api";
+
+import { TCeps, TCities } from "../persons/PersonRegister";
 
 export function InvoiceSales() {
 
     const apiUrl = Globais.API_URL;
     const apiUrlPerson = apiUrl + "/person_users/";
 
+    const [ceps, setCeps] = useState<TCeps[]>([])
+    const [cities, setCities] = useState<TCities[]>([])
+
     const [sum, setSum] = useState<number>(0)
     const [sales, setSales] = useState<TSale[]>([])
     const [itens, setItens] = useState<TSale[]>([]);
     const [sale, setSale] = useState<TSale>({
-        filial: 0, user_id: 0, user: "", fk_name_pers: 0,
-        name_pers: "", cpf_pers: '', address_pers: '',
-        phone_pers: '', disc_sale: 0, tItens: 0, tNote: 0, paySale: 0,
-        id:0, item:0, descric:'',amount:0,valor:0, tItem:0
+        filial: 0,
+        user_id: 0,
+        user: "",
+        fk_name_pers: 0,
+        name_pers: '',
+        cpf_pers: '',
+        address_pers: '',
+        bairro_pers: '',
+        fk_cep: 0,
+        name_city:'',
+        uf:'',
+        num_cep:'',
+        phone_pers: '',
+        disc_sale: 0,
+        tItens: 0,
+        tNote: 0, paySale: 0,
+        id:0,
+        item:0,
+        descric:'',
+        amount:0,
+        valor:0,
+        tItem:0
     });
 
     const handleChange = (e: any) => {
@@ -41,6 +65,8 @@ export function InvoiceSales() {
                                 sale.fk_name_pers = persons[i].id_person;
                                 sale.name_pers = persons[i].name_pers;
                                 sale.phone_pers = persons[i].phone_pers;
+                                sale.bairro_pers = persons[i].bairro_pers;
+                                sale.fk_cep = persons[i].fk_cep;
                                 sale.cpf_pers = persons[i].cpf_pers;
                                 sale.address_pers = persons[i].address_pers;
                                 sale.user_id = userLoggedId;
@@ -69,10 +95,42 @@ export function InvoiceSales() {
             }
         }
     }, [sale]);
+    useEffect(() => { getSale()}, [sale]);
 
-    useEffect(() => {
-        getSale();
-    }, [sale]);
+    async function getCeps() {
+        try {
+            await api.get(`/ceps`)
+                .then(response => { setCeps(response.data) })
+        } catch (err) { alert("error occurred !!" + err) }
+    };
+    useEffect(() => { getCeps() }, [])
+
+    async function getCities() {
+        try {
+            await api.get(`/cities`)
+                .then(response => { setCities(response.data) })
+        } catch (err) { alert("error occurred !!" + err) }
+    };
+    useEffect(() => { getCities() }, [])
+
+    function setCep() {
+        for (let i = 0; i < ceps.length; i++) {
+            if (ceps[i].id_cep === sale.fk_cep) {
+                sale.num_cep = ceps[i].num_cep
+            }
+        }
+    };
+    useEffect(() => { setCep() }, [ceps])
+
+    function setCity() {
+        for (let i = 0; i < cities.length; i++) {
+            if (cities[i].id_city === sale.fk_cep) {
+                sale.name_city = cities[i].name_city
+                sale.uf = cities[i].uf
+            }
+        }
+    };
+    useEffect(() => { setCity() }, [cities])
 
     function payment() {
         if (itens !== null) {

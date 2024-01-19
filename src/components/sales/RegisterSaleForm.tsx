@@ -1,7 +1,8 @@
 import './SaleForm.css'
+import '../global-module.css'
 
 import { Thead } from '../dashboard/Thead';
-import { Globais } from '../globais/Globais';
+
 
 type TRegisterSaleForm = {
   children: string | number | readonly string[] | undefined | any;
@@ -41,20 +42,22 @@ export function RegisterSaleForm({
 
   return (
     <>
-    <p></p>
+      <p></p>
       <div className="container-sale">
         <div className="main-sale">
           <form className='main-sale-register' >
             <div className='text-center'>
-           </div>
+            </div>
             <label>{alert}</label>
             <label>{message}</label>
             <img src={item_img} alt={children.descric}></img>
-            <label >{item}</label>
+            <p style={{
+              display: 'flex', flexDirection: 'column', alignItems: 'center',
+            }}>{item}</p>
             <datalist id="data-itens">
               {list}
             </datalist>
-            <input 
+            <input
               type="search"
               list="data-itens"
               name="descric"
@@ -73,17 +76,19 @@ export function RegisterSaleForm({
               onChange={handleChange}
               required
             />
-            <label>{totalItens}</label>
+            <p style={{
+              display: 'flex', flexDirection: 'column', alignItems: 'center',
+            }}><b>{totalItens}</b></p>
             <button onClick={handleSaveUpdate}>{statusBtnSaveUpdate}</button>
             <button onClick={handleSubmit}>{statusBtnSaleSubmit}</button>
             <button onClick={handleDelete}>Deletar Item</button>
             <button onClick={handleSearchItem}>( Buscar Item ) / ( Importar pedido )</button>
-           <div className='text-center'>
-            <a><b>Centro Informática</b></a>
-            <a>Compras on-line<a href='/dashboardefault'><b>Sair</b></a></a>
+            <div>
+              <a><b>Centro Informática</b></a>
+              <a>Compras on-line<a href='/dashboardefault'><b>Sair</b></a></a>
             </div>
           </form>
-  
+
         </div>
       </div>
       <Thead />

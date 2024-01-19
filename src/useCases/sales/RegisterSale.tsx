@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useContext } from "react";
 import { RegisterSaleForm } from "../../components/sales/RegisterSaleForm";
 import { Itens } from "../../components/sales/Itens";
-import { TProductRegister, TItens, TSale } from "../products/type/TypeProducts";
+import { TProductRegister, TItens } from "../products/type/TypeProducts";
 import { currencyFormat } from "../../components/utils/currentFormat/CurrentFormat";
 import api from "../../services/api/api";
 
@@ -19,7 +19,7 @@ export function RegisterSale() {
     const [totalItens, setTotalItens] = useState<number>(0)
     const [statusBtnSaleSubmit, setStatusBtnSaleSubmit] = useState<"Iniciar Pedido" | "Faturar Pedido">("Iniciar Pedido");
     const [statusBtnSaveUpdate, setStatusBtnSaveUpdate] = useState<"Salvar Item" | "Atualizar Item">("Salvar Item");
-    const [itemImg, setIemImg] = useState<string>('./img/img_itens/sale_avatar.png');
+    const [itemImg, setIemImg] = useState<string>('./img/car_sale.jpg');
     const [itenStorage, setItenStorage] = useState<TItens[]>([]);
     const [statuStore, setStatuStore] = useState<boolean>(false)
 
@@ -48,7 +48,7 @@ export function RegisterSale() {
         product.tItem = item.amount * item.valor;
         product.image = item.image;
         if (product.image === null) {
-            setIemImg('./img/img_itens/sale_avatar.png')
+            setIemImg('./img/car_sale.jpg')
         } else {
             findProducts();
         }
@@ -69,7 +69,7 @@ export function RegisterSale() {
                 product.valor = products[i].val_max_product;
                 product.tItem = product.valor * product.amount;
                 if (products[i].image === null) {
-                    setIemImg('./img/img_itens/sale_avatar.png')
+                    setIemImg('./img/car_sale.jpg')
                 } else {
                     setIemImg("./img/img_itens/" + products[i].image);
                 }
@@ -190,7 +190,7 @@ export function RegisterSale() {
         setStatusBtnSaleSubmit("Iniciar Pedido");
         setEditId(null);
         setPreco(0);
-        setIemImg('./img/img_itens/sale_avatar.png')
+        setIemImg('./img/car_sale.jpg')
     };
 
     function searchItem(e: Event) {
