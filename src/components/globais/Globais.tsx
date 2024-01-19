@@ -26,13 +26,13 @@ export  class Globais {
     static phone = '+55 (44) 98852-1033'
     static title = 'centroinfo store-online';
     
-    // static URL = 'https://centroinfo.com.br'
-    // static API_URL = 'https://api-centroinfo-05e63255c453.herokuapp.com'
-    // static URL_NOTE = 'https://api-centroinfo-05e63255c453.herokuapp.com/note/'
+    static URL = 'https://centroinfo.com.br'
+    static API_URL = 'https://api-centroinfo-05e63255c453.herokuapp.com'
+    static URL_NOTE = 'https://api-centroinfo-05e63255c453.herokuapp.com/note/'
     
-    static URL = 'http://localhost:3001' /** endereço app-manager-sale */
-    static API_URL = "http://localhost:3000" /** api localhost */ 
-    static URL_NOTE = 'http://localhost:3000/note/' /** acrescentar na frente do / a variavel da nota */
+    // static URL = 'http://localhost:3001' /** endereço app-manager-sale */
+    // static API_URL = "http://localhost:3000" /** api localhost */ 
+    // static URL_NOTE = 'http://localhost:3000/note/' /** acrescentar na frente do / a variavel da nota */
     
     static URL_CENTROINFO = 'https://www.centroinfo.com.br'
 }
