@@ -6,6 +6,7 @@ import { Globais } from "../../components/globais/Globais";
 import api from "../../services/api/api";
 
 import { TCeps, TCities } from "../persons/PersonRegister";
+import { currencyFormat } from "../../components/utils/currentFormat/CurrentFormat";
 
 export function InvoiceSales() {
 
@@ -147,7 +148,7 @@ export function InvoiceSales() {
                     console.log(sales)
                 } else {
                     if (payment == sale.tNote) {
-                        alert("Valor á pagar: R$ " + payment)
+                        alert("Valor á pagar " + currencyFormat(payment))
                         prepareSales();
                         console.log(sales)
                         setTimeout(() => {

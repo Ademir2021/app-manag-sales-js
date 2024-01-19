@@ -7,6 +7,7 @@ import { Header } from '../../components/home/Header';
 import { FooterHomePage } from './FooterHome';
 import { Whats } from '../../components/whats/Whats';
 import { SearchItens } from '../../components/home/SearchItens';
+import { currencyFormat } from '../../components/utils/currentFormat/CurrentFormat';
 
 export function HomePage() {
 
@@ -201,7 +202,7 @@ export function HomePage() {
         <>
             <Header
                 counter={counter !== 0 ? counter : 0}
-                subtotal={subtotal === 0 ? '' : 'Subtotal R$' + subtotal}
+                subtotal={subtotal === 0 ? '' : 'Subtotal ' + currencyFormat(subtotal)}
                 contact={<a href={"/contact"} style={{ color: 'gray' }}>Fale conosco +55 (44) 98852-1033</a>}
             />
             <NavBar />
