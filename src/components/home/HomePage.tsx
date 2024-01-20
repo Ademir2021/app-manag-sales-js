@@ -19,7 +19,7 @@ export function ListItens(props:Props){
     return(
     <div className='container-itens'>
         <div className='main-itens'>
-        <img className='itens-img' src={props.item_img} alt='Imagem Produto'></img>
+        <img className='itens-img' src={props.item_img} alt="Aguardando Item !!"></img>
             <p><b>ITEM</b> {props.id}</p>
             <p className='text-center'>{props.descric}</p>
             {props.amount}

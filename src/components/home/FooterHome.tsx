@@ -53,12 +53,12 @@ export function FooterHome() {
 
                 <p><a href="#"><img src="img//btn-top.png" className="btn-top" alt="Voltar ao topo."></img></a></p>
                 <hr></hr>
-                <strong>Formas de entregra - Delivery ! <a href={'/contact'}><b>Sua cotação?</b></a></strong>
+                <span><a href={'/contact'}>Formas de entrega</a></span>
                 <a href={'/contact'}>
                     <img src='/img/formas_entrega.png' className='footer-delivery'></img>
                 </a>
                 <hr></hr>
-                <strong>Formas de pagamento - Payment ! <a href={'/contact'}><b>Como Pagar?</b></a></strong>
+                <span><a href={'/contact'}>Formas de pagamento</a></span>
                 <a href={'/contact'}>
                     <img src='/img/band_cartao_creditos.png' className='footer-payment'></img>
                 </a>
