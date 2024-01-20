@@ -23,7 +23,7 @@ export function Dashboard() {
 
             />
             <NavBar/>
-          
         </>
+        
     )
 }

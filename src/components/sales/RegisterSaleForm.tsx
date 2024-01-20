@@ -63,7 +63,7 @@ export function RegisterSaleForm({
               list="data-itens"
               name="descric"
               value={children.descric}
-              placeholder='Digite um produto ou codigo de barras'
+              placeholder='Digite um produto ou código de barras'
               required
               onChange={handleChange}
             />
@@ -83,7 +83,7 @@ export function RegisterSaleForm({
             <button onClick={handleSaveUpdate}>{statusBtnSaveUpdate}</button>
             <button onClick={handleSubmit}>{statusBtnSaleSubmit}</button>
             <button onClick={handleDelete}>Deletar Item</button>
-            <button onClick={handleSearchItem}>( Buscar Item ) / ( Importar pedido )</button>
+            <button onClick={handleSearchItem}>Buscar Item / Importar Carrinho</button>
             <div>
               <a href='###'><b>{Globais.title}</b></a>
               <a href='###'>{Globais.URL}</a>
