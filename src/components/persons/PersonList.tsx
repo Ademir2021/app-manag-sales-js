@@ -8,10 +8,10 @@ export type Props = {
     cpf: string
     phone: string
     address: string
-    bairro:string
-    num_cep:string | undefined
-    name_city:string | undefined
-    uf:string | undefined
+    bairro: string
+    num_cep: string | undefined
+    name_city: string | undefined
+    uf: string | undefined
     filial: number
     id_user: number
     update: any
@@ -21,23 +21,22 @@ export const PersonList = (props: Props) => {
     return (
         <div className="container-global" >
             <div className="main-global">
-                <span className="main-global-form">
-                <strong>Id</strong>{props.id_person}<br />
-                <strong>Data cadastro</strong><a>{props.created_at}</a><br />
-                <strong>Atualizado</strong><a>{props.updated_at}</a><br />
-                <strong>Nome</strong>{props.name}<br />
-                <strong>CPF</strong> {props.cpf}<br />
-                <strong>Telefone</strong>{props.phone}<br />
-                <strong>Endereço</strong>{props.address}<br />
-                <strong>Bairro</strong>{props.bairro}<br />
-                <strong>CEP</strong>{props.num_cep}<br />
-                <strong>Cidade</strong>{props.name_city}<br />
-                <strong>Estado</strong>{props.uf}<br />
-                <strong>Filial</strong>{props.filial}<br />
-                <strong>Usuário</strong>{props.id_user}<br />
-                <button>{props.update}</button>
-                <a href='/invoice_sales'><b>Clique aqui</b> para retornar ao <b>Faturamneto</b> !!</a>
-                </span>
+                <ul className="main-global-form">
+                    <li><b>ID</b> {props.id_person}</li>
+                    <li><b>Cadastro</b> {props.created_at}</li>
+                    <li><b>Alterado</b> {props.updated_at}</li>
+                    <li><b>Nome</b> {props.name}</li>
+                    <li><b>CPF</b>{props.cpf}</li>
+                    <li><b>Telefone</b> {props.phone}</li>
+                    <li><b>Endereço</b> {props.address}</li>
+                    <li><b>Bairro</b> {props.bairro}</li>
+                    <li><b>CEP</b> {props.num_cep}</li>
+                    <li><b>Cidade</b> {props.name_city}</li>
+                    <li><b>Estado</b> {props.uf}</li>
+                    <li><b>Filial</b> {props.filial}</li>
+                    <li><b>Usuário</b> {props.id_user}</li>
+                    <>{props.update}</>
+                </ul>
             </div>
         </div>
     )

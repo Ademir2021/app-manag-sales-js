@@ -71,7 +71,7 @@ export function ProductsList() {
                         sector={nameSector(product.fk_sector)}
                         bar_code={product.bar_code}
                         image={product.image}
-                        update={'Somente Listagem'}
+                        update={null}
                     />
                 )))}
         </>

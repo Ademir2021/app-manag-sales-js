@@ -197,10 +197,10 @@ export function ProductUpdate() {
                         sector={nameSector(product.fk_sector)}
                         bar_code={product.bar_code}
                         image={product.image}
-                        update={<div onClick={() =>
-                            listUpdate(product)}>Atualizar</div>}
-                    />
-                )))}
+                        update={<button onClick={() =>
+                            listUpdate(product)}>Atualizar</button>}
+                        />
+                        )))}
         </>
     )
 }

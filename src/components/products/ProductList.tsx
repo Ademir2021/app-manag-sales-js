@@ -18,19 +18,19 @@ export function ProductList(props: Props) {
     return (
         <div className="container-global" >
             <div className="main-global">
-                <span className="main-global-form">
-                    <strong>Id</strong>{props.id}<br />
-                    <strong>Cadastrado</strong><a>{props.created_at}</a><br />
-                    <strong>Atualizado</strong><a>{props.updated_at}</a><br />
-                    <strong>Descrição</strong>{props.name}<br />
-                    <strong>Valor max</strong>{props.val_max}<br />
-                    <strong>Valor min</strong>{props.val_min}<br />
-                    <strong>Marca</strong>{props.brand}<br />
-                    <strong>Setor</strong>{props.sector}<br />
-                    <strong>Código de barras</strong>{props.bar_code}<br />
-                    <strong>Imagem</strong>{props.image}
-                    <button>{props.update}</button><br />
-                </span>
+                <ul className="main-global-form">
+                    <li><b>ID</b> {props.id}</li>
+                    <li><b>Cadastro</b> {props.created_at}</li>
+                    <li><b>Alterado</b> {props.updated_at}</li>
+                    <li><b>Descrição</b> {props.name}</li>
+                    <li><b>Valor máximo</b> {props.val_max}</li>
+                    <li><b>Valor minimo</b> {props.val_min}</li>
+                    <li><b>Marca</b> {props.brand}</li>
+                    <li><b>Setor</b> {props.sector}</li>
+                    <li><b>Barras</b> {props.bar_code}</li>
+                    <li><b>Imagem</b> {props.image}</li>
+                    <>{props.update}</>
+                </ul>
             </div>
         </div>
     )

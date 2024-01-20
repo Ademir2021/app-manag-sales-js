@@ -74,7 +74,7 @@ export function PersonsList() {
                         cpf={person.cpf_pers}
                         id_user={person.id_person}
                         filial={person.fk_name_filial}
-                        update={'Somente Listagem'}
+                        update={null}
                     />
                 )))}
         </>

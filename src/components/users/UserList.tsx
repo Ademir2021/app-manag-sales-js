@@ -7,24 +7,22 @@ export type PropsUsers = {
     name: string;
     username: string;
     password?: string;
-    // update?: Date | any;
+    update?: Date | any;
 };
 
 export const ListUSers = (props: PropsUsers) => {
     return (
-        <>
             <div className="container-global">
                 <div className="main-global">
-                    <span className='main-global-form'>
-                    <strong>Id</strong>{props.id}<br />
-                    <strong>Criado</strong>{props.created_at}<br />
-                    <strong>Atualizado</strong>{props.updated_at}<br />
-                    <strong>Nome completo</strong>{props.name}<br />
-                    <strong>Email</strong>{props.username}<br />
-                    {/* <button>Inativo</button> */}
-                    </span>
+                    <ul className='main-global-form'>
+                    <li><b>ID</b> {props.id}</li>
+                    <li><b>Criado</b> {props.created_at}</li>
+                    <li><b>Alterado</b> {props.updated_at}</li>
+                    <li><b>Nome</b> {props.name}</li>
+                    <li><b>Email</b> {props.username}</li>
+                    <></>
+                    </ul>
                 </div>
             </div>
-        </>
     )
 }

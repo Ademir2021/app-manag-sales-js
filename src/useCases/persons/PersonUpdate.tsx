@@ -222,8 +222,8 @@ export function PersonUpdate() {
                         cpf={person.cpf_pers}
                         id_user={person.fk_id_user}
                         filial={person.fk_name_filial}
-                        update={<div onClick={() =>
-                            listUpdate(person)}>Atualizar</div>}
+                        update={<button onClick={() =>
+                            listUpdate(person)}>Atualizar</button>}
                     />
                 )))}
         </>
