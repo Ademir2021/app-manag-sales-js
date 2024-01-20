@@ -1,9 +1,8 @@
-import React from 'react'
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
 
 export function Whats() {
 
-  const avatar:any = <img></img>
+  const avatar: any = <img></img>
 
   return (
       <FloatingWhatsApp
@@ -12,6 +11,7 @@ export function Whats() {
       statusMessage={'Normalmente responde dentro de 1 hora'}
       chatMessage={'Olá! 🤝 \nComo podemos ajudar?'}
       placeholder={'Digite uma mensagem..'}
+      // avatar={avatar}
       />
   )
 }

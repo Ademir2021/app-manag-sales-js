@@ -4,6 +4,7 @@ import { ProductList } from "../../components/products/ProductList";
 import { TBrand, TProductRegister, TSector } from "./type/TypeProducts";
 import { BackHome } from "../../components/utils/backHome/BackHome"
 import api from "../../services/api/api";
+import { currencyFormat } from "../../components/utils/currentFormat/CurrentFormat";
 
 export function ProductsList() {
 
@@ -65,8 +66,8 @@ export function ProductsList() {
                         updated_at={product.updated_at === null ?
                             "não houve atualização" : FormatDate(product.updated_at)}
                         name={product.descric_product}
-                        val_max={product.val_max_product}
-                        val_min={product.val_min_product}
+                        val_max={currencyFormat(product.val_max_product)}
+                        val_min={currencyFormat(product.val_min_product)}
                         brand={nameBrands(product.fk_brand)}
                         sector={nameSector(product.fk_sector)}
                         bar_code={product.bar_code}

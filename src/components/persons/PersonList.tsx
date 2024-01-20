@@ -26,7 +26,7 @@ export const PersonList = (props: Props) => {
                     <li><b>Cadastro</b> {props.created_at}</li>
                     <li><b>Alterado</b> {props.updated_at}</li>
                     <li><b>Nome</b> {props.name}</li>
-                    <li><b>CPF</b>{props.cpf}</li>
+                    <li><b>CPF</b> {props.cpf}</li>
                     <li><b>Telefone</b> {props.phone}</li>
                     <li><b>Endereço</b> {props.address}</li>
                     <li><b>Bairro</b> {props.bairro}</li>

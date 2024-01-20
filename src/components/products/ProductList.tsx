@@ -1,12 +1,13 @@
 import '../global-module.css'
 
+
 type Props = {
     id: number;
     created_at: Date | any;
     updated_at?: Date | any | null;
     name: string | number;
-    val_max: number;
-    val_min: number;
+    val_max: string | number;
+    val_min: string | number;
     brand: string | undefined;
     sector: string | undefined;
     bar_code: string;
@@ -24,7 +25,7 @@ export function ProductList(props: Props) {
                     <li><b>Alterado</b> {props.updated_at}</li>
                     <li><b>Descrição</b> {props.name}</li>
                     <li><b>Valor máximo</b> {props.val_max}</li>
-                    <li><b>Valor minimo</b> {props.val_min}</li>
+                    <li><b>Valor mínimo</b> {props.val_min}</li>
                     <li><b>Marca</b> {props.brand}</li>
                     <li><b>Setor</b> {props.sector}</li>
                     <li><b>Barras</b> {props.bar_code}</li>

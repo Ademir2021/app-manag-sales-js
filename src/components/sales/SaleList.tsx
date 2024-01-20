@@ -4,9 +4,9 @@ type Props = {
     id: number;
     create: Date | any;
     name: string | number;
-    total_prod: number;
-    disc_sale: number;
-    total_note: number;
+    total_prod: string | number;
+    disc_sale: string | number;
+    total_note: string | number;
     issueNote: HTMLAnchorElement | string | undefined | HTMLLabelElement | any;
 }
 

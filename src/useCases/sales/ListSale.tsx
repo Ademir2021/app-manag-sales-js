@@ -7,6 +7,7 @@ import { InputSearch } from "../../components/inputSearch/InputSearch";
 import { Waiting } from "../../components/utils/waiting/Waiting";
 import { Globais } from "../../components/globais/Globais";
 import { AuthContext } from '../../context/auth'
+import { currencyFormat } from "../../components/utils/currentFormat/CurrentFormat";
 
 type TSaleList = {
   id_sale: number;
@@ -71,9 +72,9 @@ export function ListSales() {
             id={sale.id_sale}
             create={FormatDate(sale.created_at)}
             name={sale.fk_name_pers}
-            total_prod={sale.val_rec}
-            disc_sale={sale.disc_sale}
-            total_note={sale.total_sale}
+            total_prod={currencyFormat(sale.val_rec)}
+            disc_sale={currencyFormat(sale.disc_sale)}
+            total_note={currencyFormat(sale.total_sale)}
             issueNote={<a target="_blank"
             href={Globais.URL_NOTE + sale.id_sale}>Emitir a nota</a>}
           />
