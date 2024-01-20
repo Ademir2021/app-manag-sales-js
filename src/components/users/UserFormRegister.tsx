@@ -22,7 +22,7 @@ export function UserFormRegister({
             <fieldset className='main-user'>
                 <form className='main-user-login'>
                     <LogoIn/>
-                <strong>Registrar_se</strong>
+                <span>Cadastre_se</span>
                 <label>{alert}</label>
                 <label>{message}</label>
                     <input

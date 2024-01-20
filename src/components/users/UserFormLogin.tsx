@@ -22,7 +22,7 @@ export function UserFormLogin({
                 <fieldset className='main-user'>
                     <form className='main-user-login'>
                         <LogoIn/>
-                        <strong>Logar_se no Panel</strong>
+                        <span>Entrar na minha conta</span>
                         <label>{alert}</label>
                         <label>{message}</label>
                         <input
