@@ -25,7 +25,7 @@ export function FooterHome() {
                     <div className='container-footer'>
                         <div className='main-footer'>
                             <b>Logística</b>
-                            <a href='##'>Rma</a>
+                            <a href='/contact'>Rma</a>
                             <a href='/invoice_sales'>Faturamento</a>
                             <a href='/direct_payment'>Financeiro</a>
                             <a href='/pe'>Carrinho</a>
@@ -44,7 +44,7 @@ export function FooterHome() {
                         <div className='main-footer'>
                             <b>Contatos</b>
                             <a href={"/contact"}>Fale conosco</a>
-                            <a href='##'></a>
+                            <a href='contacts_list'>Posts</a>
                             <a href='##'></a>
                             <a href='##'></a>
                         </div>
