@@ -24,6 +24,7 @@ import { Logout } from "./components/utils/logout/Logout";
 import { FormModel } from "./useCases/formModel/FormModel";
 import { BackHome } from './components/utils/backHome/BackHome';
 import { Ceps } from "./useCases/ceps/Ceps";
+import { ContactsList } from "./useCases/contacts/ContactsList";
 
 export function AppRoutes() {
     const Private = ({ children }: any) => {
@@ -63,6 +64,7 @@ export function AppRoutes() {
                     <Route path="/person_list" element={<Private><PersonsList/></Private>} />
                     <Route path="/person_update" element={<Private><PersonUpdate/></Private>} />
                     <Route path="/ceps" element={<Private><Ceps/></Private>} />
+                    <Route path="/contacts_list" element={<Private><ContactsList/></Private>}/>
                     <Route path="*" element={<><BackHome/><strong>Error 404: <label>Endereço URL inválido</label></strong><br/></>}/>
                 </Routes>
             </AuthProvider>
