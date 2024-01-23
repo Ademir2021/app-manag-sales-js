@@ -86,9 +86,12 @@ export function PersonUpdate() {
     async function handleSubmit(e: Event) {
         e.preventDefault();
         if (PersonsValFields(person)) {
+            listUpdate(person); //Atualiza o CEP do Cliente
             person.cpf_pers = person.cpf_pers.replace(/[..-]/g, '')
             person.phone_pers = person.phone_pers.replace(/[()-]/g, '')
-            postRegister(person, 'persons')
+            if (person.fk_cep === undefined) {
+                alert('Digite um Cep válido')
+            } else { postRegister(person, 'persons') }
         } else { alert("Digite um novo usuário") }
     }
 
