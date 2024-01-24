@@ -39,3 +39,11 @@
     /* border:1px solid grey; */
 
 }
+
+.input-amount{
+    margin-bottom: 2px;
+}
+
+.select-amount{
+    margin: 3px;
+}
