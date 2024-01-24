@@ -3,6 +3,7 @@ import './FooterHome.css'
 import './cookies.css'
 
 export function FooterHome() {
+
     return (
         <>
             <footer>

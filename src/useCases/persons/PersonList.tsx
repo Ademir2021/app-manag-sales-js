@@ -19,7 +19,9 @@ export function PersonsList() {
                 .then(response => { setPerson(response.data) })
         } catch (err) { alert("error occurred !!" + err) }
     };
+
     useEffect(() => { getPerson() }, [])
+    
 
     async function getCeps() {
         try {

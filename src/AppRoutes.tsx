@@ -29,15 +29,19 @@ import { ContactsList } from "./useCases/contacts/ContactsList";
 export function AppRoutes() {
     const Private = ({ children }: any) => {
         const { authenticated, loading }: any = useContext(AuthContext)
-        if(loading){
+        if (loading) {
             return <div className="loading">Carregando...</div>
         }
-        
         if (!authenticated) {
+            let res_uri = window.location.pathname;
+            let parts = res_uri.split('/');
+            let urlParts = parts.pop() || parts.pop();
+            localStorage.setItem("uri", JSON.stringify(urlParts));
             return <Navigate to="/login" />
         }
         return children
-    };
+    }
+    
     return (
         <Router>
             <AuthProvider>
@@ -47,25 +51,25 @@ export function AppRoutes() {
                     <Route path="/logout" Component={Logout} />
                     <Route path="/form_model" Component={FormModel} />
                     <Route path="/register" Component={UserRegister} />
-                    <Route path="/contact" Component={Contacts}/>
-                    <Route path="/dashboardefault" element={<Private><DashboardDefault/></Private>}/>
-                    <Route path="/pe" element={<Private><ItenStore/></Private>}/>
-                    <Route path="/users_list" element={<Private><UsersList/></Private>} />
-                    <Route path="/user_update" element={<Private><UserUpdate/></Private>} />
-                    <Route path="/invoice_sales" element={<Private><InvoiceSales/></Private>} />
-                    <Route path="/payment" element={<Private><PaymentSale/></Private>} />
-                    <Route path="/direct_payment" element={<Private><DirectPaymentSale/></Private>} />
-                    <Route path="/sale" element={<Private><RegisterSale/></Private>} />
-                    <Route path="/list_sale" element={<Private><ListSales/></Private>} />
-                    <Route path="/form_product" element={<Private><FormProduct/></Private> } />
-                    <Route path="/product_list" element={<Private><ProductsList/></Private>} />
-                    <Route path="product_update" element={<Private><ProductUpdate/></Private>}/>
-                    <Route path="/form_person" element={<Private><FormPerson/></Private>} />
-                    <Route path="/person_list" element={<Private><PersonsList/></Private>} />
-                    <Route path="/person_update" element={<Private><PersonUpdate/></Private>} />
-                    <Route path="/ceps" element={<Private><Ceps/></Private>} />
-                    <Route path="/contacts_list" element={<Private><ContactsList/></Private>}/>
-                    <Route path="*" element={<><BackHome/><strong>Error 404: <label>Endereço URL inválido</label></strong><br/></>}/>
+                    <Route path="/contact" Component={Contacts} />
+                    <Route path="/dashboardefault" element={<Private><DashboardDefault /></Private>} />
+                    <Route path="/pe" element={<Private><ItenStore /></Private>} />
+                    <Route path="/users_list" element={<Private><UsersList /></Private>} />
+                    <Route path="/user_update" element={<Private><UserUpdate /></Private>} />
+                    <Route path="/invoice_sales" element={<Private><InvoiceSales /></Private>} />
+                    <Route path="/payment" element={<Private><PaymentSale /></Private>} />
+                    <Route path="/direct_payment" element={<Private><DirectPaymentSale /></Private>} />
+                    <Route path="/sale" element={<Private><RegisterSale /></Private>} />
+                    <Route path="/list_sale" element={<Private><ListSales /></Private>} />
+                    <Route path="/form_product" element={<Private><FormProduct /></Private>} />
+                    <Route path="/product_list" element={<Private><ProductsList /></Private>} />
+                    <Route path="product_update" element={<Private><ProductUpdate /></Private>} />
+                    <Route path="/form_person" element={<Private><FormPerson /></Private>} />
+                    <Route path="/person_list" element={<Private><PersonsList /></Private>} />
+                    <Route path="/person_update" element={<Private><PersonUpdate /></Private>} />
+                    <Route path="/ceps" element={<Private><Ceps /></Private>} />
+                    <Route path="/contacts_list" element={<Private><ContactsList /></Private>} />
+                    <Route path="*" element={<><BackHome /><strong>Error 404: <label>Endereço URL inválido</label></strong><br /></>} />
                 </Routes>
             </AuthProvider>
         </Router>
