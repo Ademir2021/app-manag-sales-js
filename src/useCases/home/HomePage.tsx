@@ -40,11 +40,12 @@ export function HomePage() {
                     for (let i = 0; items.length > i; i++) {
                         if (items[i].fk_sector != 7 && items[i].fk_sector != 6) { // Remover grupo especifico.
                             resultProducts.push(items[i])
-                            setlistProd(resultProducts)
-                            if(listProd === null){
+                            if (products) {
+                                setProducts(resultProducts)
+                            }
+                            if (listProd) {
                                 setlistProd(resultProducts)
                             }
-                            setProducts(resultProducts)
                         }
                     }
                 })
@@ -137,7 +138,6 @@ export function HomePage() {
 
     function handleSubmit(e: Event) {
         e.preventDefault()
-        console.log(listProd)
         const res = []
         for (let i = 0; products.length > 0; i++) {
             if (item.descric === products[i].descric_product) {
