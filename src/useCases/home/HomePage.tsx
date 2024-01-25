@@ -90,8 +90,8 @@ export function HomePage() {
 
     function checkItemAlreadyExists(id: number) {
         for (let i = 0; itens.length > i; i++) {
-            if (products[i].id_product === id)
-                return alert('Item ' + products[i].id_product + ' Já foi adicionado ao carrinho !')
+            if (itens[i].item === id)
+                return alert('Item ' + itens[i].item + ' Já foi adicionado ao carrinho !')
         }
         return true
     }
