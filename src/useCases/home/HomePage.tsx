@@ -91,36 +91,46 @@ export function HomePage() {
         return itens.push(element);
     }
 
-    function handleItem(item: TProductRegister) {
-        const getItem: TItens = {
-            id: 0,
-            item: 0,
-            descric: '',
-            amount: 0,
-            valor: 0,
-            tItem: 0
+    function checkItemAlreadyExists(element: number) {
+        for (let i = 0; itens.length > i; i++) {
+            if (products[i].id_product === element)
+                return alert('Item ' +products[i].id_product + ' Já foi adicionado ao carrinho !')
         }
+        return true
+    }
 
-        getItem.id = id;
-        getItem.item = item.id_product;
-        getItem.descric = item.descric_product;
-        getItem.amount = amount
-        setAmount(amount)
-        amount = 1
-        setAmount(amount)
-        getItem.valor = item.val_max_product;
-        getItem.tItem = getItem.valor * getItem.amount;
-        verifItem(getItem);
-        setItens(itens);
-        setsubtotal(sumItens)
-        localStorage.setItem("p", JSON.stringify(itens));
-        localStorage.setItem("id", JSON.stringify(id));
-        for (let i = 0; itens.length > 0; i++) {
-            if (itens[i].item === item.id_product) {
-                setMessages('Adicionado ' + itens[i].amount +
-                    ' UN ' + item.descric_product);
-                setTimeout(() => { setMessages('') }, 9000)
-                alert("Item " + item.id_product + " Adicionado ao Carrinho")
+    function handleItem(item: TProductRegister) {
+        if (checkItemAlreadyExists(item.id_product) === true) {
+            const getItem: TItens = {
+                id: 0,
+                item: 0,
+                descric: '',
+                amount: 0,
+                valor: 0,
+                tItem: 0
+            }
+
+            getItem.id = id;
+            getItem.item = item.id_product;
+            getItem.descric = item.descric_product;
+            getItem.amount = amount
+            setAmount(amount)
+            amount = 1
+            setAmount(amount)
+            getItem.valor = item.val_max_product;
+            getItem.tItem = getItem.valor * getItem.amount;
+            verifItem(getItem);
+            setItens(itens);
+            setsubtotal(sumItens)
+            localStorage.setItem("p", JSON.stringify(itens));
+            localStorage.setItem("id", JSON.stringify(id));
+            for (let i = 0; itens.length > 0; i++) {
+                if (itens[i].item === item.id_product) {
+                    setMessages('Adicionado ' + itens[i].amount +
+                        ' UN ' + item.descric_product);
+                    setTimeout(() => { setMessages('') }, 9000)
+                    alert("Item " + item.id_product + " Adicionado ao Carrinho !")
+                }
             }
         }
     }
@@ -186,7 +196,6 @@ export function HomePage() {
         for (let i = 0; i < brands.length; i++) {
             if (brands[i].id_brand === idBrand) {
                 return brands[i].name_brand;
-
             }
         }
     }

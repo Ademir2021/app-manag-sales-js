@@ -15,23 +15,23 @@ export function ItenStore() {
     const [subtotal, setsubtotal] = useState<number>(0);
     const [counter_, setCounter] = useState<number>(0)
 
-    function itensStore() {
-        const itens_store_res = localStorage.getItem('p');
-        if (itens_store_res !== null) {
-            setItens(JSON.parse(itens_store_res));
-        }
-        const counter_res = localStorage.getItem('c');
-        if (counter_res !== null) {
-            setCounter(JSON.parse(counter_res));
-        }
-        const subTotal_res = localStorage.getItem('t');
-        if (subTotal_res !== null) {
-            setsubtotal(JSON.parse(subTotal_res));
-        }
-    };
     useEffect(() => {
-        itensStore();
-    }, [itens]);
+        const itens_store_res = localStorage.getItem('p');
+        if (itens_store_res !== null) 
+            setItens(JSON.parse(itens_store_res));
+    }, [itens])
+
+    useEffect(() => {
+        const counter_res = localStorage.getItem('c');
+        if (counter_res !== null)
+            setCounter(JSON.parse(counter_res));
+    }, [counter_])
+
+    useEffect(() => {
+        const subTotal_res = localStorage.getItem('t');
+        if (subTotal_res !== null)
+            setsubtotal(JSON.parse(subTotal_res));
+    }, [subtotal])
 
     function sumItens() {
         let sum = 0
@@ -40,7 +40,7 @@ export function ItenStore() {
         }
         localStorage.setItem("t", JSON.stringify(sum));
         return sum
-    };
+    }
 
     function deleteListStore(item: TItens) {
         if (window.confirm('Deseja remover, ' + item.descric + ' ??')) {
@@ -94,7 +94,6 @@ export function ItenStore() {
                         deleteListStore(item)}><b>-</b></button>}
                 />
             )))}
-
         </>
     )
 
