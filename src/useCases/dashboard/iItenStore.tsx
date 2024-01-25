@@ -15,23 +15,20 @@ export function ItenStore() {
     const [subtotal, setsubtotal] = useState<number>(0);
     const [counter_, setCounter] = useState<number>(0)
 
-    useEffect(() => {
+    function getItensStorage() {
         const itens_store_res = localStorage.getItem('p');
-        if (itens_store_res !== null) 
+        if (itens_store_res !== null)
             setItens(JSON.parse(itens_store_res));
-    }, [itens])
-
-    useEffect(() => {
         const counter_res = localStorage.getItem('c');
         if (counter_res !== null)
             setCounter(JSON.parse(counter_res));
-    }, [counter_])
-
-    useEffect(() => {
         const subTotal_res = localStorage.getItem('t');
         if (subTotal_res !== null)
             setsubtotal(JSON.parse(subTotal_res));
-    }, [subtotal])
+    }
+    useEffect(() => {
+        getItensStorage()
+    },[itens]);
 
     function sumItens() {
         let sum = 0
