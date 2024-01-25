@@ -40,19 +40,15 @@ export function HomePage() {
                     for (let i = 0; items.length > i; i++) {
                         if (items[i].fk_sector != 7 && items[i].fk_sector != 6) { // Remover grupo especifico.
                             resultProducts.push(items[i])
-                            if (products) {
-                                setProducts(resultProducts)
-                            }
-                            if (listProd) {
-                                setlistProd(resultProducts)
-                            }
+                            setlistProd(resultProducts)
+                            setProducts(resultProducts)
                         }
                     }
                 })
         } catch (err) {
             console.log("error occurred !" + err)
         }
-    }, [setProducts]);
+    }, [products]);
 
     function getItensStorage() {
         const res_itens = localStorage.getItem('p')
