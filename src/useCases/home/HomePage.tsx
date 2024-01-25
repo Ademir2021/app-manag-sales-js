@@ -120,6 +120,7 @@ export function HomePage() {
                 setMessages('Adicionado ' + itens[i].amount +
                     ' UN ' + item.descric_product);
                 setTimeout(() => { setMessages('') }, 9000)
+                alert("Item " + item.id_product + " Adicionado ao Carrinho")
             }
         }
     }

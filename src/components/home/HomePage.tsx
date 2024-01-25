@@ -41,6 +41,8 @@ export function ListItens(props: Props) {
 
                 <>{props.addItem}</>
 
+                <p><a href='pe'>Ir para o Carrinho</a></p>
+
             </div>
         </div>
     )

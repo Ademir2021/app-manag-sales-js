@@ -69,6 +69,10 @@ export function ItenStore() {
         <>
             <NavBar />
             <BackHome />
+            <ul>
+                <li><a href='/'>Retornar as Compras</a></li>
+                <li><a href='sale'>Finalizar as Compras</a></li>
+            </ul>
             <hr></hr>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '1px' }}>
                 <img style={{ width: '60px', height: '70px' }} src="img/car_sale.jpg" alt="Carrinho de Compras" /></div>
