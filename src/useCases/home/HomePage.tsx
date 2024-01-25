@@ -79,7 +79,7 @@ export function HomePage() {
     function verifItem(element: TItens) {
         for (let i = 0; itens.length > i; i++)
             if (element.item === itens[i].item) {
-                itens[i].amount = itens[i].amount + 1;
+                itens[i].amount = itens[i].amount + element.amount;
                 return itens[i].tItem = itens[i].amount * itens[i].valor;
             }
         setCounter(counter + 1)
@@ -91,13 +91,13 @@ export function HomePage() {
     function checkItemAlreadyExists(id: number) {
         for (let i = 0; itens.length > i; i++) {
             if (itens[i].item === id)
-                return alert('Item ' + itens[i].item + ' Já foi adicionado ao carrinho !')
+           alert('Item (' + itens[i].item + ') já estava com: (' + itens[i].amount + ' UN) no Carrinho !!')
         }
         return true
     }
 
     function handleItem(item: TProductRegister) {
-        if (checkItemAlreadyExists(item.id_product) === true) {
+        if (checkItemAlreadyExists(item.id_product) === true ) {
             const getItem: TItens = {
                 id: 0,
                 item: 0,
@@ -126,7 +126,7 @@ export function HomePage() {
                     setMessages('Adicionado ' + itens[i].amount +
                         ' UN ' + item.descric_product);
                     setTimeout(() => { setMessages('') }, 9000)
-                    alert("Item " + item.id_product + " Adicionado ao Carrinho !")
+                    alert(itens[i].amount + " Produtos do Item (" + itens[i].item + ") Adicionado com Sucesso !!")
                 }
             }
         }
