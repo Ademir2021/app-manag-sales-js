@@ -40,8 +40,11 @@ export function HomePage() {
                     for (let i = 0; items.length > i; i++) {
                         if (items[i].fk_sector != 7 && items[i].fk_sector != 6) { // Remover grupo especifico.
                             resultProducts.push(items[i])
-                            setProducts(resultProducts)
                             setlistProd(resultProducts)
+                            if(listProd === null){
+                                setlistProd(resultProducts)
+                            }
+                            setProducts(resultProducts)
                         }
                     }
                 })
@@ -50,23 +53,20 @@ export function HomePage() {
         }
     }, [setProducts]);
 
+    function getItensStorage() {
+        const res_itens = localStorage.getItem('p')
+        if (res_itens !== null)
+            setItens(JSON.parse(res_itens))
+        const res_counter = localStorage.getItem('c')
+        if (res_counter !== null)
+            setCounter(JSON.parse(res_counter))
+        const res_sub_total = localStorage.getItem('t')
+        if (res_sub_total !== null)
+            setsubtotal(JSON.parse(res_sub_total))
+    }
     useEffect(() => {
         getProducts()
-
-        const res_itens = localStorage.getItem('p');
-        if (res_itens !== null) {
-            setItens(JSON.parse(res_itens));
-        }
-
-        const res_counter = localStorage.getItem('c');
-        if (res_counter !== null) {
-            setCounter(JSON.parse(res_counter));
-        }
-        const res_sub_total = localStorage.getItem('t');
-        if (res_sub_total !== null) {
-            setsubtotal(JSON.parse(res_sub_total))
-        }
-
+        getItensStorage()
     }, [item, itens])
 
     function sumItens() {
@@ -91,10 +91,10 @@ export function HomePage() {
         return itens.push(element);
     }
 
-    function checkItemAlreadyExists(element: number) {
+    function checkItemAlreadyExists(id: number) {
         for (let i = 0; itens.length > i; i++) {
-            if (products[i].id_product === element)
-                return alert('Item ' +products[i].id_product + ' Já foi adicionado ao carrinho !')
+            if (products[i].id_product === id)
+                return alert('Item ' + products[i].id_product + ' Já foi adicionado ao carrinho !')
         }
         return true
     }
@@ -137,6 +137,7 @@ export function HomePage() {
 
     function handleSubmit(e: Event) {
         e.preventDefault()
+        console.log(listProd)
         const res = []
         for (let i = 0; products.length > 0; i++) {
             if (item.descric === products[i].descric_product) {
