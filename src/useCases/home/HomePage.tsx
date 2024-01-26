@@ -236,7 +236,7 @@ export function HomePage() {
                     amount={item.amount}
                     valor={item.val_max_product}
 
-                    selectAmount={<select onChange={e => setAmount(parseInt(e.target.value))}>
+                    selectAmount={ <select onChange={e => setAmount(parseInt(e.target.value))}>
                         <option>{1}</option>
                         <option>{2}</option>
                         <option>{3}</option>
