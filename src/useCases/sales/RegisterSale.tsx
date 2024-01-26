@@ -252,8 +252,8 @@ export function RegisterSale() {
                                 amount={item.amount}
                                 valor={currencyFormat(item.valor)}
                                 tItem={currencyFormat(item.tItem)}
-                                editar={<a href="#"> <button className="btn btn-danger" onClick={() =>
-                                    updateListProduct(item)}>Editar</button></a>}
+                                editar={<a href="#"> <button className="btn btn-primary" onClick={() =>
+                                    updateListProduct(item)}>E</button></a>}
                             />
                         )))}
             >

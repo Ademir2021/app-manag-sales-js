@@ -1,10 +1,12 @@
+import { currencyFormat } from "../utils/currentFormat/CurrentFormat";
+
 type Props = {
     id?: number;
     item?: number;
     descric: string | number | "" | 0;
     amount: number;
-    valor: number | string | "money";
-    tItem: number | string | "money";
+    valor: number;
+    tItem: number;
     editar?: any;
     item_img?: string;
 }
@@ -20,10 +22,10 @@ export function ListItensStore(props: Props) {
                                 <th scope="row">{props.id}</th>
                                 <td>{props.descric}</td>
                                 <td>{props.amount}</td>
-                                <td>{props.valor}</td>
-                                <td>{props.tItem}</td>
+                                <td>{currencyFormat(props.valor)}</td>
+                                <td>{currencyFormat(props.tItem)}</td>
                                 <td>{props.editar}</td>
-                            </tr>
+                                </tr>
                         </tbody>
                     </table>
                 </div>

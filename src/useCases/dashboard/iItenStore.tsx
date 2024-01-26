@@ -4,9 +4,8 @@ import { ListItensStore } from '../../components/dashboard/ListItensStore';
 import { Thead } from '../../components/dashboard/Thead';
 import { BackHome } from '../../components/utils/backHome/BackHome';
 import { Waiting } from '../../components/utils/waiting/Waiting';
-import { Messages } from '../../components/utils/messages/Messages';
+import { MessagesCar } from '../../components/utils/messages/MessagesCar';
 import { TItens } from '../products/type/TypeProducts';
-import { currencyFormat } from '../../components/utils/currentFormat/CurrentFormat';
 
 export function ItenStore() {
 
@@ -74,10 +73,10 @@ export function ItenStore() {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '1px' }}>
                 <img style={{ width: '60px', height: '70px' }} src="img/car_sale.jpg" alt="Carrinho de Compras" /></div>
 
-            {itens.length !== 0 ? <Messages
+            {itens.length !== 0 ? <MessagesCar
                 messages={messages}
-                counter_={counter_ + " Items no seu carrinho de compras"}
-                subtotal={'Subtotal ' + currencyFormat(subtotal)} /> : ''}
+                counter_={counter_}
+                subtotal={subtotal} /> : ''}
             {itens.length === 0 ? <Waiting waiting={"O seu carrinho de compras está vazio"} /> : <Thead />}
             {(itens.map((item: TItens) => (
                 <ListItensStore
@@ -87,8 +86,8 @@ export function ItenStore() {
                     amount={item.amount}
                     valor={item.valor}
                     tItem={item.tItem}
-                    editar={<button className='btn btn-info' onClick={() =>
-                        deleteListStore(item)}><b>-</b></button>}
+                    editar={<button className='btn btn-danger' onClick={() =>
+                        deleteListStore(item)}><b>x</b></button>}
                 />
             )))}
         </>

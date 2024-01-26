@@ -6,12 +6,12 @@ export function Thead() {
         <table className='table table-hover'>
             <thead>
                 <tr>
-                <th scope="col">Item</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">Unit</th>
-                <th scope="col">Valor</th>
-                <th scope="col">T-Item</th>
-                <th scope="col">Editar</th>
+                <th scope="col">ITEM</th>
+                <th scope="col">DESCRIÇÃO</th>
+                <th scope="col">UNIT</th>
+                <th scope="col">VALOR</th>
+                <th scope="col">T-ITEM</th>
+                <th scope="col">EDITAR</th>
                 </tr>
             </thead>
         </table>

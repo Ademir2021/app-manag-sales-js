@@ -3,6 +3,7 @@ import '../global-module.css'
 
 import { Thead } from '../dashboard/Thead';
 import { Globais } from '../globais/Globais';
+import { currencyFormat } from '../utils/currentFormat/CurrentFormat';
 
 
 type TRegisterSaleForm = {
@@ -52,9 +53,21 @@ export function RegisterSaleForm({
             <label>{alert}</label>
             <label>{message}</label>
             <img src={item_img} alt={children.descric}></img>
+
             <p style={{
-              display: 'flex', flexDirection: 'column', alignItems: 'center',
-            }}>{item}</p>
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',}}>
+                {item}
+            </p>
+
+            <strong style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',}}>
+            {currencyFormat(children.valor)}
+            </strong>
+            
             <datalist id="data-itens">
               {list}
             </datalist>

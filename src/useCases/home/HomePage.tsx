@@ -91,7 +91,7 @@ export function HomePage() {
     function checkItemAlreadyExists(id: number) {
         for (let i = 0; itens.length > i; i++) {
             if (itens[i].item === id)
-           alert('Item (' + itens[i].item + ') já estava com: (' + itens[i].amount + ' UN) no Carrinho !!')
+           alert('Item (' + itens[i].item + ') já estava com (' + itens[i].amount + ' UN) no Carrinho !!')
         }
         return true
     }
@@ -126,7 +126,7 @@ export function HomePage() {
                     setMessages('Adicionado ' + itens[i].amount +
                         ' UN ' + item.descric_product);
                     setTimeout(() => { setMessages('') }, 9000)
-                    alert(itens[i].amount + " Produtos do Item (" + itens[i].item + ") Adicionado com Sucesso !!")
+                    alert(itens[i].amount + " UN do Item (" + itens[i].item + ") Adicionado com Sucesso !!")
                 }
             }
         }
