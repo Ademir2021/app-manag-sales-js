@@ -75,7 +75,7 @@ export function InvoiceSales() {
                                 const resSum = localStorage.getItem('s');
                                 if (resSum !== null) {
                                     const sum: number = JSON.parse(resSum);
-                                    sale.tItens = sum;
+                                    sale.tItens =sum;
                                     setSum(sum);
                                 }
                                 sale.tNote = sale.tItens - sale.disc_sale;
@@ -150,7 +150,7 @@ export function InvoiceSales() {
                     if (payment == sale.tNote) {
                         alert("Valor á pagar " + currencyFormat(payment))
                         prepareSales();
-                        console.log(sales)
+                        // console.log(sales)
                         setTimeout(() => {
                             localStorage.removeItem('i');
                             localStorage.removeItem('p');

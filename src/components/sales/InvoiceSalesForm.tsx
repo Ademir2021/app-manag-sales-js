@@ -49,9 +49,9 @@ export function InvoiceSalesForm({
           <div><strong>Total da nota</strong><span>{currencyFormat(children.tNote)}</span></div>
           <div><strong>Valor a pagar</strong><span>{currencyFormat(children.paySale)}</span></div>
           <input
-            type='text'
+            type='number'
             name="disc_sale"
-            value={children.disc_sale || ''}
+            value={currencyFormat(children.disc_sale) || ''}
             placeholder='cupom de Desconto'
             required
             onChange={handleChange}
@@ -59,13 +59,13 @@ export function InvoiceSalesForm({
           <input
             type='text'
             name="paySale"
-            value={children.tNote}
+            value={currencyFormat(children.tNote)}
             placeholder="pagamento"
             required
             disabled
             onChange={handleChange}
           />
-          <button onClick={handleSubmit}>Próximo passo: Pagamento</button>
+          <button onClick={handleSubmit}>Próximo passo - Pagamento</button>
           <a href='###'>{'Mantenha seu cadastro atualizado'}</a>
           <span className='load-list-itens' >{loadItens}</span>
         </div>
