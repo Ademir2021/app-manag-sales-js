@@ -12,7 +12,7 @@ export function NavBar() {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark" style={{ background: 'rgb(237,237,237', border: '1px solid rgb(237,237,237)' }} aria-label="Offcanvas navbar large">
+            <nav className="navbar navbar-expand-lg navbar-dark" style={{ background: 'rgb(237,237,237', border: '1px solid rgb(237,237,237)'}} aria-label="Offcanvas navbar large">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/dashboardefault">{<Logo />}</a>
                     <button className="navbar-toggler" style={{ background: 'gray', border: 'none' }} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
