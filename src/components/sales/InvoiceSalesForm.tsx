@@ -28,26 +28,25 @@ export function InvoiceSalesForm({
       <div className="main-global">
         <div className='main-global-form'>
           <LogoIn/>
-          <p className='text-center'>FATURAR O PEDIDO</p>
            {/* <label>{alert}</label> */}
-           {/* <label>{message}</label> */}
           <>{backHomeInvoice}</>
-          <div className='text-center'>DADOS PARA EMISSÃO DA NOTA</div>
-          <div><div></div><strong>Nome</strong><span>{children.name_pers}</span></div>
-          <div><strong>Telefone</strong><span>{children.phone_pers}</span></div>
-          <div><strong>CPF</strong><span>{children.cpf_pers}</span></div>
-          <div><strong>Endereço</strong><span>{children.address_pers}</span></div>
-          <div><strong>Bairro</strong><span>{children.bairro_pers}</span></div>
-          <div><strong>Cidade</strong><span>{children.name_city}</span></div>
-          <div><strong>Estado</strong><span>{children.uf}</span></div>
-          <div><strong>Cep</strong><span>{children.num_cep}</span></div>
-          <a href='/person_update'>Atualizar cadastro <b>clique-aqui</b></a>
-          <hr></hr>
-          <div className='text-center'>VALOR DA COMPRA</div>
-          <div><strong>Subtotal</strong><span>{currencyFormat(children.tItens)}</span></div>
-          <div><strong>Cupom de desconto</strong><span>{currencyFormat(children.disc_sale)}</span></div>
-          <div><strong>Total da nota</strong><span>{currencyFormat(children.tNote)}</span></div>
-          <div><strong>Valor a pagar</strong><span>{currencyFormat(children.paySale)}</span></div>
+          <ul>
+          <b>Faturar o seu Pedido</b>
+          <li><b>Nome</b> {children.name_pers}</li>
+          <li><b>Telefone</b> {children.phone_pers}</li>
+          <li><b>CPF</b> {children.cpf_pers}</li>
+          <li><b>Endereço</b> {children.address_pers}</li>
+          <li><b>Bairro</b> {children.bairro_pers}</li>
+          <li><b>Cidade</b> {children.name_city}</li>
+          <li><b>Estado</b> {children.uf}</li>
+          <li><b>Cep</b> {children.num_cep}</li>
+          <a href='/person_update'><b>Atualizar cadastro</b></a>
+          <li><b>Subtotal</b> {currencyFormat(children.tItens)}</li>
+          <li><b>Cupom de desconto</b> {currencyFormat(children.disc_sale)}</li>
+          <li><b>Total da nota</b> {currencyFormat(children.tNote)}</li>
+          <li><b>Valor a pagar</b> {currencyFormat(children.paySale)}</li>
+          </ul>
+          <span>{message}</span>
           <input
             type='number'
             name="disc_sale"

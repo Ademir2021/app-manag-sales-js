@@ -16,6 +16,8 @@ export function InvoiceSales() {
     const [ceps, setCeps] = useState<TCeps[]>([])
     const [cities, setCities] = useState<TCities[]>([])
 
+    const [msg, setMsg] = useState<string>('')
+
     const [sum, setSum] = useState<number>(0)
     const [sales, setSales] = useState<TSale[]>([])
     const [itens, setItens] = useState<TSale[]>([]);
@@ -141,14 +143,14 @@ export function InvoiceSales() {
             totalNote += sum
             totalNote -= sale.disc_sale;
             if (limitDesc) {
-                alert("Desconto não autorizado")
+                setMsg("Desconto não autorizado !")
             } else {
                 if (totalNote === 0) {
-                    alert("Nenhum item(s) no momento !!")
+                    setMsg("Nenhum item no momento !")
                     console.log(sales)
                 } else {
                     if (payment == sale.tNote) {
-                        alert("Valor á pagar " + currencyFormat(payment))
+                        setMsg("Valor á pagar " + currencyFormat(payment))
                         prepareSales();
                         // console.log(sales)
                         setTimeout(() => {
@@ -159,15 +161,15 @@ export function InvoiceSales() {
                             localStorage.removeItem('s');
                             localStorage.removeItem('id');
                             window.location.replace("/direct_payment")
-                        }, 3000);
+                        }, 4000);
                     } else {
-                        alert("Valor diferente do total da nota ! "
+                        setMsg("Valor diferente do total da nota ! "
                             + sale.paySale)
                     }
                 }
             }
         } else {
-            alert("Pedido já foi enviado ! ")
+            setMsg("Pedido já foi enviado ! ")
         }
     };
 
@@ -181,7 +183,7 @@ export function InvoiceSales() {
             localStorage.setItem("sl", JSON.stringify(sales))
         }
         else {
-            alert("Pedido já foi enviado ! ")
+            setMsg("Pedido já foi enviado ! ")
         }
     };
 
@@ -197,7 +199,7 @@ export function InvoiceSales() {
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
                 alert=""
-                message=""
+                message={msg}
             >
                 {sale}
             </InvoiceSalesForm>
