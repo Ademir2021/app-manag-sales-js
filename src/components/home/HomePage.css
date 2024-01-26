@@ -3,7 +3,7 @@
    vertical-align: top;
    max-width: 900px;
    margin: 0 auto;
-   padding: 0 0.1%;
+   padding: 0 0.3%;
    width: 25%;
    min-width: 190px;
 }
@@ -21,7 +21,7 @@
     border-radius: 4px;
     /* margin-top: 3px; */
     /* margin-bottom: 2px; */
-    /* padding: 8px 8px 8px 8px; */
+    padding: 0px 1px 0px 1px;
 }
 
 .itens-img {
