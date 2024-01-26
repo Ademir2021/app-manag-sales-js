@@ -210,7 +210,7 @@ export function HomePage() {
             <Header
                 counter={counter !== 0 ? counter : 0}
                 subtotal={subtotal === 0 ? '' :  currencyFormat(subtotal)}
-                contact={<a href={"/contact"} style={{ color: 'gray' }}>Fale conosco +55 (44) 98852-1033</a>}
+                contact={<a href={"/contact"}>Fale conosco +55 (44) 98852-1033</a>}
             />
             <NavBar />
             <div className='text-center'><a href='form_person'><b>::: Cadastre-se e finalize suas compras :::</b></a></div>
