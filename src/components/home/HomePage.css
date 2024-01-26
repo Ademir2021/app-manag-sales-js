@@ -16,7 +16,6 @@
     margin-right: auto;
     margin-left: 2%;
     border: 1px rgb(196, 206, 196) solid;
-    /* color:gray; */
     background-color:white;
     border-radius: 4px;
     margin-top: 2px;
@@ -37,8 +36,6 @@
     width: 17rem;
     height: 18rem;
     border-radius: 6px;
-    /* border:1px solid grey; */
-
 }
 
 .input-amount{
