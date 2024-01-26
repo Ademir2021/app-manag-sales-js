@@ -29,7 +29,6 @@ export function ListItens(props: Props) {
                 <span><b>Marca: </b>{props.brand}</span>
                 <span><b>Setor: </b>{props.sector}</span>
                 <p><b>R$</b> {props.valor}</p>
-                <label>Quantidade</label>
                 <div className='select-amount'>{props.selectAmount}</div>
 
                 {/* <>{props.decrementAmount}</>

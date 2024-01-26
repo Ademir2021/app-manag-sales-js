@@ -236,8 +236,8 @@ export function HomePage() {
                     amount={item.amount}
                     valor={item.val_max_product}
 
-                    selectAmount={ <select onChange={e => setAmount(parseInt(e.target.value))}>
-                        <option>{1}</option>
+                    selectAmount={<select onChange={e => e.target.value !== "Quantidade: 1" ? setAmount(parseInt(e.target.value)) : setAmount(1)}>
+                        <option>{"Quantidade: 1"}</option>
                         <option>{2}</option>
                         <option>{3}</option>
                         <option>{4}</option>
