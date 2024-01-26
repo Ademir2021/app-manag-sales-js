@@ -23,12 +23,14 @@ export function ListItens(props: Props) {
         <div className='container-itens'>
             <div className='main-itens'>
                 <img className='itens-img' src={props.item_img} alt="Aguardando Item !!"></img>
-                <p><b>ITEM</b> {props.id}</p>
-                <p className='text-center'>{props.descric}</p>
+                <ul>
+                <li><b>ITEM</b> {props.id}</li>
+                <li>{props.descric}</li>
                 {props.amount}
-                <span><b>Marca: </b>{props.brand}</span>
+                <li><b>Marca: </b>{props.brand}</li>
                 <span><b>Setor: </b>{props.sector}</span>
-                <p><b>R$</b> {props.valor}</p>
+                <li><b>R$</b> {props.valor}</li>
+                </ul>
                 <div className='select-amount'>{props.selectAmount}</div>
 
                 {/* <>{props.decrementAmount}</>
