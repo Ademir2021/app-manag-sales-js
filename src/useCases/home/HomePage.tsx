@@ -8,6 +8,7 @@ import { FooterHomePage } from './FooterHome';
 import { Whats } from '../../components/whats/Whats';
 import { SearchItens } from '../../components/home/SearchItens';
 import { currencyFormat } from '../../components/utils/currentFormat/CurrentFormat';
+import { Globais } from '../../components/globais/Globais';
 
 export function HomePage() {
 
@@ -106,7 +107,6 @@ export function HomePage() {
                 valor: 0,
                 tItem: 0
             }
-
             getItem.id = id;
             getItem.item = item.id_product;
             getItem.descric = item.descric_product;
@@ -210,7 +210,7 @@ export function HomePage() {
             <Header
                 counter={counter !== 0 ? counter : 0}
                 subtotal={subtotal === 0 ? '' :  currencyFormat(subtotal)}
-                contact={<a href={"/contact"} style={{color:'GrayText'}}>Fale conosco +55 (44) 98852-1033</a>}
+                contact={<a href={"/contact"} style={{color:'GrayText'}}>Fale Conosco {Globais.phone}</a>}
             />
             <NavBar />
             <div className='text-center'><a href='form_person'><b>::: Cadastre-se e finalize suas compras :::</b></a></div>
