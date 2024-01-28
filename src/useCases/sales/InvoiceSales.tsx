@@ -147,7 +147,7 @@ export function InvoiceSales() {
             } else {
                 if (totalNote === 0) {
                     setMsg("Nenhum item no momento !")
-                    console.log(sales)
+                    // console.log(sales)
                 } else {
                     if (payment == sale.tNote) {
                         setMsg("Valor á pagar " + currencyFormat(payment))

@@ -39,7 +39,7 @@ export function ItenStore() {
     }
 
     function deleteListStore(item: TItens) {
-        if (window.confirm('Deseja remover, ' + item.descric + ' ??')) {
+        if (window.confirm('Deseja remover, ' + item.descric + ' ?')) {
             for (let i = 0; itens.length > 0; i++) {
                 if (itens[i].id === item.id) {
                     itens.splice(i, 1);
@@ -60,7 +60,7 @@ export function ItenStore() {
             }
         }
     }
-
+    
     return (
         <>
             <NavBar />
@@ -78,6 +78,9 @@ export function ItenStore() {
                 counter_={counter_}
                 subtotal={subtotal} /> : ''}
             {itens.length === 0 ? <Waiting waiting={"O seu carrinho de compras está vazio"} /> : <Thead />}
+           {itens.length === 0 ? <div
+           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '1px' }}><button
+           className='btn btn-primary' onClick={()=>{window.location.replace("/")}}>Voltar as Compras</button></div> : null}
             {(itens.map((item: TItens) => (
                 <ListItensStore
                     key={item.item}

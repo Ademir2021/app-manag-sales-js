@@ -57,17 +57,19 @@ export function RegisterSaleForm({
             <p style={{
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center',}}>
-                {item}
+              alignItems: 'center',
+            }}>
+              {item}
             </p>
 
-            <strong style={{
+            <span style={{
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center',}}>
-            {currencyFormat(children.valor)}
-            </strong>
-            
+              alignItems: 'center',
+            }}>
+              {currencyFormat(parseFloat(children.valor))}
+            </span>
+
             <datalist id="data-itens">
               {list}
             </datalist>
@@ -90,9 +92,10 @@ export function RegisterSaleForm({
               onChange={handleChange}
               required
             />
-            <p style={{
-              display: 'flex', flexDirection: 'column', alignItems: 'center',
-            }}><b>{totalItens}</b></p>
+            <strong
+              style={{
+                display: 'flex', flexDirection: 'column', alignItems: 'center',
+              }}>{totalItens}</strong>
             <button onClick={handleSaveUpdate}>{statusBtnSaveUpdate}</button>
             <button onClick={handleSubmit}>{statusBtnSaleSubmit}</button>
             <button onClick={handleDelete}>Deletar Item</button>
