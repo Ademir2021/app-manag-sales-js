@@ -32,6 +32,8 @@ a:hover{
 .btn-top {
     width: 46px;
     height: 46px;
+    float:right;
+    border: white solid 1px;
 }
 
 .btn-top:hover {

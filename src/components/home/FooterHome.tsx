@@ -9,7 +9,7 @@ export function FooterHome() {
             <footer>
                 <p id="cookies"></p>
                 <p>
-                    <div>SIGA-NOS NAS REDES SOCIAIS</div>
+                   <div><strong>SIGA-NOS NAS REDES SOCIAIS</strong></div>
                     <a target="_blank" href="https://www.facebook.com/ademir.souzadealmeida"><img className="social-icons" src="img/social/facebook.png"></img></a>
                     <a target="_blank" href="https://www.instagram.com/ademir_devel"><img className="social-icons" src="img//social//instagram.png"></img></a>
                     <a target="_blank" href="https://linkedin.com/in/ademir-dev"><img className="social-icons" src="img//social//linkedin.png"></img></a>
@@ -20,12 +20,12 @@ export function FooterHome() {
                 <strong>Seguimentos</strong>
                 <p>INFORMÁTICA, ANTENAS E TELECOM EM GERAL</p>
 
-                <h1>CANAIS DE ACESSO</h1>
-                <hr></hr>
+                <strong>CANAIS DE ACESSO</strong>
+                {/* <hr></hr> */}
                 <div className=''>
                     <div className='container-footer'>
                         <div className='main-footer'>
-                            <b>Logística</b>
+                            <strong>Logística</strong>
                             <a href='/contact'>Rma</a>
                             <a href='/invoice_sales'>Faturamento</a>
                             <a href='/direct_payment'>Financeiro</a>
@@ -34,7 +34,7 @@ export function FooterHome() {
                     </div>
                     <div className='container-footer'>
                         <div className='main-footer'>
-                            <b>Cadastros</b>
+                            <strong>Cadastros</strong>
                             <a href='form_person'>Pessoas</a>
                             <a href='sale'>Compras</a>
                             <a href='##'></a>
@@ -43,7 +43,7 @@ export function FooterHome() {
                     </div>
                     <div className='container-footer'>
                         <div className='main-footer'>
-                            <b>Contatos</b>
+                            <strong>Contatos</strong>
                             <a href={"/contact"}>Fale conosco</a>
                             <a href='contacts_list'>Posts</a>
                             <a href='##'></a>
@@ -53,12 +53,12 @@ export function FooterHome() {
                 </div>
 
                 <p><a href="#"><img src="img//btn-top.png" className="btn-top" alt="Voltar ao topo."></img></a></p>
-                <hr></hr>
+                {/* <hr></hr> */}
                 <span><a href={'/contact'}>Formas de entrega</a></span>
                 <a href={'/contact'}>
                     <img src='/img/formas_entrega.png' className='footer-delivery'></img>
                 </a>
-                <hr></hr>
+                {/* <hr></hr> */}
                 <span><a href={'/contact'}>Formas de pagamento</a></span>
                 <a href={'/contact'}>
                     <img src='/img/band_cartao_creditos.png' className='footer-payment'></img>
