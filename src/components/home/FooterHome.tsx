@@ -52,7 +52,7 @@ export function FooterHome() {
                     </div>
                 </div>
 
-                <p><a href="#"><img src="img//btn-top.png" className="btn-top" alt="Voltar ao topo."></img></a></p>
+                <p><a href="#"><img src="img//btn-top.png" className="btn-top" alt="Topo"></img></a></p>
                 {/* <hr></hr> */}
                 <span><a href={'/contact'}>Formas de entrega</a></span>
                 <a href={'/contact'}>
@@ -77,6 +77,7 @@ export function FooterHome() {
                     <div>{Globais.rights_reserved}</div>
                     <div>{Globais.address}</div>
                     <div>Powered by <a href={Globais.URL} title="Powered By." target="_self">{Globais.title}</a> Contato {Globais.phone}</div>
+                    <br/>
                     <strong>Política de cookies: </strong>
                     <span>
                         O <b>cookies</b> pemite que o website "lembre" suas ações ou preferencias ao longo do tempo. A
