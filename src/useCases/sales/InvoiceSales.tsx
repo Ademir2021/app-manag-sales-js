@@ -147,12 +147,10 @@ export function InvoiceSales() {
             } else {
                 if (totalNote === 0) {
                     setMsg("Nenhum item no momento !")
-                    // console.log(sales)
                 } else {
                     if (payment == sale.tNote) {
                         setMsg("Valor á pagar " + currencyFormat(payment))
                         prepareSales();
-                        // console.log(sales)
                         setTimeout(() => {
                             localStorage.removeItem('i');
                             localStorage.removeItem('p');

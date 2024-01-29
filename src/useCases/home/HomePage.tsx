@@ -92,7 +92,7 @@ export function HomePage() {
     function checkItemAlreadyExists(id: number) {
         for (let i = 0; itens.length > i; i++) {
             if (itens[i].item === id)
-           alert('Item (' + itens[i].item + ') já estava com (' + itens[i].amount + ' UN) no Carrinho !!')
+           alert('Item (' + itens[i].item + ') já estava com (' + itens[i].amount + ' UN) no carrinho !')
         }
         return true
     }
@@ -126,7 +126,7 @@ export function HomePage() {
                     setMessages('Adicionado ' + itens[i].amount +
                         ' UN ' + item.descric_product);
                     setTimeout(() => { setMessages('') }, 9000)
-                    alert(itens[i].amount + " UN do Item (" + itens[i].item + ") Adicionado com Sucesso !!")
+                    alert(itens[i].amount + " UN do Item (" + itens[i].item + ") adicionado com sucesso !")
                 }
             }
         }
@@ -149,17 +149,6 @@ export function HomePage() {
             }
         }
     }
-
-    // function handleAmountIncrement() {
-    // amount++
-    // setAmount(amount);
-    // }
-    // function handleAmountDecrement() {
-    // if (amount > 1) {
-    // amount--
-    // setAmount(amount);
-    // }
-    // }
 
     async function getBrands() {
         try {
@@ -271,17 +260,6 @@ export function HomePage() {
                         <option>{29}</option>
                         <option>{30}</option>
                     </select>}
-
-                    // decrementAmount={<button style={{ display: 'contents', color: 'gray', fontSize: '14px' }} onClick={() =>
-                    //     handleAmountDecrement()}>{'Diminuir'}</button>}
-
-                    // incrementAmount={<button style={{ display: 'contents', color: 'blue', fontSize: '14px' }} onClick={() =>
-                    //     handleAmountIncrement()}>{'Aumentar'}</button>}
-
-                    // inputAmout={<input
-                    //     onChange={e => setAmount(parseInt(e.target.value))}
-                    //     placeholder='Informe a quantidade'
-                    // />}
 
                     addItem={<button className='btn btn-primary' onClick={() =>
                         handleItem(item)}>Comprar</button>}

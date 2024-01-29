@@ -100,7 +100,7 @@ useEffect(() => {
     sendSale()
 },[paymentdirect.qr_codes[0].amount.value]);
 
-async function registerdirectPaymentHandle() {/** API payment generica genérica */
+async function registerdirectPaymentHandle() {/** API payment genérica */
     await api.post<any>('/direct_payment', directPaymentHandle)
         .then(response => {
             setPaymnetdirect(response.data)
@@ -127,8 +127,7 @@ async function registerdirectPaymentHandle() {/** API payment generica genérica
    const numNote = directPaymentHandle.reference_id;
 
     return(
-        <>
-         
+        <>     
         <DirectPaymentSaleForm
         bestPayment={!flagSales ? <>ESCOLHA A MELHOR FORMA PARA PAGAR</> : ''}
         backHomePayment={messagesPayment  !== "" ?<BackHome/> : ''}

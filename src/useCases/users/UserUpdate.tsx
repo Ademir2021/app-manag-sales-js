@@ -66,10 +66,6 @@ export function UserUpdate() {
             })
         };
 
-        // useEffect(() => {
-        //     getUsers()
-        // },[setUser]);
-
     function UsersValFields(user:any) {
         let msg = ""
         if (user.name === "") { msg += "Digite o seu nome completo !\n" };
@@ -119,16 +115,13 @@ export function UserUpdate() {
             password: "",
             psw_repeat: ""
         })
-        setAlert("Digite um novo usuário !!")
+        setAlert("Digite um novo usuário !")
         setTimeout(() => {
             setAlert('')
         }, 2000);
     }
 
     function toggleDropdown(): void {
-        // setTimeout(() => {
-        //     window.location.replace("/dashboardefault");
-        // }, 1000);
         getUsers()
         setDropdown("modal-show");
     }
