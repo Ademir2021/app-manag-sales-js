@@ -1,3 +1,4 @@
+import { checksUserLogged } from '../utils/checksUserLogged/ChecksUserLogged';
 import './HomePage.css'
 
 type Props = {
@@ -26,12 +27,11 @@ export function ListItens(props: Props) {
                 {props.amount}
                 <li><b>Marca</b> {props.brand}</li>
                 <li><b>Setor</b> {props.sector}</li>
-                <li><b>R$</b> {props.valor}</li>
+                {checksUserLogged() !== undefined ? <li><b>R$</b> {props.valor}</li> : null}
                 </ul>
                 <div className='select-amount'>{props.selectAmount}</div>
                 <>{props.addItem}</>
-                <p><a href='pe'>Ir para o Carrinho</a></p>
-
+                {checksUserLogged() !== undefined ? <p><a href='pe'>Ir para o Carrinho</a></p> : <p></p>}
             </div>
         </div>
     )

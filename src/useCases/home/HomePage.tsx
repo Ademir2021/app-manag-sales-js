@@ -9,6 +9,7 @@ import { Whats } from '../../components/whats/Whats';
 import { SearchItens } from '../../components/home/SearchItens';
 import { currencyFormat } from '../../components/utils/currentFormat/CurrentFormat';
 import { Globais } from '../../components/globais/Globais';
+import { checksUserLogged } from '../../components/utils/checksUserLogged/ChecksUserLogged';
 
 export function HomePage() {
 
@@ -225,7 +226,7 @@ export function HomePage() {
                     amount={item.amount}
                     valor={item.val_max_product}
 
-                    selectAmount={
+                    selectAmount={  checksUserLogged() !== undefined ?
                     < select onChange={e => e.target.value !== "Quant: 1" ?
                     setAmount(parseInt(e.target.value)) : setAmount(1)}
                     style={{color:'black'}}
@@ -259,10 +260,11 @@ export function HomePage() {
                         <option>{28}</option>
                         <option>{29}</option>
                         <option>{30}</option>
-                    </select>}
+                    </select> : null}
 
-                    addItem={<button className='btn btn-primary' onClick={() =>
-                        handleItem(item)}>Comprar</button>}
+                    addItem={ checksUserLogged() !== undefined ? <button className='btn btn-primary' onClick={() =>
+                        handleItem(item)}>Comprar</button> :<button className='btn btn-primary'
+                        onClick={()=>{window.location.replace("/pe")}}>Solicitar cotação</button>}
                 />
             )))}
             <Whats />
