@@ -9,7 +9,7 @@ export function FooterHome() {
             <footer>
                 <p id="cookies"></p>
                 <p>
-                   <div><strong>SIGA-NOS NAS REDES SOCIAIS</strong></div>
+                    <div><strong>SIGA-NOS NAS REDES SOCIAIS</strong></div>
                     <a target="_blank" href="https://www.facebook.com/ademir.souzadealmeida"><img className="social-icons" src="img/social/facebook.png"></img></a>
                     <a target="_blank" href="https://www.instagram.com/ademir_devel"><img className="social-icons" src="img//social//instagram.png"></img></a>
                     <a target="_blank" href="https://linkedin.com/in/ademir-dev"><img className="social-icons" src="img//social//linkedin.png"></img></a>
@@ -26,26 +26,26 @@ export function FooterHome() {
                     <div className='container-footer'>
                         <div className='main-footer'>
                             <ul>
-                            <li><a href='contact'>Rma</a></li>
-                            <li><a href='invoice_sales'>Faturamento</a></li>
-                            <li><a href='direct_payment'>Financeiro</a></li>
-                            <li><a href='pe'>Carrinho</a></li>
+                                <li><a href='contact'>Rma</a></li>
+                                <li><a href='invoice_sales'>Faturamento</a></li>
+                                <li><a href='direct_payment'>Financeiro</a></li>
+                                <li><a href='pe'>Carrinho</a></li>
                             </ul>
                         </div>
                     </div>
                     <div className='container-footer'>
                         <div className='main-footer'>
                             <ul>
-                            <li><a href='form_person'>Clientes</a></li>
-                            <li><a href='sale'>Compras</a></li>
+                                <li><a href='form_person'>Clientes</a></li>
+                                <li><a href='sale'>Compras</a></li>
                             </ul>
                         </div>
                     </div>
                     <div className='container-footer'>
                         <div className='main-footer'>
                             <ul>
-                            <li><a href={"contact"}>Fale conosco</a></li>
-                            <li><a href='contacts_list'>Posts</a></li>
+                                <li><a href={"contact"}>Fale conosco</a></li>
+                                <li><a href='contacts_list'>Posts</a></li>
                             </ul>
                         </div>
                     </div>
@@ -54,12 +54,12 @@ export function FooterHome() {
                 <p><a href="#"><img src="img//btn-top.png" className="btn-top" alt="Topo"></img></a></p>
 
                 <ul><li><a href='contact'>Consulte nossas Formas de Entregas</a></li></ul>
-            <hr></hr>
-               <a href={'direct_payment'}>
-              <b>Pague com</b>
-                    <img src='/img/band_cartao_creditos.png' className='footer-payment'/>
+                <hr></hr>
+                <a href={'direct_payment'}>
+                    <b>Pague com</b>
+                    <img src='/img/band_cartao_creditos.png' className='footer-payment' />
                 </a>
-            <p></p>
+                <p></p>
                 {/* Google Maps */}
                 <div className="maps">
                     <p>
@@ -73,7 +73,7 @@ export function FooterHome() {
                     <div>{Globais.rights_reserved}</div>
                     <div>{Globais.address}</div>
                     <div>Powered by <a href={Globais.URL} title="Powered By." target="_self">{Globais.title}</a> Contato {Globais.phone}</div>
-                    <br/>
+                    <br />
                     <strong>Política de cookies: </strong>
                     <span>
                         O <b>cookies</b> pemite que o website "lembre" suas ações ou preferencias ao longo do tempo. A
