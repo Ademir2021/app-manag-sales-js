@@ -36,7 +36,7 @@ export function FooterHome() {
                     <div className='container-footer'>
                         <div className='main-footer'>
                             <ul>
-                            <li><a href='folim_person'>Clientes</a></li>
+                            <li><a href='form_person'>Clientes</a></li>
                             <li><a href='sale'>Compras</a></li>
                             </ul>
                         </div>
