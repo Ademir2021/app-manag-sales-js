@@ -25,49 +25,44 @@ export function FooterHome() {
                 <div className=''>
                     <div className='container-footer'>
                         <div className='main-footer'>
-                            <strong>Logística</strong>
-                            <a href='/contact'>Rma</a>
-                            <a href='/invoice_sales'>Faturamento</a>
-                            <a href='/direct_payment'>Financeiro</a>
-                            <a href='/pe'>Carrinho</a>
+                            <ul>
+                            <li><a href='contact'>Rma</a></li>
+                            <li><a href='invoice_sales'>Faturamento</a></li>
+                            <li><a href='direct_payment'>Financeiro</a></li>
+                            <li><a href='pe'>Carrinho</a></li>
+                            </ul>
                         </div>
                     </div>
                     <div className='container-footer'>
                         <div className='main-footer'>
-                            <strong>Cadastros</strong>
-                            <a href='form_person'>Pessoas</a>
-                            <a href='sale'>Compras</a>
-                            <a href='##'></a>
-                            <a href='##'></a>
+                            <ul>
+                            <li><a href='folim_person'>Clientes</a></li>
+                            <li><a href='sale'>Compras</a></li>
+                            </ul>
                         </div>
                     </div>
                     <div className='container-footer'>
                         <div className='main-footer'>
-                            <strong>Contatos</strong>
-                            <a href={"/contact"}>Fale conosco</a>
-                            <a href='contacts_list'>Posts</a>
-                            <a href='##'></a>
-                            <a href='##'></a>
+                            <ul>
+                            <li><a href={"contact"}>Fale conosco</a></li>
+                            <li><a href='contacts_list'>Posts</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
                 <p><a href="#"><img src="img//btn-top.png" className="btn-top" alt="Topo"></img></a></p>
-                {/* <hr></hr> */}
-                <span><a href={'/contact'}>Formas de entrega</a></span>
-                <a href={'/contact'}>
-                    <img src='/img/formas_entrega.png' className='footer-delivery'></img>
+
+                <strong><a href='contact'>Consulte nossas forma de Entregas !</a></strong>
+            <hr></hr>
+               <a href={'/contact'}>
+                    <img src='/img/band_cartao_creditos.png' className='footer-payment'/>
                 </a>
-                {/* <hr></hr> */}
-                <span><a href={'/contact'}>Formas de pagamento</a></span>
-                <a href={'/contact'}>
-                    <img src='/img/band_cartao_creditos.png' className='footer-payment'></img>
-                </a>
-                <hr></hr>
+        
                 {/* Google Maps */}
                 <div className="maps">
                     <p>
-                        <strong>Localização Geográfica</strong>
+                        {/* <strong>Localização Geográfica</strong> */}
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8920.78111493576!2d-52.01010715806461!3d-24.032808720407672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0eeb219df7154b0!2sCENTRO%20INFORMATICA!5e0!3m2!1sen!2sbr!4v1631551065418!5m2!1sen!2sbr" className="maps" loading="lazy"></iframe><br />
                         {/* fim */}
                     </p>

@@ -34,6 +34,7 @@ a:hover{
     height: 46px;
     float:right;
     border: white solid 1px;
+    margin: 0px;
 }
 
 .btn-top:hover {
@@ -49,27 +50,23 @@ a:hover{
     display: inline-block;
     vertical-align: top;
     max-width: 100%;
-    width: 25%;
-    min-width: 110px;
+    min-width: 136px;
  }
  .main-footer {
-     font-size: 18px;
+     font-size: 16px;
      display: flex;
      flex-direction: column;
      align-items: left;
      justify-content: left;
      width: 100%;
-     background-color:white;
-     margin-top: 1px;
-     margin-bottom: 2px;
  }
 
 .footer-delivery{
     width: 100%;
 }
 .footer-payment{
-    width: 100%;
-    
+    width: 46%;
+    float: right;
 }
 
 /* @media screen and (max-width:768px) {} */
