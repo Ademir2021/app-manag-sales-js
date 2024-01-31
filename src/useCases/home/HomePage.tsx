@@ -10,6 +10,7 @@ import { SearchItens } from '../../components/home/SearchItens';
 import { currencyFormat } from '../../components/utils/currentFormat/CurrentFormat';
 import { Globais } from '../../components/globais/Globais';
 import { checksUserLogged } from '../../components/utils/checksUserLogged/ChecksUserLogged';
+import { BackHome } from '../../components/utils/backHome/BackHome';
 
 export function HomePage() {
 
@@ -203,7 +204,7 @@ export function HomePage() {
                 contact={<a href={"/contact"} style={{color:'GrayText'}}>Fale Conosco {Globais.phone}</a>}
             />
             <NavBar />
-            <div className='text-center'><a href='form_person'><b>::: Cadastre-se e finalize suas compras :::</b></a></div>
+            <h1 className='text-center'><a href='form_person'><b>Cadastre-se e faça suas Compras</b></a></h1>
             <SearchItens
                 messageItems={messages}
                 list={<select>{products.map((product) => (

@@ -53,12 +53,13 @@ export function FooterHome() {
 
                 <p><a href="#"><img src="img//btn-top.png" className="btn-top" alt="Topo"></img></a></p>
 
-                <strong><a href='contact'>Consulte nossas forma de Entregas !</a></strong>
+                <ul><li><a href='contact'>Consulte nossas Formas de Entregas</a></li></ul>
             <hr></hr>
-               <a href={'/contact'}>
+               <a href={'direct_payment'}>
+              <b>Pague com</b>
                     <img src='/img/band_cartao_creditos.png' className='footer-payment'/>
                 </a>
-        
+            <p></p>
                 {/* Google Maps */}
                 <div className="maps">
                     <p>
