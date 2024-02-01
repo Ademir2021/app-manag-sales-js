@@ -3,7 +3,7 @@ export function CookiesWarnings() {
 
     return (
         <>
-            <h1>O que são Cookies</h1>
+           <h1><strong>O que são cookies:</strong></h1>
             <p>
                 Todo mundo já viu banners de sites que perguntam se você permite cookies em seu navegador ou não. Mas o que isso significa exatamente e o que são esses cookies? Bem, para começar, eles são essenciais para a experiência moderna da Internet. Uma parte necessária da navegação na Web, os cookies ajudam os desenvolvedores da Web a oferecer uma visita ao site mais pessoal e conveniente. Resumindo, os cookies permitem que os sites se lembrem de você, de seus logins, carrinhos de compras e muito mais. Mas também podem ser um tesouro de informações privadas e uma séria vulnerabilidade à sua privacidade.
 
@@ -19,7 +19,7 @@ export function CookiesWarnings() {
                 O <b>cookies</b> pemite que o website "lembre" suas ações ou preferencias ao longo do tempo. A
                 maioria dos navegadores da internet aceitam <a>cookies;</a> entretanto, os usuários podem configurar
                 seus navegadores para recusar certos tipos de <a>cookies</a> ou <a>cookies</a> específicos.
-                <a href={'/'} title="Home"> Home</a>
+                <a href={'/'} title="Close"> Sair</a>
                 <hr></hr>
             </p>
         </>
