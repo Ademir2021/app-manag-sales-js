@@ -26,62 +26,64 @@ export function NavBar() {
                                 aria-label="Close"></button>
                         </div>
                         <div className="offcanvas-body">
+                            <b>
                             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
 
                                 <li className="nav-item">
-                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" aria-current="page" href="/dashboardefault">Painel</a> :
-                                        <a className="nav-link" aria-current="page" href="/">Home</a>}
+                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" aria-current="page" href="/dashboardefault">PAINEL</a> :
+                                        <a className="nav-link" aria-current="page" href="/">HOME</a>}
                                 </li>
                                 <li className="nav-item">
-                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" aria-current="page" href="/pe">Carrinho</a> :
-                                        <a className="nav-link" aria-current="page" href="/pe">Carrinho</a>}
-                                </li>
-
-                                <li className="nav-item">
-                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" href='/register'>Criar conta</a> :
-                                        <a className="nav-link" href='/user_update'>Sua conta</a>}
+                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" aria-current="page" href="/pe">CARRINHO</a> :
+                                        <a className="nav-link" aria-current="page" href="/pe">CARRINHO</a>}
                                 </li>
 
                                 <li className="nav-item">
-                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" href='/login'>Entrar</a> :
-                                        <a className="nav-link" href='/logout'>Sair</a>}
+                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" href='/register'>CRIAR CONTA</a> :
+                                        <a className="nav-link" href='/user_update'>SUA CONTA</a>}
+                                </li>
+
+                                <li className="nav-item">
+                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" href='/login'>ENTRAR</a> :
+                                        <a className="nav-link" href='/logout'>SAIR</a>}
                                 </li>
                                 <li className="nav-item">
-                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" href="/sale">Compras</a> :
-                                        <a className="nav-link" href="/sale">Suas compras</a>}
+                                    {checksUserLogged() === privilegeShopping ? <a className="nav-link" href="/sale">COMPRAS</a> :
+                                        <a className="nav-link" href="/sale">SUAS COMPRAS</a>}
                                 </li>
 
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="##" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">Cadastros</a>
+                                        aria-expanded="false">CADASTROS</a>
                                     <ul className="dropdown-menu" style={{ background: 'rgb(237,237,237)', border: '0px solid gray', padding: '12px' }}>
-                                        <li><a className="dropdown-item nav-link" href="/form_person">Clientes</a></li>
+                                        <li><a className="dropdown-item nav-link" href="/form_person">CLIENTES</a></li>
 
-                                        <li>{checkAdminPrivilege() === privilAdmin ? <a className="dropdown-item nav-link" href="/form_product">Produtos</a> :
+                                        <li>{checkAdminPrivilege() === privilAdmin ? <a className="dropdown-item nav-link" href="/form_product">PRODUTOS</a> :
                                             <></>}</li>
                                         <li>
 
                                             <hr className="dropdown-divider" />
                                         </li>
-                                        <li><a className="dropdown-item nav-link" href="/person_update">Clientes - Atualizar</a></li>
-                                        <li>{checkAdminPrivilege() === privilAdmin ? <a className="dropdown-item nav-link" href="/product_update">Produtos - Atualizar</a> :
+                                        <li><a className="dropdown-item nav-link" href="/person_update">ATUALIZAR - CLIENTES</a></li>
+                                        <li>{checkAdminPrivilege() === privilAdmin ? <a className="dropdown-item nav-link" href="/product_update">ATUALIZAR - PRODUTOS</a> :
                                             <></>}</li>
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="##" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">Consultar</a>
+                                    aria-expanded="false">CONSULTAR</a>
                                     <ul className="dropdown-menu" style={{ background: 'rgb(237, 237, 237)', border: '0px solid gray', padding: '12px' }}>
-                                        <li><a className="dropdown-item nav-link" href="/person_list">Pessoas</a></li>
-                                        <li><a className="dropdown-item nav-link" href="/product_list">Produtos</a></li>
+                                        <li><a className="dropdown-item nav-link" href="/person_list">CLIENTES</a></li>
+                                        <li><a className="dropdown-item nav-link" href="/product_list">PRODUTOS</a></li>
                                         <li>
                                             <hr className="dropdown-divider" />
                                         </li>
-                                        <li><a className="dropdown-item nav-link" href="/list_sale">Notas de Venda</a></li>
-                                        <li><a className="dropdown-item nav-link" href="/users_list">Usuários</a></li>
+                                        <li><a className="dropdown-item nav-link" href="/list_sale">EMITIR NOTAS</a></li>
+                                        <li><a className="dropdown-item nav-link" href="/users_list">USUÁRIOS</a></li>
                                     </ul>
                                 </li>
                             </ul>
+                            </b>
                         </div>
                     </div>
                 </div>
