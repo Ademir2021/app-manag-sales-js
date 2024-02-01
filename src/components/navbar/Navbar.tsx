@@ -58,14 +58,14 @@ export function NavBar() {
                                     <ul className="dropdown-menu" style={{ background: 'rgb(237,237,237)', border: '0px solid gray', padding: '12px' }}>
                                         <li><a className="dropdown-item nav-link" href="/form_person">Clientes</a></li>
 
-                                        <li>{checkAdminPrivilege() === privilAdmin ? <a className="dropdown-item nav-link" href="/form_product">PRODUTOS</a> :
+                                        <li>{checkAdminPrivilege() === privilAdmin ? <a className="dropdown-item nav-link" href="/form_product">Produtos</a> :
                                             <></>}</li>
                                         <li>
 
                                             <hr className="dropdown-divider" />
                                         </li>
                                         <li><a className="dropdown-item nav-link" href="/person_update">Atualizar - Clientes</a></li>
-                                        <li>{checkAdminPrivilege() === privilAdmin ? <a className="dropdown-item nav-link" href="/product_update">ATUALIZAR - PRODUTOS</a> :
+                                        <li>{checkAdminPrivilege() === privilAdmin ? <a className="dropdown-item nav-link" href="/product_update">Atualizar - Produtos</a> :
                                             <></>}</li>
                                     </ul>
                                 </li>
