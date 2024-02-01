@@ -9,19 +9,18 @@ export function FooterHome() {
             <footer>
                 <p id="cookies"></p>
                 <p>
-                    <div><strong>SIGA-NOS NAS REDES SOCIAIS</strong></div>
-                    <a target="_blank" href="https://www.facebook.com/ademir.souzadealmeida"><img className="social-icons" src="img/social/facebook.png"></img></a>
-                    <a target="_blank" href="https://www.instagram.com/ademir_devel"><img className="social-icons" src="img//social//instagram.png"></img></a>
-                    <a target="_blank" href="https://linkedin.com/in/ademir-dev"><img className="social-icons" src="img//social//linkedin.png"></img></a>
-                    <a target="_blank" href="https://github.com/Ademir2021"><img className="social-icons" src="img//social//github.png"></img></a>
-                    <a target="_blank" href="https://twitter.com/AdemirDeveloper"><img className="social-icons" src="img//social//twitter.png"></img></a>
+                    {/* <div><strong>SIGA-NOS</strong></div> */}
+                    {/* <a target="_blank" href="https://www.facebook.com/ademir.souzadealmeida"><img className="social-icons" src="img/social/facebook.png"></img></a> */}
+                    {/* <a target="_blank" href="https://www.instagram.com/ademir_devel"><img className="social-icons" src="img//social//instagram.png"></img></a> */}
+                    {/* <a target="_blank" href="https://linkedin.com/in/ademir-dev"><img className="social-icons" src="img//social//linkedin.png"></img></a> */}
+                    {/* <a target="_blank" href="https://github.com/Ademir2021"><img className="social-icons" src="img//social//github.png"></img></a> */}
+                    {/* <a target="_blank" href="https://twitter.com/AdemirDeveloper"><img className="social-icons" src="img//social//twitter.png"></img></a> */}
                 </p>
 
                 <strong>Seguimentos</strong>
                 <p>INFORMÁTICA, ANTENAS E TELECOM EM GERAL</p>
 
                 <strong>CANAIS DE ACESSO</strong>
-                {/* <hr></hr> */}
                 <div className=''>
                     <div className='container-footer'>
                         <div className='main-footer'>
