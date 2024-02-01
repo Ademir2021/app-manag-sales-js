@@ -1,5 +1,5 @@
 var purecookieTitle="Cookies.",purecookieDesc="Ao usar este site vc aceita automaticamente que usamos cookies.",
-purecookieLink='<a href="https://app-centroinfo-aae9bffa47dc.herokuapp.com/#cookies"> O que siginifica?</a>',
+purecookieLink='<a href="cookies"> O que siginifica?</a>',
 purecookieButton="Entendido";function pureFadeIn(e,o){var i=document.getElementById(e);
 i.style.opacity=0,i.style.display=o||"block",function e(){var o=parseFloat(i.style.opacity);
 (o+=.02)>1||(i.style.opacity=o,requestAnimationFrame(e))}()}function pureFadeOut(e){var o=document.getElementById(e);o.style.opacity=1,

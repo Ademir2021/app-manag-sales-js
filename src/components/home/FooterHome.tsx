@@ -78,7 +78,7 @@ export function FooterHome() {
                         O <b>cookies</b> pemite que o website "lembre" suas ações ou preferencias ao longo do tempo. A
                         maioria dos navegadores da internet aceitam <a>cookies;</a> entretanto, os usuários podem configurar
                         seus navegadores para recusar certos tipos de <a>cookies</a> ou <a>cookies</a> específicos.
-                        <a href={Globais.URL + '/#cookies'} title="Politica de cookies">cokies</a>
+                        <a href={'cookies'} title="Politica de cookies">cokies</a>
                     </span>
                     <div>
                         <img className="site-ssl" src='img/ssl_cert.png' alt="Certificado SSL"></img>

@@ -25,6 +25,7 @@ import { FormModel } from "./useCases/formModel/FormModel";
 import { BackHome } from './components/utils/backHome/BackHome';
 import { Ceps } from "./useCases/ceps/Ceps";
 import { ContactsList } from "./useCases/contacts/ContactsList";
+import { CookieWarnings } from "./useCases/home/CookieWarnings";
 
 export function AppRoutes() {
     const Private = ({ children }: any) => {
@@ -52,6 +53,7 @@ export function AppRoutes() {
                     <Route path="/form_model" Component={FormModel} />
                     <Route path="/register" Component={UserRegister} />
                     <Route path="/contact" Component={Contacts} />
+                    <Route path="/cookies" Component={CookieWarnings} />
                     <Route path="/dashboardefault" element={<Private><DashboardDefault /></Private>} />
                     <Route path="/pe" element={<Private><ItenStore /></Private>} />
                     <Route path="/users_list" element={<Private><UsersList /></Private>} />
