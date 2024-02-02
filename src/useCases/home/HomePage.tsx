@@ -204,7 +204,6 @@ export function HomePage() {
                 contact={<a href={"/contact"} style={{color:'GrayText'}}>Fale Conosco {Globais.phone}</a>}
             />
             <NavBar />
-
             <SearchItens
                 messageItems={messages !== "" ? messages : ""}
                 list={<select>{products.map((product) => (
@@ -215,9 +214,6 @@ export function HomePage() {
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
             />
-
-            <Carousel/> 
-
             {(listProd.map((item: TProductRegister) => (
                 <ListItens
                     key={item.id_product}
@@ -229,7 +225,6 @@ export function HomePage() {
                     descric={item.descric_product}
                     amount={item.amount}
                     valor={item.val_max_product}
-
                     selectAmount={  checksUserLogged() !== undefined ?
                     < select onChange={e => e.target.value !== "Quant: 1" ?
                     setAmount(parseInt(e.target.value)) : setAmount(1)}
