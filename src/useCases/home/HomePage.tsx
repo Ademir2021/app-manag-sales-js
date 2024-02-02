@@ -11,6 +11,7 @@ import { currencyFormat } from '../../components/utils/currentFormat/CurrentForm
 import { Globais } from '../../components/globais/Globais';
 import { checksUserLogged } from '../../components/utils/checksUserLogged/ChecksUserLogged';
 import { BackHome } from '../../components/utils/backHome/BackHome';
+import { Carousel } from '../../components/carousel/Carousel';
 
 export function HomePage() {
 
@@ -204,9 +205,9 @@ export function HomePage() {
                 contact={<a href={"/contact"} style={{color:'GrayText'}}>Fale Conosco {Globais.phone}</a>}
             />
             <NavBar />
-            <h1 className='text-center'><a href='form_person'><b>Cadastre-se e faça suas Compras</b></a></h1>
+
             <SearchItens
-                messageItems={messages}
+                messageItems={messages !== "" ? messages : ""}
                 list={<select>{products.map((product) => (
                     <option key={product.id_product}>
                         {product.descric_product}</option>))}
@@ -215,6 +216,9 @@ export function HomePage() {
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
             />
+
+            <Carousel/> 
+
             {(listProd.map((item: TProductRegister) => (
                 <ListItens
                     key={item.id_product}
