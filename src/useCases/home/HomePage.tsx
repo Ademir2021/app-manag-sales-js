@@ -10,7 +10,6 @@ import { SearchItens } from '../../components/home/SearchItens';
 import { currencyFormat } from '../../components/utils/currentFormat/CurrentFormat';
 import { Globais } from '../../components/globais/Globais';
 import { checksUserLogged } from '../../components/utils/checksUserLogged/ChecksUserLogged';
-import { BackHome } from '../../components/utils/backHome/BackHome';
 import { Carousel } from '../../components/carousel/Carousel';
 
 export function HomePage() {
@@ -20,7 +19,7 @@ export function HomePage() {
     const [counter, setCounter] = useState<number>(0)
     const [subtotal, setsubtotal] = useState<number>(0)
     const [itemImg,] = useState<string>('./img/img_itens/sale_avatar.png');
-    const [messages, setMessages] = useState<string>('')
+    const [messages, setMessages] = useState<string>("")
     const [products, setProducts] = useState<TProductRegister[]>([]);
     const [listProd, setlistProd] = useState<TProductRegister[]>([]);
     const [itens, setItens] = useState<TItens[]>([]);

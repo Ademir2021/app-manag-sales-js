@@ -5,7 +5,7 @@ export function Carousel() {
       <div style={{
         backgroundColor: 'black',
         padding: '12px',
-        borderRadius: '3px'
+        borderRadius: '3px',
       }}>
         <h3
         className='text-center'
@@ -37,7 +37,7 @@ export function Carousel() {
               alt="1" /> */}
             <div style={{ color: 'white' }}>
               <h1>Compras segura</h1>
-              <p>Confiança - Rapidez - Facilidade</p>
+              <p>Confiança - Rápidez - Facilidade</p>
             </div>
           </div>
 
