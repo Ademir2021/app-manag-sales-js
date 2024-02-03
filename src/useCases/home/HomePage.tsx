@@ -203,7 +203,7 @@ export function HomePage() {
                 subtotal={subtotal === 0 ? '' :  currencyFormat(subtotal)}
                 contact={<a href={"/contact"} style={{color:'GrayText'}}>Fale Conosco {Globais.phone}</a>}
             />
-            <NavBar />
+            <NavBar />  
             <SearchItens
                 messageItems={messages !== "" ? messages : ""}
                 list={<select>{products.map((product) => (
