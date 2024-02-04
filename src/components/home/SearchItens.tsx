@@ -6,6 +6,7 @@ type PropsNavBar = {
     handleSubmit?: React.FormEventHandler<HTMLFormElement> | undefined | any;
     descric?: string;
     messageItems?:any;
+
 };
 
 export function SearchItens(props: PropsNavBar): JSX.Element {
@@ -16,7 +17,7 @@ export function SearchItens(props: PropsNavBar): JSX.Element {
             <section className="p-1">
                     <form onSubmit={props.handleSubmit} className="d-flex mt-3 mt-lg-0" role="search">
                         <datalist id='data-itens' >{props.list}</datalist>
-                        <input className="form-control p-2 mb-3" type="search"
+                        <input className="form-control p-2 mb-3 text-center" type="search"
                             placeholder="Do que você precisa ?" aria-label="Search"
                             list='data-itens' name='descric' value={props.descric}
                             style={{backgroundColor:'white'}}

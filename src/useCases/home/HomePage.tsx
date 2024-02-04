@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { NavBar } from "../../components/navbar/Navbar";
 import { TProductRegister, TItem, TItens, TBrand, TSector } from '../products/type/TypeProducts';
 import api from '../../services/api/api'
@@ -11,9 +11,9 @@ import { currencyFormat } from '../../components/utils/currentFormat/CurrentForm
 import { Globais } from '../../components/globais/Globais';
 import { checksUserLogged } from '../../components/utils/checksUserLogged/ChecksUserLogged';
 import { Carousel } from '../../components/carousel/Carousel';
+import './../../components/home/SearchItens.css'
 
 export function HomePage() {
-
     const [id, setId] = useState<number>(1);
     let [amount, setAmount] = useState<number>(1)
     const [counter, setCounter] = useState<number>(0)
@@ -24,34 +24,35 @@ export function HomePage() {
     const [listProd, setlistProd] = useState<TProductRegister[]>([]);
     const [itens, setItens] = useState<TItens[]>([]);
     const [item, setItem] = useState<TItem>({ descric: '' });
-
     const [brands, setBrand] = useState<TBrand[]>([]);
     const [sectors, setSector] = useState<TSector[]>([]);
-
+    const [selectSector, setSelectSector] = useState<string>("Todos")
     const handleChange = (e: any) => {
         const name = e.target.name;
         const value = e.target.value;
         setItem(values => ({ ...values, [name]: value }))
     };
 
-    const getProducts = useCallback(async () => {
+    async function getProducts() {
         try {
             await api.get<TProductRegister[]>('products_home')
                 .then(response => {
                     const resultProducts: TProductRegister[] = []
                     const items: TProductRegister[] = response.data
                     for (let i = 0; items.length > i; i++) {
-                        if (items[i].fk_sector != 7 && items[i].fk_sector != 6) { // Remover grupo especifico.
+                        if (items[i].fk_sector === idSector(selectSector)?.id_sector) {
                             resultProducts.push(items[i])
-                            setlistProd(resultProducts)
-                            setProducts(resultProducts)
                         }
+                        selectSector !== "Todos" ? setProducts(resultProducts) : setProducts(items)
                     }
                 })
         } catch (err) {
             console.log("error occurred !" + err)
         }
-    }, [products]);
+    }
+    useEffect(() => {
+        getProducts()
+    }, [products])
 
     function getItensStorage() {
         const res_itens = localStorage.getItem('p')
@@ -85,6 +86,7 @@ export function HomePage() {
                 itens[i].amount = itens[i].amount + element.amount;
                 return itens[i].tItem = itens[i].amount * itens[i].valor;
             }
+
         setCounter(counter + 1)
         localStorage.setItem("c", JSON.stringify(counter + 1));
         setId(id + 1);
@@ -94,13 +96,13 @@ export function HomePage() {
     function checkItemAlreadyExists(id: number) {
         for (let i = 0; itens.length > i; i++) {
             if (itens[i].item === id)
-           alert('Item (' + itens[i].item + ') já estava com (' + itens[i].amount + ' UN) no carrinho !')
+                alert('Item (' + itens[i].item + ') já estava com (' + itens[i].amount + ' UN) no carrinho !')
         }
         return true
     }
 
     function handleItem(item: TProductRegister) {
-        if (checkItemAlreadyExists(item.id_product) === true ) {
+        if (checkItemAlreadyExists(item.id_product) === true) {
             const getItem: TItens = {
                 id: 0,
                 item: 0,
@@ -136,20 +138,17 @@ export function HomePage() {
 
     function handleSubmit(e: Event) {
         e.preventDefault()
-        const res = []
-        for (let i = 0; products.length > 0; i++) {
-            if (item.descric === products[i].descric_product) {
-                let num_sector = 0;
-                item.descric = '';
-                num_sector = products[i].fk_sector
-                for (let j = 0; products.length > j; j++) {
-                    if (num_sector === products[j].fk_sector) {
-                        res.push(products[j])
-                        setlistProd(res)
-                    }
+        if (item.descric !== '') {
+            const res: TProductRegister[] = []
+            for (let i = 0; products.length > 0; i++) {
+                if (item.descric === products[i].descric_product) {
+                    res.push(products[i])
+                    setlistProd(res)
+                    item.descric = ""
                 }
             }
         }
+        setlistProd(products)
     }
 
     async function getBrands() {
@@ -195,21 +194,34 @@ export function HomePage() {
             }
         }
     }
+    function idSector(nameSector: string) {
+        for (let i = 0; i < sectors.length; i++) {
+            if (sectors[i].name_sector === nameSector) {
+                return sectors[i]
+            }
+        }
+    }
 
     return (
         <>
             <Header
                 counter={counter !== 0 ? counter : 0}
-                subtotal={subtotal === 0 ? '' :  currencyFormat(subtotal)}
-                contact={<a href={"/contact"} style={{color:'GrayText'}}>Fale Conosco {Globais.phone}</a>}
+                subtotal={subtotal === 0 ? '' : currencyFormat(subtotal)}
+                contact={<a href={"/contact"} style={{ color: 'GrayText' }}>Fale Conosco {Globais.phone}</a>}
             />
-            <NavBar />  
+            <NavBar />
+            <select className='search-select' onChange={e => setSelectSector(e.target.value)} >
+                <option>Todos</option>
+                {sectors.map((sector) => (
+                    <option key={sector.id_sector}>
+                        {sector.name_sector}</option>))}
+            </select>
             <SearchItens
                 messageItems={messages !== "" ? messages : ""}
-                list={<select>{products.map((product) => (
+                list={item.descric !== "" ? <select>{products.map((product) => (
                     <option key={product.id_product}>
                         {product.descric_product}</option>))}
-                </select>}
+                </select> : item.descric = ""}
                 descric={item.descric}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
@@ -225,45 +237,44 @@ export function HomePage() {
                     descric={item.descric_product}
                     amount={item.amount}
                     valor={item.val_max_product}
-                    selectAmount={  checksUserLogged() !== undefined ?
-                    < select onChange={e => e.target.value !== "Quant: 1" ?
-                    setAmount(parseInt(e.target.value)) : setAmount(1)}
-                    style={{color:'black'}}
-                    ><option>{"Quant: 1"}</option>
-                        <option>{2}</option>
-                        <option>{3}</option>
-                        <option>{4}</option>
-                        <option>{5}</option>
-                        <option>{6}</option>
-                        <option>{7}</option>
-                        <option>{8}</option>
-                        <option>{9}</option>
-                        <option>{10}</option>
-                        <option>{11}</option>
-                        <option>{12}</option>
-                        <option>{13}</option>
-                        <option>{14}</option>
-                        <option>{15}</option>
-                        <option>{16}</option>
-                        <option>{17}</option>
-                        <option>{18}</option>
-                        <option>{19}</option>
-                        <option>{20}</option>
-                        <option>{21}</option>
-                        <option>{22}</option>
-                        <option>{23}</option>
-                        <option>{24}</option>
-                        <option>{25}</option>
-                        <option>{26}</option>
-                        <option>{27}</option>
-                        <option>{28}</option>
-                        <option>{29}</option>
-                        <option>{30}</option>
-                    </select> : null}
-
-                    addItem={ checksUserLogged() !== undefined ? <button className='btn btn-primary' onClick={() =>
-                        handleItem(item)}>Comprar</button> :<button className='btn btn-primary'
-                        onClick={()=>{window.location.replace("/pe")}}>Solicitar cotação</button>}
+                    selectAmount={checksUserLogged() !== undefined ?
+                        < select onChange={e => e.target.value !== "Quant: 1" ?
+                            setAmount(parseInt(e.target.value)) : setAmount(1)}
+                            style={{ color: 'black' }}
+                        ><option>{"Quant: 1"}</option>
+                            <option>{2}</option>
+                            <option>{3}</option>
+                            <option>{4}</option>
+                            <option>{5}</option>
+                            <option>{6}</option>
+                            <option>{7}</option>
+                            <option>{8}</option>
+                            <option>{9}</option>
+                            <option>{10}</option>
+                            <option>{11}</option>
+                            <option>{12}</option>
+                            <option>{13}</option>
+                            <option>{14}</option>
+                            <option>{15}</option>
+                            <option>{16}</option>
+                            <option>{17}</option>
+                            <option>{18}</option>
+                            <option>{19}</option>
+                            <option>{20}</option>
+                            <option>{21}</option>
+                            <option>{22}</option>
+                            <option>{23}</option>
+                            <option>{24}</option>
+                            <option>{25}</option>
+                            <option>{26}</option>
+                            <option>{27}</option>
+                            <option>{28}</option>
+                            <option>{29}</option>
+                            <option>{30}</option>
+                        </select> : null}
+                    addItem={checksUserLogged() !== undefined ? <button className='btn btn-primary' onClick={() =>
+                        handleItem(item)}>Comprar</button> : <button className='btn btn-primary'
+                            onClick={() => { window.location.replace("/pe") }}>Solicitar cotação</button>}
                 />
             )))}
             <Whats />

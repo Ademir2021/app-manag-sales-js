@@ -18,3 +18,22 @@ background-color: aliceblue;
     font-size: 12px;
     padding-left: 12px;
 }
+
+.search-select{
+    /* display: flex; */
+    background-color:white;
+    position: relative;
+    left: -20rem;
+    top:2.8rem;
+    width: 68px;
+    height: 39px;
+    font-size: 12px;
+    border-radius: 4px 0px 0px 4px;
+    border: none;
+}
+@media screen and (max-width:768px) {
+    .search-select{
+        top:3.8rem;
+        left: -20rem;
+    }
+}
