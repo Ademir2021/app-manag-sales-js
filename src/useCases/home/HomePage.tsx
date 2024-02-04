@@ -213,7 +213,7 @@ export function HomePage() {
           
             <SearchItens
             selectSector={  <select className='search-select' onChange={e => setSelectSector(e.target.value)} >
-            <option><b>Todos</b></option>
+            <option>Todos</option>
             {sectors.map((sector) => (
                 <option key={sector.id_sector}>
                     {sector.name_sector}</option>))}
