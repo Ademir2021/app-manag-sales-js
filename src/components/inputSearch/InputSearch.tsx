@@ -10,6 +10,7 @@ type Props = {
 
 export function InputSearch(props: Props) {
   return (
+    <>
     <div className='container-global'>
       <div className='main-global'>
         <form className='main-global-form'>
@@ -23,6 +24,6 @@ export function InputSearch(props: Props) {
         </form>
       </div>
     </div>
-
+</>
   )
 }

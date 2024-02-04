@@ -20,20 +20,21 @@ background-color: aliceblue;
 }
 
 .search-select{
-    /* display: flex; */
-    background-color:white;
-    position: relative;
-    left: -20rem;
-    top:2.8rem;
+    background-color:rgb(237,237,237);
+    position:absolute;
+    left: 8rem;
+    top:8.5rem;
     width: 68px;
     height: 39px;
     font-size: 12px;
     border-radius: 4px 0px 0px 4px;
+    /* border: 0px solid rgb(237, 237, 237); */
+    padding: 4px;
     border: none;
 }
 @media screen and (max-width:768px) {
     .search-select{
-        top:3.8rem;
-        left: -20rem;
+        top:9.5rem;
+        left:1rem;
     }
 }

@@ -210,13 +210,14 @@ export function HomePage() {
                 contact={<a href={"/contact"} style={{ color: 'GrayText' }}>Fale Conosco {Globais.phone}</a>}
             />
             <NavBar />
-            <select className='search-select' onChange={e => setSelectSector(e.target.value)} >
-                <option>Todos</option>
-                {sectors.map((sector) => (
-                    <option key={sector.id_sector}>
-                        {sector.name_sector}</option>))}
-            </select>
+          
             <SearchItens
+            selectSector={  <select className='search-select' onChange={e => setSelectSector(e.target.value)} >
+            <option>Todos</option>
+            {sectors.map((sector) => (
+                <option key={sector.id_sector}>
+                    {sector.name_sector}</option>))}
+        </select>}
                 messageItems={messages !== "" ? messages : ""}
                 list={item.descric !== "" ? <select>{products.map((product) => (
                     <option key={product.id_product}>
