@@ -44,10 +44,10 @@ export function ListItens(props: PropsListItens) {
                         <option>{10}</option>
                     </select> : null}
 
-                {checksUserLogged() !== undefined ? <p><a href='pe'>Ir para o Carrinho</a></p> : <p></p>}
+                {checksUserLogged() !== undefined ? <div className='mb-1'><a href='pe'>Ir para o Carrinho</a></div> : null}
 
-                {checksUserLogged() !== undefined ? <button className='btn btn-primary' onClick={() =>
-                    props.handleItem(props.paramitem)}>Comprar</button> : <button className='btn btn-primary'
+                {checksUserLogged() !== undefined ? <button className='btn btn-primary mb-2' onClick={() =>
+                    props.handleItem(props.paramitem)}>Comprar</button> : <button className='btn btn-primary mb-2'
                         onClick={() => { window.location.replace("/pe") }}>Solicitar cotação</button>}
             </div>
         </div>
