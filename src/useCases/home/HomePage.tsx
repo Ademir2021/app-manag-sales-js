@@ -213,8 +213,7 @@ export function HomePage() {
             {(listProd.map((item: TProductRegister) => (
                 <ListItens
                     key={item.id_product}
-                    item_img={item.image !== null ?
-                        `./img/img_itens/${item.image}` : itemImg}
+                    item_img={item.image !== null ? `./img/img_itens/${item.image}` : itemImg}
                     id={item.id_product}
                     brand={nameBrands(item.fk_brand)}
                     sector={nameSector(item.fk_sector)}
@@ -223,7 +222,7 @@ export function HomePage() {
                     valor={item.val_max_product}
                     selectAmount={e => e.target.value !== "Quant: 1" ? setAmount(parseInt(e.target.value)) : setAmount(1)}
                     handleItem={handleItem}
-                    paramitem={item}
+                    itemParameter={item}
                 />
             )))}
             <Whats />

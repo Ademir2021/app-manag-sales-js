@@ -5,8 +5,6 @@ import { TProductRegister, TItens } from "../products/type/TypeProducts";
 import { currencyFormat } from "../../components/utils/currentFormat/CurrentFormat";
 import api from "../../services/api/api";
 
-import "../../App.css"
-
 export function RegisterSale() {
 
     const [product, setProduct] = useState<TItens>(
@@ -230,10 +228,7 @@ export function RegisterSale() {
                 handleSubmit={handleSubmit}
                 handleDelete={handleDelete}
                 handleSearchItem={searchItem}
-                list={<select>{products.map((product) => (
-                    <option key={product.id_product}>
-                        {product.descric_product}</option>))}
-                </select>}
+                products={products}
                 item={(product.descric)}
                 statusBtnSaveUpdate={statusBtnSaveUpdate}
                 statusBtnSaleSubmit={statusBtnSaleSubmit}

@@ -5,16 +5,15 @@ import { Thead } from '../dashboard/Thead';
 import { Globais } from '../globais/Globais';
 import { currencyFormat } from '../utils/currentFormat/CurrentFormat';
 
-
 type TRegisterSaleForm = {
   children: string | number | readonly string[] | undefined | any;
   handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
-  handleSubmit: React.FormEventHandler<HTMLFormElement> | undefined | any;
+  handleSubmit: any;
   handleDelete: any;
   handleSaveUpdate: any;
   handleSearchItem: any;
-  list: HTMLSelectElement | HTMLOptionElement | any;
-  item: any
+  products: Array<object>;
+  item: string | number;
   statusBtnSaveUpdate: "Salvar Item" | "Atualizar Item";
   statusBtnSaleSubmit: "Iniciar Pedido" | "Faturar Pedido";
   loadItens: string | any;
@@ -31,7 +30,7 @@ export function RegisterSaleForm({
   handleDelete,
   handleSaveUpdate,
   handleSearchItem,
-  list,
+  products,
   item,
   statusBtnSaveUpdate,
   statusBtnSaleSubmit,
@@ -44,7 +43,6 @@ export function RegisterSaleForm({
 
   return (
     <>
-      <p></p>
       <div className="container-sale">
         <div className="main-sale">
           <form className='main-sale-register' >
@@ -71,8 +69,12 @@ export function RegisterSaleForm({
             </span>
 
             <datalist id="data-itens">
-              {list}
+              <select>{products.map((product:number|string|any) => (
+                <option key={product.id_product}>
+                  {product.descric_product}</option>))}
+              </select>
             </datalist>
+
             <input
               type="search"
               list="data-itens"
