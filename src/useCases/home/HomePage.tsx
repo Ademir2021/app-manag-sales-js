@@ -2,7 +2,7 @@ import { useState, useEffect, SetStateAction } from 'react';
 import { NavBar } from "../../components/navbar/Navbar";
 import { TProductRegister, TItem, TItens, TBrand, TSector } from '../products/type/TypeProducts';
 import api from '../../services/api/api'
-import { ListItens } from '../../components/home/HomePage';
+import { ListItens } from '../../components/home/ListItens';
 import { Header } from '../../components/home/Header';
 import { FooterHomePage } from './FooterHome';
 import { Whats } from '../../components/whats/Whats';
