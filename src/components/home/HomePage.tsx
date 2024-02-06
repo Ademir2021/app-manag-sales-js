@@ -6,7 +6,7 @@ type PropsListItens = {
     id?: number;
     item_img: string;
     item?: number;
-    descric: string | number | "" | 0;
+    descric: string | number;
     sector: number | string | undefined;
     brand: number | string | undefined;
     amount: number | undefined;
