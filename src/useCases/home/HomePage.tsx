@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, SetStateAction } from 'react';
 import { NavBar } from "../../components/navbar/Navbar";
 import { TProductRegister, TItem, TItens, TBrand, TSector } from '../products/type/TypeProducts';
 import api from '../../services/api/api'
@@ -11,7 +11,6 @@ import { currencyFormat } from '../../components/utils/currentFormat/CurrentForm
 import { Globais } from '../../components/globais/Globais';
 import { checksUserLogged } from '../../components/utils/checksUserLogged/ChecksUserLogged';
 import { Carousel } from '../../components/carousel/Carousel';
-import './../../components/home/SearchItens.css'
 
 export function HomePage() {
     const [id, setId] = useState<number>(1);
@@ -40,19 +39,12 @@ export function HomePage() {
                     const resultProducts: TProductRegister[] = []
                     const items: TProductRegister[] = response.data
                     for (let i = 0; items.length > i; i++) {
-                        if (items[i].fk_sector === idSector(selectSector)?.id_sector) {
-                            resultProducts.push(items[i])
-                        }
-                        selectSector !== "Todos" ? setProducts(resultProducts) : setProducts(items)
+                        if (items[i].fk_sector === idSector(selectSector)?.id_sector) resultProducts.push(items[i]);
+                        selectSector !== "Todos" ? setProducts(resultProducts) : setProducts(items);
                     }
                 })
-        } catch (err) {
-            console.log("error occurred !" + err)
-        }
-    }
-    useEffect(() => {
-        getProducts()
-    }, [products])
+        } catch (err) { console.log("error occurred !" + err) }
+    } useEffect(() => { getProducts() }, [products])
 
     function getItensStorage() {
         const res_itens = localStorage.getItem('p')
@@ -210,19 +202,11 @@ export function HomePage() {
                 contact={<a href={"/contact"} style={{ color: 'GrayText' }}>Fale Conosco {Globais.phone}</a>}
             />
             <NavBar />
-          
             <SearchItens
-            selectSector={  <select className='search-select' onChange={e => setSelectSector(e.target.value)} >
-            <option>Todos</option>
-            {sectors.map((sector) => (
-                <option key={sector.id_sector}>
-                    {sector.name_sector}</option>))}
-        </select>}
+                selectSector={(e: { target: { value: SetStateAction<string> } }) => setSelectSector(e.target.value)}
+                sectors={sectors}
                 messageItems={messages !== "" ? messages : ""}
-                list={item.descric !== "" ? <select>{products.map((product) => (
-                    <option key={product.id_product}>
-                        {product.descric_product}</option>))}
-                </select> : item.descric = ""}
+                products={products}
                 descric={item.descric}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
