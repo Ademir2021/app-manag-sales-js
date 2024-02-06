@@ -222,44 +222,9 @@ export function HomePage() {
                     descric={item.descric_product}
                     amount={item.amount}
                     valor={item.val_max_product}
-                    selectAmount={checksUserLogged() !== undefined ?
-                        < select onChange={e => e.target.value !== "Quant: 1" ?
-                            setAmount(parseInt(e.target.value)) : setAmount(1)}
-                            style={{ color: 'black' }}
-                        ><option>{"Quant: 1"}</option>
-                            <option>{2}</option>
-                            <option>{3}</option>
-                            <option>{4}</option>
-                            <option>{5}</option>
-                            <option>{6}</option>
-                            <option>{7}</option>
-                            <option>{8}</option>
-                            <option>{9}</option>
-                            <option>{10}</option>
-                            <option>{11}</option>
-                            <option>{12}</option>
-                            <option>{13}</option>
-                            <option>{14}</option>
-                            <option>{15}</option>
-                            <option>{16}</option>
-                            <option>{17}</option>
-                            <option>{18}</option>
-                            <option>{19}</option>
-                            <option>{20}</option>
-                            <option>{21}</option>
-                            <option>{22}</option>
-                            <option>{23}</option>
-                            <option>{24}</option>
-                            <option>{25}</option>
-                            <option>{26}</option>
-                            <option>{27}</option>
-                            <option>{28}</option>
-                            <option>{29}</option>
-                            <option>{30}</option>
-                        </select> : null}
-                    addItem={checksUserLogged() !== undefined ? <button className='btn btn-primary' onClick={() =>
-                        handleItem(item)}>Comprar</button> : <button className='btn btn-primary'
-                            onClick={() => { window.location.replace("/pe") }}>Solicitar cotação</button>}
+                    selectAmount={e => e.target.value !== "Quant: 1" ? setAmount(parseInt(e.target.value)) : setAmount(1)}
+                    handleItem={handleItem}
+                    paramitem={item}
                 />
             )))}
             <Whats />

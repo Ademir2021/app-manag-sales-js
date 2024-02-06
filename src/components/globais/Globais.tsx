@@ -45,7 +45,7 @@ const setMonth = () => {
 }
 
 export class Globais {
-    static calendar = saudacao + ' - ' + 'Hoje é ' + day + ' de ' + setMonth() + ' de ' + year + ' ás ' + H + ':' + M + ':' + S
+    static calendar = saudacao + ' - ' + day + ' de ' + setMonth() + ' de ' + year + ' ás ' + H + ':' + M + ':' + S
     static checksUserLogged = undefined;
     static privilAdmin = '2'
     static rights_reserved = '2007 | ' + year + ', All rights reserved CENTROINFO';

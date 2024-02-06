@@ -1,4 +1,3 @@
-import { EventHandler } from 'react';
 import './SearchItens.css'
 
 type SearchItens = {
@@ -24,9 +23,7 @@ export function SearchItens(props: SearchItens) {
 
             <label className='search-items-message'>{props.messageItems}</label>
             <section className="p-1">
-                <form onSubmit={props.handleSubmit} className="d-flex mt-3 mt-lg-0" role="search">
-
-
+                <form onSubmit={props.handleSubmit} className="d-flex mt-1 mt-lg-0" role="search">
                     <datalist id='data-itens' ><select>{props.products.map((product: any) => (
                         <option key={product.id_product}>
                             {product.descric_product}</option>))}
