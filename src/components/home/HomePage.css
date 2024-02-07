@@ -15,12 +15,16 @@
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    border: 1px rgb(196, 206, 196) solid;
+    /* border: 1px rgb(196, 206, 196) solid; */
     background-color:white;
     border-radius: 4px;
     /* margin-top: 2px; */
     /* margin-bottom: 1px; */
     padding: 0px 1px 0px 0px;
+}
+.main-itens:hover{
+    background-color: rgb(246, 247, 253);
+     /* border: 1px rgb(226, 221, 221) solid; */
 }
 
 .itens-img {
