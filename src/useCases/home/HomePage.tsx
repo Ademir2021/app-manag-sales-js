@@ -185,6 +185,7 @@ export function HomePage() {
             }
         }
     }
+    
     function idSector(nameSector: string) {
         for (let i = 0; i < sectors.length; i++) {
             if (sectors[i].name_sector === nameSector) {
