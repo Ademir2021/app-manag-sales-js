@@ -5,32 +5,27 @@ export function Carousel() {
   return (
 
     <div
-      id="carouselExampleIndicators" className="carousel slide text-center" data-ride="carousel">
+      id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
       <ol className="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
-      <div className="carousel-inner">  
-
+      <div className="carousel-inner">
         <div className="carousel-item active">
-        <div>
-        <img src='img\banner_llink_4g.png' className="carousel-img-banner"/>
+          <img src='img\banner_link_4g.png' className="carousel-img-banner" />
         </div>
-        </div>
-
         <div className="carousel-item">
-        <div>
-        <img src='img\banner_link_4g_2.png' className='carousel-img-banner'/>
+          <img src='img\banner_b7.png' className='carousel-img-banner' />
         </div>
-        </div>
-
         <div className="carousel-item">
-        <div>
-        <img src='img\banner_elsys_1.png' className='carousel-img-banner'/>
+          <img src='img\banner_amplimax_4g.png' className='carousel-img-banner' />
         </div>
+        <div className="carousel-item">
+          <img src='img\banner_elsys_1.png' className='carousel-img-banner' />        </div>
+        <div className="carousel-item">
+          <img src='img\banner_rigol.png' className='carousel-img-banner' />
         </div>
-
         <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="sr-only"></span>
@@ -41,6 +36,5 @@ export function Carousel() {
         </a>
       </div>
     </div>
-
   )
 }
