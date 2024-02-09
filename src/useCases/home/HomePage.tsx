@@ -25,6 +25,7 @@ export function HomePage() {
     const [brands, setBrand] = useState<TBrand[]>([]);
     const [sectors, setSector] = useState<TSector[]>([]);
     const [selectSector, setSelectSector] = useState<string>("Todos")
+    const [flgItens, setFlgItens] = useState<boolean>(false)
     const handleChange = (e: any) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -37,13 +38,22 @@ export function HomePage() {
                 .then(response => {
                     const resultProducts: TProductRegister[] = []
                     const items: TProductRegister[] = response.data
+
+                    if (flgItens === false) {
+                        setlistProd(items)
+                        setFlgItens(true)
+                    }
+
                     for (let i = 0; items.length > i; i++) {
                         if (items[i].fk_sector === idSector(selectSector)?.id_sector) resultProducts.push(items[i]);
                         selectSector !== "Todos" ? setProducts(resultProducts) : setProducts(items);
                     }
                 })
         } catch (err) { console.log("error occurred !" + err) }
-    } useEffect(() => { getProducts() }, [products])
+    }
+    useEffect(() => {
+        getProducts()
+    }, [products])
 
     function getItensStorage() {
         const res_itens = localStorage.getItem('p')
@@ -127,8 +137,7 @@ export function HomePage() {
         }
     }
 
-    function handleSubmit(e: Event) {
-        e.preventDefault()
+    function handleProducts() {
         if (item.descric !== '') {
             const res: TProductRegister[] = []
             for (let i = 0; products.length > 0; i++) {
@@ -140,6 +149,11 @@ export function HomePage() {
             }
         }
         setlistProd(products)
+    }
+
+    function handleSubmit(e: Event) {
+        e.preventDefault()
+        handleProducts()
     }
 
     async function getBrands() {
@@ -185,7 +199,7 @@ export function HomePage() {
             }
         }
     }
-    
+
     function idSector(nameSector: string) {
         for (let i = 0; i < sectors.length; i++) {
             if (sectors[i].name_sector === nameSector) {
@@ -202,6 +216,7 @@ export function HomePage() {
                 contact={<a href={"/contact"} style={{ color: 'GrayText' }}>Fale Conosco {Globais.phone}</a>}
             />
             <NavBar />
+            <Carousel/>
             <SearchItens
                 selectSector={(e: { target: { value: SetStateAction<string> } }) => setSelectSector(e.target.value)}
                 sectors={sectors}
@@ -210,7 +225,7 @@ export function HomePage() {
                 descric={item.descric}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
-            />
+                />
             {(listProd.map((item: TProductRegister) => (
                 <ListItens
                     key={item.id_product}

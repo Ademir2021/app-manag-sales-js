@@ -1,0 +1,13 @@
+.carousel-img-banner{
+    border: solid 3px rgb(237,237,237);
+    border-radius: 12px;
+    width: 1120px;
+    height: 422px;
+}
+@media screen and (max-width:768px) {
+    .carousel-img-banner{
+        width: 420px;
+        height: 150px;
+    }
+
+}

@@ -11,9 +11,11 @@
     width: 32px;
     height: 32px;
 }
+
 .search-items-img:hover{
 background-color: aliceblue;
 }
+
 .search-items-message{
     font-size: 12px;
     padding-left: 12px;
@@ -21,20 +23,20 @@ background-color: aliceblue;
 
 .search-select{
     background-color:rgb(194, 194, 194);
-    position:absolute;
-    left: 8rem;
-    top:8.5rem;
     width: 68px;
-    height: 39px;
+    height: 42px;
     font-size: 12px;
     border-radius: 8px 0px 0px 8px;
     border: 1px solid rgb(237, 237, 237);
-    padding: 4px;
-    /* border: none; */
 }
-@media screen and (max-width:768px) {
-    .search-select{
-        top:8.8rem;
-        left:1rem;
-    }
+
+.search-item-main{
+    margin-top: 4px;
+}
+.search-item-input{
+    font-size: 14px;
+    border-radius: 0px 6px 6px 0px;
+    width: 100%;
+    height: 42px;
+    border: 1px solid rgb(237, 237, 237);
 }

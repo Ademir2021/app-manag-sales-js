@@ -1,3 +1,5 @@
+import './Carousel.css'
+
 export function Carousel() {
 
   return (
@@ -9,14 +11,26 @@ export function Carousel() {
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
-      <div className="carousel-inner">
+      <div className="carousel-inner">  
 
         <div className="carousel-item active">
-          <div>
-            <img src='...' />
-          </div>
-
+        <div>
+        <img src='img\banner_llink_4g.png' className="carousel-img-banner"/>
         </div>
+        </div>
+
+        <div className="carousel-item">
+        <div>
+        <img src='img\banner_link_4g_2.png' className='carousel-img-banner'/>
+        </div>
+        </div>
+
+        <div className="carousel-item">
+        <div>
+        <img src='img\banner_elsys_1.png' className='carousel-img-banner'/>
+        </div>
+        </div>
+
         <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="sr-only"></span>
@@ -27,6 +41,6 @@ export function Carousel() {
         </a>
       </div>
     </div>
-    
+
   )
 }
