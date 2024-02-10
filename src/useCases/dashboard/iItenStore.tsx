@@ -71,7 +71,7 @@ export function ItenStore() {
             </ul>
             <hr></hr>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '1px' }}>
-                <img style={{ width: '60px', height: '70px' }} src="img/car_sale.jpg" alt="Carrinho de Compras" /></div>
+                <a href='sale'><img style={{ width: '60px', height: '60px' }} src="img/car_sale.png" alt="Carrinho de Compras" /></a></div>
 
             {itens.length !== 0 ? <MessagesCar
                 messages={messages}

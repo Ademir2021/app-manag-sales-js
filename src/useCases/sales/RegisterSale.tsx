@@ -17,7 +17,7 @@ export function RegisterSale() {
     const [totalItens, setTotalItens] = useState<number>(0)
     const [statusBtnSaleSubmit, setStatusBtnSaleSubmit] = useState<"Iniciar Pedido" | "Faturar Pedido">("Iniciar Pedido");
     const [statusBtnSaveUpdate, setStatusBtnSaveUpdate] = useState<"Salvar Item" | "Atualizar Item">("Salvar Item");
-    const [itemImg, setIemImg] = useState<string>('./img/car_sale.jpg');
+    const [itemImg, setIemImg] = useState<string>('./img/car_sale.png');
     const [itenStorage, setItenStorage] = useState<TItens[]>([]);
     const [statuStore, setStatuStore] = useState<boolean>(false)
 
@@ -46,7 +46,7 @@ export function RegisterSale() {
         product.tItem = item.amount * item.valor;
         product.image = item.image;
         if (product.image === null) {
-            setIemImg('./img/car_sale.jpg')
+            setIemImg('./img/car_sale.png')
         } else {
             findProducts();
         }
@@ -67,7 +67,7 @@ export function RegisterSale() {
                 product.valor = products[i].val_max_product;
                 product.tItem = product.valor * product.amount;
                 if (products[i].image === null) {
-                    setIemImg('./img/car_sale.jpg')
+                    setIemImg('./img/car_sale.png')
                 } else {
                     setIemImg("./img/img_itens/" + products[i].image);
                 }
@@ -188,7 +188,7 @@ export function RegisterSale() {
         setStatusBtnSaleSubmit("Iniciar Pedido");
         setEditId(null);
         setPreco(0);
-        setIemImg('./img/car_sale.jpg')
+        setIemImg('./img/car_sale.png')
     };
 
     function searchItem(e: Event) {
