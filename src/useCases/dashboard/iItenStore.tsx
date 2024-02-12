@@ -77,7 +77,7 @@ export function ItenStore() {
                 messages={messages}
                 counter_={counter_}
                 subtotal={subtotal} /> : ''}
-            {itens.length === 0 ? <Waiting waiting={"O seu carrinho de compras está vazio"} /> : <Thead />}
+            {itens.length === 0 ? <Waiting waiting={"O seu Carrinho de compras está vazio"} /> : <Thead />}
            {itens.length === 0 ? <div
            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '1px' }}><button
            className='btn btn-primary' onClick={()=>{window.location.replace("/")}}>Voltar as Compras</button></div> : null}

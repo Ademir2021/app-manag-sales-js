@@ -3,7 +3,7 @@ import { currencyFormat } from "../utils/currentFormat/CurrentFormat";
 type Props = {
     id?: number;
     item?: number;
-    descric: string | number | "" | 0;
+    descric: string | number;
     amount: number;
     valor: number;
     tItem: number;
