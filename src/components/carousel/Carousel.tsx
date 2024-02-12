@@ -10,19 +10,24 @@ export function Carousel() {
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
         </ol>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src='img\carousel\banner_link_4g.png' className="carousel-img-banner" alt='Link 4G' />
+            <img src='img\carousel\banner_link_4g.png' className="carousel-img-banner" alt='Aquario Link 4G' />
           </div>
           <div className="carousel-item">
-            <img src='img\carousel\banner_b7.png' className='carousel-img-banner' />
+            <img src='img\carousel\banner_b7.png' className='carousel-img-banner' alt='Receptor Satélite B7' />
           </div>
           <div className="carousel-item">
-            <img src='img\carousel\banner_amplimax_4g.png' className='carousel-img-banner' alt='Rec Sat Century b7' />
+            <img src='img\carousel\banner_amplimax_4g.png' className='carousel-img-banner' alt='Amplimax 4G' />
           </div>
           <div className="carousel-item">
-            <img src='img\carousel\banner_elsys_1.png' className='carousel-img-banner' alt='Amplimax 4G' />
+            <img src='img\carousel\banner_amplimax_4g_2.png' className='carousel-img-banner' alt='Amplimax 4G 2' />
+          </div>
+          <div className="carousel-item">
+            <img src='img\carousel\banner_parabolica_century.png' className='carousel-img-banner' alt='Parabólica Century' />
           </div>
           <div className="carousel-item">
             <img src='img\carousel\banner_rigol.png' className='carousel-img-banner' alt='Osciloscopio Rigol' />
