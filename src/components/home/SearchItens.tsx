@@ -13,11 +13,8 @@ type SearchItens = {
 export function SearchItens(props: SearchItens) {
 
     return (
-        <>
-
-
             <section className="search-item-main">
-                <form onSubmit={props.handleSubmit} className="d-flex mt-1 mt-lg-0" role="search">
+                <form onClick={props.handleSubmit} className="d-flex mt-1 mt-lg-0" role="search">
                     <datalist id='data-itens' ><select>{props.products.map((product: any) => (
                         <option key={product.id_product}>
                             {product.descric_product}</option>))}
@@ -41,7 +38,5 @@ export function SearchItens(props: SearchItens) {
                 </form>
                 <strong className='search-items-message'>{props.messageItems}</strong>
             </section>
-
-        </>
     )
 }
