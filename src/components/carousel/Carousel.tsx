@@ -18,7 +18,7 @@ export function Carousel() {
             <img src='img\carousel\banner_link_4g.png' className="carousel-img-banner" alt='Aquario Link 4G' />
           </div>
           <div className="carousel-item">
-            <img src='img\carousel\banner_b7.png' className='carousel-img-banner' alt='Receptor Satélite B7' />
+            <img src='img\carousel\banner_century.png' className='carousel-img-banner' alt='Receptor Satélite B7' />
           </div>
           <div className="carousel-item">
             <img src='img\carousel\banner_amplimax_4g.png' className='carousel-img-banner' alt='Amplimax 4G' />
