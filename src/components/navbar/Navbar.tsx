@@ -12,14 +12,14 @@ export function NavBar() {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark" style={{ background: 'rgb(237,237,237', border: '1px solid rgb(237,237,237)'}} aria-label="Offcanvas navbar large">
+            <nav className="navbar navbar-expand-lg navbar-dark" style={{ background: 'whitesmoke', border: '1px solid rgb(237,237,237)', borderRadius:'6px'}} aria-label="Offcanvas navbar large">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/dashboardefault">{<Logo />}</a>
                     <button className="navbar-toggler" style={{ background: 'gray', border: 'none'}} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
                         aria-controls="offcanvasNavbar2">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="offcanvas offcanvas-end bg-secondary-old" style={{ background: 'rgb(237, 237, 237)', border: '3px solid gray', padding: '0px' }} id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+                    <div className="offcanvas offcanvas-end bg-secondary-old" style={{ background: 'whitesmoke)', border: '2px solid rgb(237,237,237)', borderRadius:'6px' }} id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
                         <div className="offcanvas-header">
                             <p className="offcanvas-title" id="offcanvasNavbar2Label"><a href={'/contact'}>Fale conosco</a></p>
                             <button type="button" className="btn-close btn-close-dark" data-bs-dismiss="offcanvas"
