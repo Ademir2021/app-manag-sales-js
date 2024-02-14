@@ -10,6 +10,7 @@ import { SearchItens } from '../../components/home/SearchItens';
 import { currencyFormat } from '../../components/utils/currentFormat/CurrentFormat';
 import { Globais } from '../../components/globais/Globais';
 import { Carousel } from '../../components/carousel/Carousel';
+import ControlledCarousel from '../../components/carousel/ControlledCarousel';
 
 export function HomePage() {
     const [id, setId] = useState<number>(1);
@@ -216,7 +217,8 @@ export function HomePage() {
                 contact={<a href={"/contact"} style={{ color: 'GrayText' }}>Fale Conosco {Globais.phone}</a>}
             />
             <NavBar />
-            <Carousel/>
+            {/* <Carousel/> */}
+            <ControlledCarousel />
             <SearchItens
                 selectSector={(e: { target: { value: SetStateAction<string> } }) => setSelectSector(e.target.value)}
                 sectors={sectors}
