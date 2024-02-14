@@ -27,7 +27,7 @@ export function Carousel() {
             <img src='img\carousel\banner_amplimax_4g_2.png' className='carousel-img-banner' alt='Amplimax 4G 2' />
           </div>
           <div className="carousel-item">
-            <img src='img\carousel\banner_parabolica_century.png' className='carousel-img-banner' alt='Parabólica Century' />
+            <img src='img\carousel\banner_parabol_century.png' className='carousel-img-banner' alt='Parabólica Century' />
           </div>
           <div className="carousel-item">
             <img src='img\carousel\banner_rigol.png' className='carousel-img-banner' alt='Osciloscopio Rigol' />
