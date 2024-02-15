@@ -9,7 +9,6 @@ import { Whats } from '../../components/whats/Whats';
 import { SearchItens } from '../../components/home/SearchItens';
 import { currencyFormat } from '../../components/utils/currentFormat/CurrentFormat';
 import { Globais } from '../../components/globais/Globais';
-import { Carousel } from '../../components/carousel/Carousel';
 import ControlledCarousel from '../../components/carousel/ControlledCarousel';
 
 export function HomePage() {
