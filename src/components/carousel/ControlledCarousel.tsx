@@ -56,7 +56,7 @@ function ControlledCarousel() {
           <Carousel.Caption>
             <div style={{color:'white'}}>
             <h3>Elsys Amplimax</h3>
-            <p>Internet longo alcance</p>
+            <p>Internet de longo alcance</p>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
