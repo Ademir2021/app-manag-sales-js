@@ -22,48 +22,52 @@ function ControlledCarousel() {
         <Carousel.Item interval={1000}>
           <img src='img\carousel\banner_link_4g.png' className="carousel-img-banner" alt='Aquario Link 4G' />
           <Carousel.Caption>
-            {/* <p>First slide label</p> */}
-            {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
+            {/* <p>-</p> */}
+            {/* <p>-</p> */}
           </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item  interval={1000}>
-          <img src='img\carousel\new_midia_box_b7.png' className='carousel-img-banner' alt='Receptor Satélite B7' />
+          <img src='img\carousel\banner_midiabox_b7.png' className='carousel-img-banner' alt='Receptor Satélite B7' />
           <Carousel.Caption>
-            {/* <h3>Second slide label</h3> */}
-            {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
+            {/* <h3>-</h3> */}
+            {/* <p>-</p> */}
           </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item  interval={1000}>
           <img src='img\carousel\banner_amplimax.png' className='carousel-img-banner' alt='Amplimax 4G' />
           <Carousel.Caption>
-            {/* <h3>Third slide label</h3> */}
-            {/* <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
+            {/* <h3>-</h3> */}
+            {/* <p>-</p> */}
           </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item  interval={1000}>
           <img src='img\carousel\banner_parabol_century.png' className='carousel-img-banner' alt='Parabólica Century' />
           <Carousel.Caption>
-            {/* <h3>Third slide label</h3> */}
-            {/* <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
+            {/* <h3>-</h3> */}
+            {/* <p>-</p> */}
           </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item  interval={1000}>
           <img src='img\carousel\banner_amplimax_4g.png' className='carousel-img-banner' alt='Amplimax 4G' />
           <Carousel.Caption>
-            {/* <h3>Third slide label</h3> */}
-            {/* <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
+            <div style={{color:'white'}}>
+            <h3>Elsys Amplimax</h3>
+            <p>Internet longo alcance</p>
+            </div>
           </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item  interval={1000}>
           <img src='img\carousel\banner_rigol.png' className='carousel-img-banner' alt='Osciloscopio Rigol' />
           <Carousel.Caption>
-            {/* <h3>Third slide label</h3> */}
-            {/* <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
+            <div style={{color:'white'}}>
+            <h3>Osciloscópio Rigol</h3>
+            <p>200Mhz 2canais 1gs digital DS1202Z</p>
+            </div>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
