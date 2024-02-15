@@ -1,7 +1,7 @@
 import { SetStateAction, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import './Carousel.css'
-import '../global-module.css'
+// import '../global-module.css'
 
 function ControlledCarousel() {
   const [index, setIndex] = useState(0);
@@ -11,12 +11,18 @@ function ControlledCarousel() {
   };
 
   return (
-    <div>
-      <Carousel  data-bs-theme="dark"  slide={false} activeIndex={index} onSelect={handleSelect}>
+    
+      <Carousel
+      prevIcon=''
+      nextIcon=''
+      variant='dark'
+      activeIndex={index}
+      onSelect={handleSelect}>
+
         <Carousel.Item interval={1000}>
           <img src='img\carousel\banner_link_4g.png' className="carousel-img-banner" alt='Aquario Link 4G' />
           <Carousel.Caption>
-            {/* <h3>First slide label</h3> */}
+            {/* <p>First slide label</p> */}
             {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
@@ -61,7 +67,7 @@ function ControlledCarousel() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-    </div>
+    
   )
 }
 
