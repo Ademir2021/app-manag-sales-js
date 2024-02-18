@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState } from "react";
 import { NewsLetterForm } from "../../components/contacts/newsLetterForm";
 import { postRegister } from "../../services/handleService";
 
@@ -9,10 +9,10 @@ type TContact = {
     comments?: string;
 }
 
-export function NewsLetter(){
+export function NewsLetter() {
 
     const [contacts, setContacts] = useState<TContact>({
-        name:"",
+        name: "",
         email: "",
         phone: "null",
         comments: "news Letter"
@@ -24,18 +24,21 @@ export function NewsLetter(){
         setContacts(values => ({ ...values, [name]: value }))
     };
 
-    function handleSubmit(e:any){
+    function handleSubmit(e: any) {
         e.preventDefault();
-        contacts.name = contacts.email;
-        postRegister(contacts, "contact")
+        if (contacts.email !== "") {
+            contacts.name = contacts.email;
+            postRegister(contacts, "contact")
+        }
+        contacts.email = ""
     }
 
-    return(
+    return (
         <NewsLetterForm
-        handleSubmit={handleSubmit}
-        handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
         >
-        {contacts}
+            {contacts}
         </NewsLetterForm>
     )
 }
