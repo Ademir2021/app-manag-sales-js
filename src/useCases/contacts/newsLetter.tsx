@@ -24,13 +24,14 @@ export function NewsLetter() {
         setContacts(values => ({ ...values, [name]: value }))
     };
 
-    function handleSubmit(e: any) {
+   
+    function handleSubmit(e: Event) {
         e.preventDefault();
-        if (contacts.email !== "") {
-            contacts.name = contacts.email;
-            postRegister(contacts, "contact")
-        }
+        if(contacts.email !== ""){
+        contacts.name = contacts.email;
+        postRegister(contacts, "contact")
         contacts.email = ""
+        }
     }
 
     return (

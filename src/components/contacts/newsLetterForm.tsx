@@ -18,6 +18,7 @@ export function NewsLetterForm(
             onChange={handleChange}
             />
             <button style={{width:'20%', height:'48px', borderRadius:'0px 12px 12px 0px'}}
+             type="submit"
             onClick={handleSubmit}
             >Enviar</button>
         </form>
