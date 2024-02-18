@@ -216,7 +216,6 @@ export function HomePage() {
                 contact={<a href={"/contact"} style={{ color: 'GrayText' }}>Fale Conosco {Globais.phone}</a>}
             />
             <NavBar />
-            {/* <Carousel/> */}
             <ControlledCarousel />
             <SearchItens
                 selectSector={(e: { target: { value: SetStateAction<string> } }) => setSelectSector(e.target.value)}

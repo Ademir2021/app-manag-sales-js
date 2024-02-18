@@ -1,3 +1,4 @@
+import { NewsLetter } from '../../useCases/contacts/newsLetter'
 import { Globais } from '../globais/Globais'
 import './FooterHome.css'
 import './cookies.css'
@@ -19,6 +20,7 @@ export function FooterHome() {
 
                 <strong>Seguimentos</strong>
                 <p>INFORMÁTICA, ANTENAS E TELECOM EM GERAL</p>
+
 
                 <strong>CANAIS DE ACESSO</strong>
                 <div className=''>
@@ -72,6 +74,8 @@ export function FooterHome() {
                     <div>{Globais.rights_reserved}</div>
                     <div>{Globais.address}</div>
                     <div>Powered by <a href={Globais.URL} title="Powered By." target="_self">{Globais.title}</a> Contato {Globais.phone}</div>
+                    <br />
+                    <NewsLetter />
                     <br />
                     <strong>Política de cookies: </strong>
                     <span>

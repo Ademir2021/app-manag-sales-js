@@ -1,8 +1,8 @@
 import { checksUserLogged } from '../utils/checksUserLogged/ChecksUserLogged';
-import './HomePage.css'
+import './ListItens.css'
 
 type PropsListItens = {
-    handleItem: React.FormEventHandler<HTMLFormElement> | undefined | any;
+    handleItem: any;
     id?: number;
     item_img: string;
     item?: number;

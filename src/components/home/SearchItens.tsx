@@ -2,7 +2,7 @@ import './SearchItens.css'
 
 type SearchItens = {
     handleChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
-    handleSubmit: React.FormEventHandler<HTMLFormElement> | undefined | any;
+    handleSubmit: React.FormEvent<HTMLFormElement> | undefined | any ;
     descric: string;
     messageItems: string;
     selectSector: React.ChangeEventHandler<HTMLSelectElement> | undefined;
