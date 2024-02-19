@@ -4,20 +4,12 @@ import { FormatDate } from "../../components/utils/formatDate";
 import { BackHome } from "../../components/utils/backHome/BackHome"
 import { AuthContext } from '../../context/auth'
 import api from "../../services/api/api";
-
-type TContacts = {
-    created_at: Date | any;
-    id: number;
-    name: string;
-    email: string;
-    phone: string;
-    comments: string
-}
+import {TContact} from "./Contacts"
 
 export function ContactsList() {
 
     const { user: isLogged }: any = useContext(AuthContext);
-    const [contacts, setContacts] = useState<TContacts[]>([])
+    const [contacts, setContacts] = useState<TContact[]>([])
     const [notAuthorized, setNotAuthorized] = useState<string>('')
 
     async function getContacts() {
@@ -39,7 +31,7 @@ export function ContactsList() {
             <BackHome />
             <p>{notAuthorized}</p>
             {contacts.length === 0 ? <p>Carregando...</p> : (
-                contacts.map((contact: TContacts) => (
+                contacts.map((contact: TContact) => (
                     <ContactList
                         key={contact.id}
                         id={contact.id}

@@ -1,14 +1,7 @@
 import { useState } from "react";
 import { NewsLetterForm } from "../../components/contacts/newsLetterForm";
 import { postRegister } from "../../services/handleService";
-
-type TContact = {
-    name?: string;
-    email: string;
-    phone?: string;
-    comments?: string;
-}
-
+import {TContact} from "./Contacts"
 export function NewsLetter() {
 
     const [contacts, setContacts] = useState<TContact>({

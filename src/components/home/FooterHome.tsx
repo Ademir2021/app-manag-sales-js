@@ -19,8 +19,7 @@ export function FooterHome() {
                 </p>
 
                 <strong>Seguimentos</strong>
-                <p>INFORMÁTICA, ANTENAS E TELECOM EM GERAL</p>
-
+                <p>Antenas Internet informática e Sistemas Gerenciais</p>
 
                 <strong>CANAIS DE ACESSO</strong>
                 <div className=''>
@@ -55,6 +54,7 @@ export function FooterHome() {
                 <p><a href="#"><img src="img//btn-top.png" className="btn-top" alt="Topo"></img></a></p>
 
                 <ul><li><a href='contact'>Consulte nossas Formas de Entregas</a></li></ul>
+                <NewsLetter />
                 <hr></hr>
                 <a href={'direct_payment'}>
                     <b>Pague com</b>
@@ -75,7 +75,6 @@ export function FooterHome() {
                     <div>{Globais.address}</div>
                     <div>Powered by <a href={Globais.URL} title="Powered By." target="_self">{Globais.title}</a> Contato {Globais.phone}</div>
                     <br />
-                    <NewsLetter />
                     <br />
                     <strong>Política de cookies: </strong>
                     <span>

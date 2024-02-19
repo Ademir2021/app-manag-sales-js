@@ -3,11 +3,13 @@ import { ContactForm } from "../../components/contacts/ContactForm"
 import { postRegister } from "../../services/handleService";
 import { NavBar } from "../../components/navbar/Navbar";
 
-type TContact = {
+export type TContact = {
+    created_at?: Date | any;
+    id?: number | any;
     name: string;
     email: string;
-    phone: string;
-    comments: string;
+    phone?: string | any;
+    comments: string
 }
 
 export function Contacts() {
