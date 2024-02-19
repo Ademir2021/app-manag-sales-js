@@ -75,7 +75,6 @@ export function FooterHome() {
                     <div>{Globais.address}</div>
                     <div>Powered by <a href={Globais.URL} title="Powered By." target="_self">{Globais.title}</a> Contato {Globais.phone}</div>
                     <br />
-                    <br />
                     <strong>Política de cookies: </strong>
                     <span>
                         O <b>cookies</b> pemite que o website "lembre" suas ações ou preferencias ao longo do tempo. A
