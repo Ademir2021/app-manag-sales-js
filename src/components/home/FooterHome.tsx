@@ -19,7 +19,7 @@ export function FooterHome() {
                 </p>
 
                 <strong>Seguimentos</strong>
-                <p>Antenas Internet informática e Sistemas Gerenciais</p>
+                <p>Antenas Internet Sistemas Gerenciais e Informática</p>
 
                 <strong>CANAIS DE ACESSO</strong>
                 <div className=''>

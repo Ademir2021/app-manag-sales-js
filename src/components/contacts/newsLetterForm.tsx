@@ -9,7 +9,7 @@ export function NewsLetterForm(
 
     return (
         <form style={{backgroundColor:"", padding:'12px', borderRadius:'6px', border:'0px solid gray'}}>
-            <strong>Receba boletim de notícias. Cadastre seu email !</strong><br/>
+            <strong>Receba boletins de notícias !</strong><br/>
             <input style={{fontSize:'16px', width: '80%', height: '46px', borderRadius:'12px 0px 0px 12px'}}
             type="email"
             name="email"
