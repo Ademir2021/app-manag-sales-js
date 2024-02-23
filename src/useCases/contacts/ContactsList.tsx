@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import { ContactList } from "../../components/contacts/ContactList"
-import { FormatDate } from "../../components/utils/formatDate";
 import { BackHome } from "../../components/utils/backHome/BackHome"
 import { AuthContext } from '../../context/auth'
 import api from "../../services/api/api";
@@ -35,7 +34,7 @@ export function ContactsList() {
                     <ContactList
                         key={contact.id}
                         id={contact.id}
-                        created_at={FormatDate(contact.created_at)}
+                        created_at={contact.created_at}
                         name={contact.name}
                         email={contact.email}
                         phone={contact.phone}

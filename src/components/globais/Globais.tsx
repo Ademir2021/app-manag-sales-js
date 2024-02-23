@@ -50,7 +50,7 @@ export class Globais {
     static privilAdmin = '2'
     static rights_reserved = '2007 | ' + year + ', All rights reserved Centro Informática';
     static address = 'Avenida Castro Alves 1241, Barbosa Ferraz, PR. CEP 86960-000';
-    static phone = '+55 (44) 98852-1033'
+    static phone = '+55 (44) 98462-3082'
     static title = 'Centro Informática';
     static company = "Centro Informática"
 

@@ -3,12 +3,12 @@ import { ContactForm } from "../../components/contacts/ContactForm"
 import { postRegister } from "../../services/handleService";
 import { NavBar } from "../../components/navbar/Navbar";
 
-export type TContact = {
+export interface TContact {
     created_at?: Date | any;
-    id?: number | any;
+    id?: number;
     name: string;
     email: string;
-    phone?: string | any;
+    phone?: string;
     comments: string
 }
 

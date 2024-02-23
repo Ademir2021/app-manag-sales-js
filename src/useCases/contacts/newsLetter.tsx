@@ -17,7 +17,6 @@ export function NewsLetter() {
         setContacts(values => ({ ...values, [name]: value }))
     };
 
-   
     function handleSubmit(e: Event) {
         e.preventDefault();
         if(contacts.email !== ""){

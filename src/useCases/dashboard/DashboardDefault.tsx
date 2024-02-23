@@ -11,7 +11,6 @@ export function DashboardDefault(){
                     <a href="\sale" 
                         style={{color:'white'}}>
                             ACESSO A TELA DE COMPRAS</a></button></div>
-            {/* <hr></hr> */}
             <FooterHome/>
         </>
     )
