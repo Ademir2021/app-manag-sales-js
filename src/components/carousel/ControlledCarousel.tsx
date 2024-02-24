@@ -20,36 +20,18 @@ function ControlledCarousel() {
 
       <Carousel.Item interval={200}>
         <img src='img\carousel\banner_midiabox_b7.png' className='carousel-img-banner' alt='Receptor Satélite B7' />
-        <Carousel.Caption>
-          {/* <h3>-</h3> */}
-          {/* <p>-</p> */}
-        </Carousel.Caption>
       </Carousel.Item>
 
       <Carousel.Item interval={400}>
         <img src='img\carousel\banner_parabol_century.png' className='carousel-img-banner' alt='Parabólica Century' />
-        <Carousel.Caption>
-          {/* <h3>-</h3> */}
-          {/* <p>-</p> */}
-        </Carousel.Caption>
       </Carousel.Item>
 
       <Carousel.Item interval={400}>
         <img src='img\carousel\banner_amplimax_4g.png' className='carousel-img-banner' alt='Amplimax 4G' />
-        <Carousel.Caption>
-          <div style={{ color: 'white' }}>
-            <h3>Elsys Amplimax</h3>
-            <p>Internet de longo alcance</p>
-          </div>
-        </Carousel.Caption>
       </Carousel.Item>
 
       <Carousel.Item interval={400}>
         <img src='img\carousel\banner_amplimax.png' className='carousel-img-banner' alt='Amplimax 4G' />
-        <Carousel.Caption>
-          {/* <h3>-</h3> */}
-          {/* <p>-</p> */}
-        </Carousel.Caption>
       </Carousel.Item>
 
       <Carousel.Item interval={400}>
