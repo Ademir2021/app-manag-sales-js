@@ -1,35 +1,36 @@
 .header-home{
-    display:flexbox;
-    background-color: white;
+    border-radius: 6px 6px 0px 0px;
+    background-color:rgb(133, 133, 167);
 }
 
 .header-home-carrinho {
     border: solid 1px rgb(248, 244, 244);
+    color: white;
     padding: 9px;
     width: 33px;
     height: 32px;
 }
 .header-home-carrinho:hover{
-    background-color: rgb(221, 217, 217);
+    background-color:rgb(237,237,237);
 }
 
 .header-home-sub-total {
-    border: solid 1px rgb(248, 244, 244);
+    /* border: solid 1px rgb(248, 244, 244); */
     padding: 9px;
-    color:black;
+    color:white;
     font-size: 14px;
 }
 .header-home-sub-total:hover{
-    background-color: rgb(221, 217, 217);
+    background-color:rgb(237,237,237);
 }
 
 .header-contact-speak{
-    color:grey;
+    color:white;
 }
 
 .header-contact{
     font-size: 16px;
-    border: solid 1px rgb(248, 244, 244);
+    /* border: solid 1px rgb(248, 244, 244); */
     padding: 12px;
 }
 .header-contact:hover{

@@ -19,7 +19,7 @@ export function NavBar() {
                         aria-controls="offcanvasNavbar2">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="offcanvas offcanvas-end bg-secondary-old" style={{ background: 'whitesmoke)', border: '2px solid rgb(237,237,237)', borderRadius:'6px' }} id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+                    <div className="offcanvas offcanvas-end bg-secondary-old" style={{ background: 'whitesmoke)', border: '2px solid rgb(237,237,237)', borderRadius:'0px 0px 3px 3px' }} id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
                         <div className="offcanvas-header">
                             <p className="offcanvas-title" id="offcanvasNavbar2Label"><a href={'/contact'}>Fale conosco</a></p>
                             <button type="button" className="btn-close btn-close-dark" data-bs-dismiss="offcanvas"

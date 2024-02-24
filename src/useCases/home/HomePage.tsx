@@ -214,7 +214,7 @@ export function HomePage() {
                 subtotal={subtotal === 0 ? '' : currencyFormat(subtotal)}
             />
             <NavBar />
-            <ControlledCarousel />
+            {selectSector === "Todos" ? <ControlledCarousel /> : null}
             <SearchItens
                 selectSector={(e: { target: { value: SetStateAction<string> } }) => setSelectSector(e.target.value)}
                 sectors={sectors}
