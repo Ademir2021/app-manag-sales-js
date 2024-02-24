@@ -23,6 +23,10 @@
     background-color: rgb(221, 217, 217);
 }
 
+.header-contact-speak{
+    color:grey;
+}
+
 .header-contact{
     font-size: 16px;
     border: solid 1px rgb(248, 244, 244);
@@ -37,5 +41,3 @@
         font-size: 12px;
     }
 }
-
-/* @media screen and (max-width:768px) {} */

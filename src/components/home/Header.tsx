@@ -1,9 +1,10 @@
+import { Globais } from '../globais/Globais';
 import './Header.css'
 
 type PropsHeader = {
     counter: number | string;
     subtotal: number | string;
-    contact:any;
+    // contact:any;
 }
 
 export function Header(props: PropsHeader) {
@@ -16,7 +17,7 @@ export function Header(props: PropsHeader) {
                 </img></strong></a>
             <a className='header-home-sub-total'>
                 {props.subtotal}</a>
-                 <a className='header-contact'>{props.contact}</a>
+                {<a href={"/contact"} className='header-contact-speak'>Fale Conosco {Globais.phone}</a>}
                  </div>
         </>
     )

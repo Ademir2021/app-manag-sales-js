@@ -3,7 +3,6 @@ import { crypt } from '../../components/utils/crypt/Crypt'
 import { UserFormRegister } from '../../components/users/UserFormRegister';
 
 import api from '../../services/api/api'
-import { Logo } from '../../components/logo/Logo';
 
 type TUserRegister = {
   name: string;
@@ -72,7 +71,7 @@ export function UserRegister() {
         handleSubmit={handleSubmit}
         handleChange={handleChange}
         message={message}
-        alert={msg}/**Aguardando Ajustes */
+        alert={msg}
       >
         {user}
       </UserFormRegister>

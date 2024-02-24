@@ -8,7 +8,6 @@ import { FooterHomePage } from './FooterHome';
 import { Whats } from '../../components/whats/Whats';
 import { SearchItens } from '../../components/home/SearchItens';
 import { currencyFormat } from '../../components/utils/currentFormat/CurrentFormat';
-import { Globais } from '../../components/globais/Globais';
 import ControlledCarousel from '../../components/carousel/ControlledCarousel';
 
 export function HomePage() {
@@ -213,7 +212,6 @@ export function HomePage() {
             <Header
                 counter={counter !== 0 ? counter : 0}
                 subtotal={subtotal === 0 ? '' : currencyFormat(subtotal)}
-                contact={<a href={"/contact"} style={{ color: 'GrayText' }}>Fale Conosco {Globais.phone}</a>}
             />
             <NavBar />
             <ControlledCarousel />
