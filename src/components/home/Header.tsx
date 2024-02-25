@@ -17,7 +17,7 @@ export function Header(props: PropsHeader) {
                 </img></strong></a>
             <a className='header-home-sub-total'>
                 {props.subtotal}</a>
-                {<a href={"/contact"} className='header-contact-speak'>Fale Conosco {Globais.phone}</a>}
+                {<a href={"/contact"} className='header-contact'>Fale Conosco {Globais.phone}</a>}
                  </div>
         </>
     )
