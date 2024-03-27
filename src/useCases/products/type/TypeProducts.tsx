@@ -11,9 +11,11 @@ export type TProductRegister = {
     bar_code: string;
     image?: | string;
 };
+
 export type TItem = {
     descric: string;
 };
+
 export type TItens = {
     id: number;
     item: number;
@@ -24,15 +26,25 @@ export type TItens = {
     image?:string;
 };
 
+export type TItemSale ={
+    id: number
+    item: number
+    descric: string
+    amount: number
+    valor: number
+    tItem: number
+
+}
+
 export type TSale = {
     filial: number;
     user_id: number;
     user: string;
     fk_name_pers: number;
     name_pers: string;
-    cpf_pers:string;
-    address_pers:string;
-    phone_pers:string;
+    cpf_pers: string;
+    address_pers: string;
+    phone_pers: string;
     bairro_pers: string
     fk_cep: number;
     num_cep: string | undefined | any
@@ -42,12 +54,16 @@ export type TSale = {
     tItens: number;
     tNote: number;
     paySale: number;
-    id: number;
-    item: number;
-    descric: string;
-    amount: number;
-    valor: number | any;
-    tItem: number;
+    itens: [
+        {
+            id: number;
+            item: number;
+            descric: string;
+            amount: number | any;
+            valor: number | any;
+            tItem: number;
+        }
+    ]
 };
 
 export type TBrand = {

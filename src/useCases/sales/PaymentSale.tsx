@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { PaymentSaleForm } from '../../components/sales/PaymentSaleForm';
 import { currencyFormat } from "../../components/utils/currentFormat/CurrentFormat";
 import { TSale } from "../products/type/TypeProducts";
-import { TPaymentPagSeguroSaleCard, TPaymentPagSeguroPix, TQrcodePagSeguro,
-TPaymentPagSeguroBoleto, Tboleto, TPaymentPagSeguroCard } from "./type/TPagSeguro";
+import {
+    TPaymentPagSeguroSaleCard, TPaymentPagSeguroPix, TQrcodePagSeguro,
+    TPaymentPagSeguroBoleto, Tboleto, TPaymentPagSeguroCard
+} from "./type/TPagSeguro";
 import { postRegister as registerSale } from "../../services/handleService";
 import { BackHome } from "../../components/utils/backHome/BackHome";
 import { ButtonOnClick } from "../../components/utils/btnOnClick/BtnOnClick";
 import api from "../../services/api/api";
+
 
 export function PaymentSale() {
 
@@ -19,46 +22,80 @@ export function PaymentSale() {
     const [messagesSucess, SetMessagesSucess] = useState<string>('');
 
     const [paymentPagSeguroSaleCard, setPaymentSaleCard] = useState<TPaymentPagSeguroSaleCard>(
-        {"encryptedCard":"","publicKey":"","number":"4539620659922097",
-        "expMonth":"11","expYear":"2026","securityCode":"123","installments":1,
-        "holder":"Joao da Silva","token":""}
+        {
+            "encryptedCard": "", "publicKey": "", "number": "4539620659922097",
+            "expMonth": "11", "expYear": "2026", "securityCode": "123", "installments": 1,
+            "holder": "Joao da Silva", "token": ""
+        }
     );
 
     const [sale, setSale] = useState<TSale[]>([
-        {"filial":0,"user_id":0,"user":"","fk_name_pers":0,"name_pers":"",
-        "cpf_pers":"","address_pers":"",
-        "bairro_pers": '',
-        "fk_cep": 0,
-        "name_city":'',
-        "uf":'',
-        "num_cep":'',
-        "phone_pers":"","disc_sale":0,"tItens":0,
-        "tNote":0,"paySale":0,"id":0,"item":0,"descric":"","amount":0,"valor":0,"tItem":0}
+        {
+            "filial": 0, "user_id": 0, "user": "", "fk_name_pers": 0, "name_pers": "",
+            "cpf_pers": "", "address_pers": "",
+            "bairro_pers": '',
+            "fk_cep": 0,
+            "name_city": '',
+            "uf": '',
+            "num_cep": '',
+            "phone_pers": "", "disc_sale": 0, "tItens": 0,
+            "tNote": 0, "paySale": 0, itens: [{ "id": 0, "item": 0, "descric": "", "amount": 0, "valor": 0, "tItem": 0 }]
+        }
     ]);
 
     const [paymentPagSeguroPix, setPaymentPagSeguroPix] = useState<TPaymentPagSeguroPix>(
-        {"reference_id":"","customer":{"name":"","email":"","tax_id":"","phones":[{"country":"",
-        "area":"","number":"","type":""}]},"items":[],"qr_codes":[{"amount":{"value":0},"expiration_date":"",
-        "links":[{"href":""}]}],"shipping":{"address":{"street":"","number":"","complement":"","locality":"",
-        "city":"","region_code":"","country":"","postal_code":""}},"notification_urls":[""]}
+        {
+            "reference_id": "", "customer": {
+                "name": "", "email": "", "tax_id": "", "phones": [{
+                    "country": "",
+                    "area": "", "number": "", "type": ""
+                }]
+            }, "items": [], "qr_codes": [{
+                "amount": { "value": 0 }, "expiration_date": "",
+                "links": [{ "href": "" }]
+            }], "shipping": {
+                "address": {
+                    "street": "", "number": "", "complement": "", "locality": "",
+                    "city": "", "region_code": "", "country": "", "postal_code": ""
+                }
+            }, "notification_urls": [""]
+        }
     );
 
     const [qrcodePagSeguro, setQrcode] = useState<TQrcodePagSeguro>(
-        {"qr_codes":[{"amount":{"value":0},"expiration_date":"","links":[{"href":""}]}]}
+        { "qr_codes": [{ "amount": { "value": 0 }, "expiration_date": "", "links": [{ "href": "" }] }] }
     );
 
     const [paymentPagSeguroBoleto, setPaymentPagSeguroBoleto] = useState<TPaymentPagSeguroBoleto>(
-        {"reference_id":"","customer":{"name":"","email":"","tax_id":"","phones":[{"country":"","area":"",
-        "number":"","type":""}]},"items":[],"description":"","amount":{"value":"","currency":""},
-        "payment_method":{"type":"","boleto":{"due_date":"","instruction_lines":{"line_1":"","line_2":""},
-        "holder":{"name":"","tax_id":"","email":"","address":{"street":"","number":"","locality":"",
-        "city":"","region":"","region_code":"","country":"","postal_code":""}}}},
-        "shipping":{"address":{"street":"","number":"","complement":"","locality":"",
-        "city":"","region_code":"","country":"","postal_code":""}},"notification_urls":[""]}
+        {
+            "reference_id": "", "customer": {
+                "name": "", "email": "", "tax_id": "", "phones": [{
+                    "country": "", "area": "",
+                    "number": "", "type": ""
+                }]
+            }, "items": [], "description": "", "amount": { "value": "", "currency": "" },
+            "payment_method": {
+                "type": "", "boleto": {
+                    "due_date": "", "instruction_lines": { "line_1": "", "line_2": "" },
+                    "holder": {
+                        "name": "", "tax_id": "", "email": "", "address": {
+                            "street": "", "number": "", "locality": "",
+                            "city": "", "region": "", "region_code": "", "country": "", "postal_code": ""
+                        }
+                    }
+                }
+            },
+            "shipping": {
+                "address": {
+                    "street": "", "number": "", "complement": "", "locality": "",
+                    "city": "", "region_code": "", "country": "", "postal_code": ""
+                }
+            }, "notification_urls": [""]
+        }
     );
 
     const [boletoPagSeguro, setBoletoPagSeguro] = useState<Tboleto>(
-        {"links":[{"href":""}]}
+        { "links": [{ "href": "" }] }
     );
 
     if (boletoPagSeguro.links[0].href.length !== 0) {
@@ -68,17 +105,29 @@ export function PaymentSale() {
     };
 
     const [paymentPagSeguroCard, setPaymentPagSeguroCard] = useState<TPaymentPagSeguroCard>(
-        {"reference_id":"","customer":{"name":"","email":"","tax_id":"",
-        "phones":[{"country":"","area":"","number":"","type":""}]},
-        "items":[],"description":"","amount":{"value":0,"currency":""},
-        "payment_method":{"type":"","installments":0,"capture":true,"soft_descriptor":"",
-        "card":{"encrypted":"","number":"","exp_month":"","exp_year":"","security_code":"",
-        "holder":{"name":""}}},"store":true, "shipping":{"address":{"street":"","number":"","complement":"",
-        "locality":"","city":"","region_code":"","country":"","postal_code":""}},"notification_urls":[""]}
+        {
+            "reference_id": "", "customer": {
+                "name": "", "email": "", "tax_id": "",
+                "phones": [{ "country": "", "area": "", "number": "", "type": "" }]
+            },
+            "items": [], "description": "", "amount": { "value": 0, "currency": "" },
+            "payment_method": {
+                "type": "", "installments": 0, "capture": true, "soft_descriptor": "",
+                "card": {
+                    "encrypted": "", "number": "", "exp_month": "", "exp_year": "", "security_code": "",
+                    "holder": { "name": "" }
+                }
+            }, "store": true, "shipping": {
+                "address": {
+                    "street": "", "number": "", "complement": "",
+                    "locality": "", "city": "", "region_code": "", "country": "", "postal_code": ""
+                }
+            }, "notification_urls": [""]
+        }
     );
 
     const [cardPagSeguro, setcardPagSeguro] = useState(
-        {"amount":{"value":0,"currency":"real","summary":{"total":0,"paid":0,"refunded":0}}}
+        { "amount": { "value": 0, "currency": "real", "summary": { "total": 0, "paid": 0, "refunded": 0 } } }
     );
 
     const handleChange = (e: any) => {
@@ -101,9 +150,9 @@ export function PaymentSale() {
     function arrayItems(obj: any) {
         for (let i = 1; sale.length > i; i++) {
             const items = { name: '', quantity: 0, unit_amount: 0 }
-            items.name = sale[i].descric
-            items.quantity = sale[i].amount
-            items.unit_amount = sale[i].valor.replace(/[.]/g, '')
+            items.name = sale[0].itens[0].descric[i]
+            items.quantity = sale[0].itens[0].amount[i]
+            items.unit_amount = sale[0].itens[0].valor[i].replace(/[.]/g, '')
             obj.items.push(items)
         }
     };
@@ -232,10 +281,10 @@ export function PaymentSale() {
     };
     useEffect(() => {
         sendSale()
-    },[qrcodePagSeguro.qr_codes[0].amount.value,
+    }, [qrcodePagSeguro.qr_codes[0].amount.value,
     cardPagSeguro.amount.summary.total,
     boletoPagSeguro.links[0].href]);
-    
+
     async function registerPaymentPagSeguroPix() {
         await api.post<any>('/pix', paymentPagSeguroPix)
             .then(response => {

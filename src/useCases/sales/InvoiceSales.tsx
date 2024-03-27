@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { InvoiceSalesForm } from '../../components/sales/InvoiceSalesForm';
 import { BackHome } from "../../components/utils/backHome/BackHome";
-import { TSale } from "../products/type/TypeProducts";
+import { TSale, TItemSale } from "../products/type/TypeProducts";
 import { Globais } from "../../components/globais/Globais";
 import api from "../../services/api/api";
 
@@ -20,7 +20,7 @@ export function InvoiceSales() {
 
     const [sum, setSum] = useState<number>(0)
     const [sales, setSales] = useState<TSale[]>([])
-    const [itens, setItens] = useState<TSale[]>([]);
+    const [itens, setItens] = useState<TItemSale[]>([]);
     const [sale, setSale] = useState<TSale>({
         filial: 0,
         user_id: 0,
@@ -31,19 +31,24 @@ export function InvoiceSales() {
         address_pers: '',
         bairro_pers: '',
         fk_cep: 0,
-        name_city:'',
-        uf:'',
-        num_cep:'',
+        name_city: '',
+        uf: '',
+        num_cep: '',
         phone_pers: '',
         disc_sale: 0,
         tItens: 0,
-        tNote: 0, paySale: 0,
-        id:0,
-        item:0,
-        descric:'',
-        amount:0,
-        valor:0,
-        tItem:0
+        tNote: 0,
+        paySale: 0,
+        itens: [
+            {
+                id: 0,
+                item: 0,
+                descric: "",
+                amount: 0,
+                valor: 0,
+                tItem: 0
+            }
+        ]
     });
 
     const handleChange = (e: any) => {
@@ -77,7 +82,7 @@ export function InvoiceSales() {
                                 const resSum = localStorage.getItem('s');
                                 if (resSum !== null) {
                                     const sum: number = JSON.parse(resSum);
-                                    sale.tItens =sum;
+                                    sale.tItens = sum;
                                     setSum(sum);
                                 }
                                 sale.tNote = sale.tItens - sale.disc_sale;
@@ -98,7 +103,7 @@ export function InvoiceSales() {
             }
         }
     }, [sale]);
-    useEffect(() => { getSale()}, [sale]);
+    useEffect(() => { getSale() }, [sale]);
 
     async function getCeps() {
         try {
@@ -175,7 +180,7 @@ export function InvoiceSales() {
         if (sales.length === 0) {
             sales.push(sale)
             for (let i = 0; itens.length > i; i++) {
-                sales.push(itens[i])
+                sales[0].itens.push(itens[i])
             }
             setSales(sales);
             localStorage.setItem("sl", JSON.stringify(sales))
