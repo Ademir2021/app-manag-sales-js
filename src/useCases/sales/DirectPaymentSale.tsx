@@ -11,11 +11,11 @@ import api from "../../services/api/api";
 
 export function DirectPaymentSale() {
 
-    const [flagdirectPaymentHandle, setFlagdirectPaymentHandle] = useState(true);/**Confirma somente 1 vez o pagamento */
-    const [flagSales, setFlagSales] = useState<Boolean>(false);/**Emite a venda somente 1 vez */
+    const [flagdirectPaymentHandle, setFlagdirectPaymentHandle] = useState(true); /**Confirma somente 1 vez o pagamento */
+    const [flagSales, setFlagSales] = useState<Boolean>(false); /**Emite a venda somente 1 vez */
     const [messagesSucess, SetMessagesSucess] = useState<string>('');
     const [messagesPayment, SetMessagesPayment] = useState<string>('');
-    const [directPaymentHandle, setdirectPaymentHandle] = useState<TDirectPayment>(/**Set Pagto genérico */
+    const [directPaymentHandle, setdirectPaymentHandle] = useState<TDirectPayment>(
         {
             "reference_id": "", "customer": {
                 "name": "", "email": "", "tax_id": "", "phones": [{
@@ -32,33 +32,19 @@ export function DirectPaymentSale() {
                 }
             }, "notification_urls": [""]
         }
-    )
+    ); /**Set Pagto genérico */
 
-    const [paymentdirect, setPaymnetdirect] = useState<TPymentdirect>(/**retorno do payment */
+    const [paymentdirect, setPaymnetdirect] = useState<TPymentdirect>(
         { "qr_codes": [{ "amount": { "value": 0 }, "expiration_date": "", "links": [{ "href": "" }] }] }
-    );
+    ); /**retorno do payment */
 
-    const [sale, setSale] = useState<TSale[]>([
-        {
-            "filial": 0, "user_id": 0, "user": "", "fk_name_pers": 0, "name_pers": "",
-            "cpf_pers": "", "address_pers": "",
-            "bairro_pers": '',
-            "fk_cep": 0,
-            "name_city": '',
-            "uf": '',
-            "num_cep": '',
-            "phone_pers": "", "disc_sale": 0, "tItens": 0,
-            "tNote": 0, "paySale": 0,
-            "itens": [{
-                id: 0,
-                item: 0,
-                descric: "",
-                amount: 0,
-                valor: 0,
-                tItem: 0
-            }]
-        }
-    ]);
+    const [sale, setSale] = useState<TSale[]>([{
+        filial: 0, user_id: 0, user: "", fk_name_pers: 0, name_pers: "",
+        cpf_pers: "", address_pers: "", bairro_pers: '', fk_cep: 0,
+        name_city: '', uf: '', num_cep: '', phone_pers: "",
+        disc_sale: 0, tItens: 0, tNote: 0, paySale: 0,
+        itens: [{ id: 0, item: 0, descric: "", amount: 0, valor: 0, tItem: 0 }]
+    }]);
 
     const getSale = () => {
         const sale_store_res = localStorage.getItem('sl');
@@ -123,13 +109,13 @@ export function DirectPaymentSale() {
         sendSale()
     }, [paymentdirect.qr_codes[0].amount.value]);
 
-    async function registerdirectPaymentHandle() {/** API payment genérica */
+    async function registerdirectPaymentHandle() {
         await api.post<any>('/direct_payment', directPaymentHandle)
             .then(response => {
                 setPaymnetdirect(response.data)
                 setdirectPaymentHandle(response.data)
             }).catch(error => console.log(error))
-    };
+    }; /** API payment genérica */
 
     function handleDirectPaymentSubmit() {
         if (flagdirectPaymentHandle === true) {
@@ -152,16 +138,10 @@ export function DirectPaymentSale() {
     return (
         <>
             <DirectPaymentSaleForm
-                bestPayment={!flagSales ? <>ESCOLHA A MELHOR FORMA PARA PAGAR</> : ''}
+                bestPayment={!flagSales}
                 backHomePayment={messagesPayment !== "" ? <BackHome /> : ''}
-                paymentInfo={<a>Pagamento <b>localizado</b> o pedido será despachado</a>}
-                PaymentMethods={!flagSales ? <span>
-                    <li><b><strong>Chave PIX</strong></b>44988521033</li>
-                    <li><b><strong>Chave PIX</strong></b>18069383000110</li>
-                    <li><b><strong>PagSeguro</strong></b>Banco:290 AG:0001 Conta:10715966-7</li>
-                    <li><b><strong>Contato Whats</strong></b>44 988521033</li>
-                    <li><b><strong>Contato Email</strong></b>centroserra@gmail.com</li>
-                </span> : ''}
+                paymentInfo={!null}
+                paymentMethods={!flagSales}
                 messagesPayment={messagesPayment}
                 handleSubmit={handleDirectPaymentSubmit}
                 totalPayable={<>Total a pagar {currencyFormat(sale[0].paySale)}</>}
